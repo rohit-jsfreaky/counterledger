@@ -1,0 +1,60 @@
+{
+  "note": "Backtest events. T = the exchange's own stated halt time where it published one; otherwise the first public confirmation. Every time has a source and a quote.",
+  "events": [
+    {
+      "id": "ftx-2022-11",
+      "exchange": "ftx",
+      "T": "2022-11-08T21:51:25Z",
+      "T_kind": "first public confirmation (no exchange-published halt time found)",
+      "T_source": "https://www.coindesk.com/business/2022/11/08/ftx-exchange-halts-all-crypto-withdrawals",
+      "T_quote": "Crypto exchange FTX has halted all non-fiat customer withdrawals, an FTX support employee confirmed in the company's official Telegram group Tuesday afternoon.",
+      "T_time_from": "article datePublished 2022-11-08T21:51:25.724Z (page JSON-LD)",
+      "also": "CoinDesk quotes a user: \"It's been a full 11 hours since I've requested my withdrawal\" - on-chain slowdown likely precedes T",
+      "hot_wallets_eth": {
+        "0x2faf487a4414fe77e2327f0bf4ae2a264a776ad2": "FTX Exchange",
+        "0xc098b2a3aa256d2140208c3de6543aaef5cd3a94": "FTX Exchange 2"
+      },
+      "hot_wallets_source": "Etherscan labels via https://raw.githubusercontent.com/brianleect/etherscan-labels/923aba72c7e2d0682f7ae6194b6140bd90668dc9/data/etherscan/accounts/ftx.json"
+    },
+    {
+      "id": "wazirx-2024-07",
+      "exchange": "wazirx",
+      "T": "2024-07-18T07:30:00Z",
+      "T_kind": "exchange-stated halt time",
+      "T_source": "https://wazirx.com/blog/wazirx-cyber-attack-day-wise-report/",
+      "T_quote": "undo trades made after the withdrawal stoppage at 1 PM IST on 18th July 2024",
+      "first_abnormal": "2024-07-18T06:15:00Z",
+      "first_abnormal_quote": "you can view all related transactions performed by the attacker after 18th July, 11:45 AM here (same page; IST)",
+      "hot_wallets_eth": {
+        "0x618ffd1cdabee36ce5992a857cc7463f21272bd7": "WazirX: Withdrawals",
+        "0x0e293a9e57d22f6ec575b376e3e3bd8e642fd5fc": "WazirX 1",
+        "0xcdef28fe85ab08a6632c97fd90534666c1ae96a3": "WazirX 3",
+        "0x1b9509aeb1fbb605868d21caf2eeb6ac8351264d": "WazirX 4",
+        "0x305dcaea67a9d4152e54e68060c89db05fd67a7b": "WazirX 5",
+        "0x0389776e4d48384160cd5acde2f61ab9359e757e": "WazirX 6",
+        "0x196eeecf1a247ed7cadfb39a3125a321f8642aad": "WazirX 7"
+      },
+      "own_set_extra": {"0x27fd43babfbe83a81d14665b1a6fb8030a60c9b4": "WazirX 2 (the multisig attacked on 18 Jul 2024; own address, not a hot wallet)"},
+      "hot_wallets_source": "explorer label cloud (chainIds 480, 43114; same EVM addresses) via https://raw.githubusercontent.com/dawsbot/eth-labels/d9b21aefeded56f7fce7208d6fa173d128526c1b/data/csv/accounts.csv - activity on Ethereum to be confirmed with Etherscan before use",
+      "context_quote": "90% of user assets are held in wallets at Binance, and the balance of 10% is stored in hot and warm wallets. (WazirX PoR PDF, Jan 2023, data/sources/wazirx-por-2023-01.pdf)"
+    },
+    {
+      "id": "bitget-2026-09",
+      "exchange": "bitget",
+      "T": "2026-09-24T19:05:00Z",
+      "T_kind": "exchange-stated halt time",
+      "T_source": "https://www.bitget.com/academy/bitget-security-incident-what-happened-timeline-impact-response",
+      "T_quote": "September 24, 19:05 UTC Bitget's reconciliation system detects a significant discrepancy, and the risk-control system automatically blocks withdrawal requests across the platform.",
+      "first_abnormal": "2026-09-24T18:31:00Z",
+      "first_abnormal_quote": "September 24, 18:31 UTC The first unauthorized transfers occur from a portion of Bitget's hot and warm wallet infrastructure.",
+      "hot_wallets_eth": {
+        "0xe6a421f24d330967a3af2f4cdb5c34067e7e4d75": "Bitget: Hot Wallet 1",
+        "0xe2b406ec9227143a8830229eeb3eb6e24b5c60be": "Bitget: Hot Wallet 2",
+        "0xf646d9b7d20babe204a89235774248ba18086dae": "Bitget: Hot Wallet 3",
+        "0x149ded7438caf5e5bfdc507a6c25436214d445e1": "Bitget: Hot Wallet 4"
+      },
+      "own_set_extra_source": "DefiLlama bitget adapter evmOwners at 6656782872a773a13a7f250c835a2737d339c325 + eth-labels 'Bitget N'",
+      "hot_wallets_source": "Etherscan labels via https://raw.githubusercontent.com/dawsbot/eth-labels/d9b21aefeded56f7fce7208d6fa173d128526c1b/data/csv/accounts.csv"
+    }
+  ]
+}

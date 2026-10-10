@@ -1,0 +1,59 @@
+# ---- Markdown: only the submission docs are pushed ----
+# Everything .md is private (CLAUDE.md, PROGRESS.md, PRD, ROADMAP, notes...)
+*.md
+# ...except what judges read
+!README.md
+!hackathon.md
+
+# ---- Secrets (never pushed) ----
+.env
+.env.*
+!.env.example
+*-keypair.json
+id.json
+
+# ---- Caches and local-only data ----
+# HTTP record/replay cache (can be 100s of MB); compact derived data goes to data/raw/ and IS pushed
+cache/
+.claude/
+.playwright-mcp/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+.turbo/
+.vercel/
+*.tsbuildinfo
+next-env.d.ts
+npm-debug.log*
+pnpm-debug.log*
+
+# Rust / Anchor / Solana
+target/
+.anchor/
+test-ledger/
+.surfpool/
+
+# Build output
+dist/
+build/
+coverage/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.log
