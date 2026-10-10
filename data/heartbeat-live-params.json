@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "fixed_at": "2026-10-10T19:27:02Z",
+  "note": "Live heartbeat for the board. Fixed before the first live run. Same decision rule as data/heartbeat-params.json v1 (K, N, 28-day hour-of-day baseline, median >= 4) - only the inputs are extended to more chains.",
+  "rule_from": "data/heartbeat-params.json",
+  "hot_set": "every address listed for the exchange in data/registry/<exchange>.json (same no-selection rule as the backtests)",
+  "own_set": "hot set on all chains + explorer labels of the exchange (Ethereum, eth-labels@d9b21ae, exploit labels excluded)",
+  "chains": {
+    "ethereum": "native ETH + the 13 allow-listed ERC-20s of heartbeat-params.json, from the hot set to outside the own set (Etherscan V2)",
+    "tron": "USDT-TRC20 (TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t, DefiLlama coreAssets) from the hot set to outside the own set (TronGrid v1, only_from=true)",
+    "bsc": "native BNB transfers (category external, value > 0, receipt status 1) + BEP-20 transfers of the allow-listed tokens below, from the hot set to outside the own set (NodeReal nr_getAssetTransfers)"
+  },
+  "signal": "hourly count summed over the chains that have data",
+  "window": "the 29 UTC days before the last full hour (28 for the baseline + 1 to show)",
+  "states": {
+    "normal": "current hour has a usable baseline (median >= 4) and no alarm",
+    "below_usual_pattern": "the v1 alarm rule holds at the last full hour (N consecutive stall hours)",
+    "not_enough_data": "median of the baseline for the current hour < 4 - shown as such, never as normal"
+  },
+  "copy_rule": "UI says 'below its usual pattern', never a claim about solvency (CLAUDE.md invariant 2)",
+  "v1_fixed_at": "2026-10-10T18:32:25Z",
+  "v2_change": "BSC added before any BSC data was fetched. Free public BSC RPCs refuse eth_getLogs history or cap it at ~100 blocks (probed 11 Oct: bsc-dataseed, publicnode, 1rpc, dRPC free), so BSC uses NodeReal MegaNode nr_getAssetTransfers (free plan, archive data).",
+  "bsc_tokens": {
+    "USDT": "0x55d398326f99059ff775485246999027b3197955",
+    "USDC": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+    "BUSD": "0xe9e7cea3dedca5984780bafc599bd69add087d56",
+    "FDUSD": "0xc5f0f7b66764f6ec8c8dff7ba683102295e16409",
+    "ETH": "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+    "BTCB": "0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c"
+  },
+  "bsc_tokens_source": "https://raw.githubusercontent.com/DefiLlama/DefiLlama-Adapters/6656782872a773a13a7f250c835a2737d339c325/projects/helper/coreAssets.json (bsc)"
+}

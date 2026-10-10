@@ -10,7 +10,7 @@ from counterledger import cache
 
 URL = "https://api.etherscan.io/v2/api"
 PAGE = 10000
-MIN_GAP = 0.22  # free plan: 5 calls/second
+MIN_GAP = 0.4  # free plan: "Max calls per sec rate limit reached (3/sec)" (seen 11 Oct)
 
 
 def _ok(d: Any) -> bool:

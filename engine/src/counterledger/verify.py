@@ -59,6 +59,21 @@ def verify_backtests() -> None:
             check(same, f"{ev['id']} {kind} recomputed from raw + params = published evidence ({summary})")
 
 
+def verify_live() -> None:
+    from counterledger import live
+
+    for ex in live.EXCHANGES:
+        ev = EVIDENCE_DIR / "heartbeat" / f"{ex}.json"
+        if not ev.exists():
+            check(False, f"{live.NAMES[ex]} live heartbeat: evidence missing")
+            continue
+        stored = json.loads(ev.read_text())
+        fresh = live.status(ex)
+        check(stored["evidence_sha256"] == fresh["evidence_sha256"],
+              f"{fresh['name']} live heartbeat state '{fresh['state']}' as of {fresh['as_of']} recomputed from "
+              f"data/live/{ex}/hourly.csv (24h outflows {fresh['last_24h_by_chain']})")
+
+
 def verify_reserves() -> None:
     summary = json.loads((EVIDENCE_DIR / "reserves" / "summary.json").read_text())
     for key, s in summary.items():
@@ -74,6 +89,7 @@ def verify_reserves() -> None:
 
 def main() -> None:
     verify_backtests()
+    verify_live()
     verify_reserves()
     bad = [m for ok, m in results if not ok]
     print(f"\n{len(results) - len(bad)}/{len(results)} PASS")
