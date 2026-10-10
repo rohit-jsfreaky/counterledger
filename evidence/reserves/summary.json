@@ -1,0 +1,85 @@
+{
+ "binance": {
+  "name": "Binance",
+  "total_usd": 172964845554.9,
+  "as_of": "2026-10-10T16:30:11Z",
+  "assets": 820,
+  "top": [
+   "BTC",
+   "USDT",
+   "BNB",
+   "WETH",
+   "USDC"
+  ]
+ },
+ "okx": {
+  "name": "OKX",
+  "total_usd": 31324047849.0,
+  "as_of": "2026-10-10T14:16:35Z",
+  "assets": 769,
+  "top": [
+   "BTC",
+   "USDT",
+   "WETH",
+   "OKB",
+   "USDC"
+  ]
+ },
+ "bybit": {
+  "name": "Bybit",
+  "total_usd": 16284533266.97,
+  "as_of": "2026-10-10T15:06:47Z",
+  "assets": 578,
+  "top": [
+   "BTC",
+   "USDT",
+   "WETH",
+   "USDC",
+   "MNT"
+  ]
+ },
+ "bitget": {
+  "name": "Bitget",
+  "total_usd": 6208070434.59,
+  "as_of": "2026-10-10T11:18:59Z",
+  "assets": 737,
+  "top": [
+   "BTC",
+   "USDT",
+   "USDGO",
+   "BGB",
+   "WETH"
+  ]
+ },
+ "kucoin": {
+  "name": "KuCoin",
+  "total_usd": 3452600314.11,
+  "as_of": "2026-10-10T16:23:11Z",
+  "assets": 712,
+  "top": [
+   "USDT",
+   "BTC",
+   "KCS",
+   "WETH",
+   "XRP"
+  ]
+ },
+ "coindcx": {
+  "name": "CoinDCX",
+  "total_usd": 184081305.02,
+  "as_of": "2026-10-10T11:22:59Z",
+  "assets": 192,
+  "top": [
+   "BTC",
+   "XRP",
+   "WETH",
+   "SHIB",
+   "ADA"
+  ]
+ },
+ "wazirx": {
+  "name": "WazirX",
+  "total_usd": null,
+  "reason": "no current published address list (its 2023 PoR page on CoinGabbar is gone)"
+ }
+}

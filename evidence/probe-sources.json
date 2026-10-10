@@ -1,0 +1,29 @@
+{
+  "probed_at": "2026-10-10T12:00:00Z",
+  "scripts": ["engine/probes/p1_defillama_cex.py", "engine/probes/p2_adapters.py", "engine/probes/p3_keyless.py", "engine/probes/p4_events.py", "engine/probes/p5_wallet_activity.py"],
+  "address_sources": {
+    "binance": {"status": "ok", "source": "https://www.binance.com/bapi/apex/v1/public/apex/market/por/address", "kind": "exchange's own PoR address list (network + address)"},
+    "bybit": {"status": "ok", "source": "https://api2.bybit.com/common-static/por/bybit_por_202609.csv", "kind": "exchange's own monthly PoR CSV (Coin,Height,Amount,Address); 213 rows"},
+    "okx": {"status": "ok", "source": "DefiLlama-Adapters@6656782 projects/okex/index.js", "kind": "community adapter; 238 ETH, 23 Tron, 41 SOL, 169 LTC ... owners"},
+    "kucoin": {"status": "ok", "source": "DefiLlama-Adapters@6656782 projects/kucoin/index.js", "kind": "community adapter"},
+    "bitget": {"status": "ok", "source": "DefiLlama-Adapters@6656782 projects/bitget/index.js", "kind": "community adapter", "note": "Etherscan labels 'Bitget: Hot Wallet 1-4' had zero Ethereum activity in Sep 2026 (p5) - stale labels, not used"},
+    "coindcx": {"status": "ok", "source": "DefiLlama-Adapters@6656782 cex/coindcx.js; cross-checked by explorer labels 'CoinDCX N' (eth-labels@d9b21ae)", "kind": "community adapter + explorer labels agree", "note": "CLAUDE.md said DefiLlama does not track CoinDCX - it does now (slug coindcx)"},
+    "wazirx": {"status": "partial", "source": "explorer labels 'WazirX 1-7', 'WazirX: Withdrawals' (eth-labels@d9b21ae)", "kind": "explorer labels", "note": "WazirX PoR (Jan 2023) pointed to coingabbar.com/en/proof-of-reserve/Wazirx - now 404. PoR PDF says 90% of user assets were held in wallets at Binance. Only 'WazirX: Withdrawals' was active on Ethereum the week before 18 Jul 2024 (p5)."},
+    "ftx": {"status": "ok (history only)", "source": "Etherscan labels 'FTX Exchange', 'FTX Exchange 2' (brianleect/etherscan-labels@923aba7); both active before Nov 2022 (p5)"}
+  },
+  "data_apis": {
+    "defillama_protocols": {"status": "ok", "key": false, "use": "CEX list + adapter module paths; TVL history per CEX (coindcx 997 points, bitget 1398)"},
+    "defillama_prices_historical": {"status": "ok", "key": false, "use": "historical USD prices"},
+    "blockstream_btc": {"status": "ok", "key": false, "use": "BTC address balances/history"},
+    "solana_mainnet_public_rpc": {"status": "ok", "key": false, "use": "SOL balances (getBalance)"},
+    "trongrid": {"status": "ok", "key": "free Basic plan: 100,000 requests/day, 3 keys (trongrid.io/price, read 10 Oct 2026)", "use": "Tron balances + TRC-20 transfer history"},
+    "etherscan_v2": {"status": "ok", "key": "free: 5 calls/s, 3 keys (info.etherscan.com/api-keys); attribution required", "free_chains": "Ethereum, Polygon, Arbitrum (+others); BSC/Base/OP/Avalanche are paid-only (docs.etherscan.io/supported-chains, read 10 Oct 2026)", "use": "ETH/ERC-20 transfer history for the 3 backtests"},
+    "bsc": {"status": "plan", "key": false, "use": "public BSC RPC eth_getLogs for BEP-20 transfers (Etherscan BSC is paid)"}
+  },
+  "events": "data/events.json",
+  "heartbeat_params": "data/heartbeat-params.json (pre-registered 2026-10-10T11:58:50Z)",
+  "wallet_activity": "evidence/probe-wallet-activity.json",
+  "open": [
+    "Mismatch to look at: CoinDCX DefiLlama TVL $184M vs CoinGabbar holdings $583.64M (different address sets / partner balances)"
+  ]
+}

@@ -1,0 +1,1423 @@
+{
+ "kind": "heartbeat-backtest",
+ "params_file": "data/heartbeat-params.json",
+ "params_sha256": "0c30e336fd196d10a362cc6e09f1c99afc123af736c2219830171b02f5e3db7d",
+ "hourly_file": "data/raw/bitget-2026-09/hourly.csv",
+ "hourly_sha256": "fdefe252e07b5fa0c3b55b22c062eef792c25b3d213110f8a2d61ae9e72b141f",
+ "outflows_file": "data/raw/bitget-2026-09/outflows.csv.gz (release asset)",
+ "outflows_sha256": "f47067cc9ae77b30ca2f67fd3c471f92d1f74b40d8460fc3d5aad554c8f4fe34",
+ "outflows_rows": 414148,
+ "event_source": {
+  "T_source": "https://www.bitget.com/academy/bitget-security-incident-what-happened-timeline-impact-response",
+  "T_quote": "September 24, 19:05 UTC Bitget's reconciliation system detects a significant discrepancy, and the risk-control system automatically blocks withdrawal requests across the platform.",
+  "first_abnormal_quote": "September 24, 18:31 UTC The first unauthorized transfers occur from a portion of Bitget's hot and warm wallet infrastructure.",
+  "hot_wallets_source": "https://github.com/DefiLlama/DefiLlama-Adapters/blob/6656782872a773a13a7f250c835a2737d339c325/projects/bitget/index.js (evmOwners, 80)"
+ },
+ "result": {
+  "event": "bitget-2026-09",
+  "K": 0.25,
+  "N": 3,
+  "T": "2026-09-24T19:05:00Z",
+  "T_kind": "exchange-stated halt time",
+  "first_abnormal": "2026-09-24T18:31:00Z",
+  "alarms_in_event_window": [
+   "2026-09-25T01:00:00Z"
+  ],
+  "first_alarm": "2026-09-25T01:00:00Z",
+  "first_alarm_minus_T_hours": 5.92,
+  "first_alarm_minus_first_abnormal_hours": 6.48,
+  "event_window_hours_with_usable_baseline": 216,
+  "controls": [
+   {
+    "window": [
+     "2026-08-13T19:00:00Z",
+     "2026-08-20T19:00:00Z"
+    ],
+    "alarms": [],
+    "hours_with_usable_baseline": 168
+   },
+   {
+    "window": [
+     "2026-07-16T19:00:00Z",
+     "2026-07-23T19:00:00Z"
+    ],
+    "alarms": [],
+    "hours_with_usable_baseline": 168
+   }
+  ],
+  "control_alarms_total": 0,
+  "series": [
+   {
+    "t": "2026-09-17T19:00:00Z",
+    "count": 173,
+    "median": 156.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-17T20:00:00Z",
+    "count": 136,
+    "median": 142.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-17T21:00:00Z",
+    "count": 107,
+    "median": 123.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-17T22:00:00Z",
+    "count": 116,
+    "median": 108.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-17T23:00:00Z",
+    "count": 103,
+    "median": 89.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-18T00:00:00Z",
+    "count": 91,
+    "median": 96.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-18T01:00:00Z",
+    "count": 105,
+    "median": 104.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-18T02:00:00Z",
+    "count": 136,
+    "median": 106.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-18T03:00:00Z",
+    "count": 164,
+    "median": 114.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-18T04:00:00Z",
+    "count": 150,
+    "median": 105.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-18T05:00:00Z",
+    "count": 140,
+    "median": 127.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-18T06:00:00Z",
+    "count": 138,
+    "median": 139.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-18T07:00:00Z",
+    "count": 186,
+    "median": 175.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-18T08:00:00Z",
+    "count": 222,
+    "median": 184.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-18T09:00:00Z",
+    "count": 234,
+    "median": 212.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-18T10:00:00Z",
+    "count": 253,
+    "median": 206.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-18T11:00:00Z",
+    "count": 265,
+    "median": 198.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-18T12:00:00Z",
+    "count": 249,
+    "median": 239.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-18T13:00:00Z",
+    "count": 329,
+    "median": 268.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-18T14:00:00Z",
+    "count": 304,
+    "median": 262.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-18T15:00:00Z",
+    "count": 319,
+    "median": 249.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-18T16:00:00Z",
+    "count": 290,
+    "median": 226.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-18T17:00:00Z",
+    "count": 213,
+    "median": 189.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-18T18:00:00Z",
+    "count": 209,
+    "median": 176.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-18T19:00:00Z",
+    "count": 214,
+    "median": 156.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-18T20:00:00Z",
+    "count": 164,
+    "median": 139.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-18T21:00:00Z",
+    "count": 188,
+    "median": 120.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-18T22:00:00Z",
+    "count": 132,
+    "median": 108.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-18T23:00:00Z",
+    "count": 120,
+    "median": 89.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-19T00:00:00Z",
+    "count": 106,
+    "median": 94.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-19T01:00:00Z",
+    "count": 98,
+    "median": 104.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-19T02:00:00Z",
+    "count": 106,
+    "median": 106.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-19T03:00:00Z",
+    "count": 94,
+    "median": 114.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-19T04:00:00Z",
+    "count": 85,
+    "median": 105.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-19T05:00:00Z",
+    "count": 100,
+    "median": 127.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-19T06:00:00Z",
+    "count": 135,
+    "median": 137.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-19T07:00:00Z",
+    "count": 138,
+    "median": 175.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-19T08:00:00Z",
+    "count": 191,
+    "median": 184.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-19T09:00:00Z",
+    "count": 217,
+    "median": 212.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-19T10:00:00Z",
+    "count": 176,
+    "median": 206.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-19T11:00:00Z",
+    "count": 168,
+    "median": 198.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-19T12:00:00Z",
+    "count": 215,
+    "median": 239.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-19T13:00:00Z",
+    "count": 256,
+    "median": 268.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-19T14:00:00Z",
+    "count": 201,
+    "median": 262.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-19T15:00:00Z",
+    "count": 178,
+    "median": 249.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-19T16:00:00Z",
+    "count": 211,
+    "median": 226.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-19T17:00:00Z",
+    "count": 148,
+    "median": 189.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-19T18:00:00Z",
+    "count": 155,
+    "median": 176.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-19T19:00:00Z",
+    "count": 113,
+    "median": 156.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-19T20:00:00Z",
+    "count": 93,
+    "median": 139.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-19T21:00:00Z",
+    "count": 104,
+    "median": 120.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-19T22:00:00Z",
+    "count": 89,
+    "median": 108.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-19T23:00:00Z",
+    "count": 70,
+    "median": 89.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-20T00:00:00Z",
+    "count": 99,
+    "median": 94.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-20T01:00:00Z",
+    "count": 63,
+    "median": 102.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-20T02:00:00Z",
+    "count": 90,
+    "median": 106.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-20T03:00:00Z",
+    "count": 107,
+    "median": 114.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-20T04:00:00Z",
+    "count": 91,
+    "median": 105.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-20T05:00:00Z",
+    "count": 111,
+    "median": 126.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-20T06:00:00Z",
+    "count": 125,
+    "median": 137.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-20T07:00:00Z",
+    "count": 170,
+    "median": 171.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-20T08:00:00Z",
+    "count": 150,
+    "median": 184.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-20T09:00:00Z",
+    "count": 160,
+    "median": 216.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-20T10:00:00Z",
+    "count": 151,
+    "median": 206.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-20T11:00:00Z",
+    "count": 126,
+    "median": 198.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-20T12:00:00Z",
+    "count": 151,
+    "median": 237.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-20T13:00:00Z",
+    "count": 151,
+    "median": 268.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-20T14:00:00Z",
+    "count": 214,
+    "median": 262.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-20T15:00:00Z",
+    "count": 417,
+    "median": 249.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-20T16:00:00Z",
+    "count": 184,
+    "median": 226.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-20T17:00:00Z",
+    "count": 134,
+    "median": 189.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-20T18:00:00Z",
+    "count": 119,
+    "median": 176.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-20T19:00:00Z",
+    "count": 122,
+    "median": 156.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-20T20:00:00Z",
+    "count": 108,
+    "median": 139.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-20T21:00:00Z",
+    "count": 88,
+    "median": 120.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-20T22:00:00Z",
+    "count": 81,
+    "median": 108.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-20T23:00:00Z",
+    "count": 79,
+    "median": 89.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-21T00:00:00Z",
+    "count": 90,
+    "median": 96.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-21T01:00:00Z",
+    "count": 100,
+    "median": 100.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-21T02:00:00Z",
+    "count": 103,
+    "median": 106.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-21T03:00:00Z",
+    "count": 89,
+    "median": 113.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-21T04:00:00Z",
+    "count": 93,
+    "median": 104.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-21T05:00:00Z",
+    "count": 107,
+    "median": 126.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-21T06:00:00Z",
+    "count": 181,
+    "median": 137.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-21T07:00:00Z",
+    "count": 200,
+    "median": 170.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-21T08:00:00Z",
+    "count": 278,
+    "median": 184.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-21T09:00:00Z",
+    "count": 353,
+    "median": 216.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-21T10:00:00Z",
+    "count": 287,
+    "median": 206.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-21T11:00:00Z",
+    "count": 240,
+    "median": 198.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-21T12:00:00Z",
+    "count": 250,
+    "median": 237.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-21T13:00:00Z",
+    "count": 331,
+    "median": 268.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-21T14:00:00Z",
+    "count": 337,
+    "median": 262.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-21T15:00:00Z",
+    "count": 341,
+    "median": 250.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-21T16:00:00Z",
+    "count": 282,
+    "median": 226.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-21T17:00:00Z",
+    "count": 228,
+    "median": 189.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-21T18:00:00Z",
+    "count": 179,
+    "median": 176.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-21T19:00:00Z",
+    "count": 217,
+    "median": 156.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-21T20:00:00Z",
+    "count": 214,
+    "median": 139.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-21T21:00:00Z",
+    "count": 185,
+    "median": 119.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-21T22:00:00Z",
+    "count": 161,
+    "median": 105.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-21T23:00:00Z",
+    "count": 194,
+    "median": 88.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-22T00:00:00Z",
+    "count": 109,
+    "median": 94.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-22T01:00:00Z",
+    "count": 122,
+    "median": 100.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-22T02:00:00Z",
+    "count": 131,
+    "median": 106.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-22T03:00:00Z",
+    "count": 129,
+    "median": 113.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-22T04:00:00Z",
+    "count": 97,
+    "median": 104.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-22T05:00:00Z",
+    "count": 143,
+    "median": 125.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-22T06:00:00Z",
+    "count": 195,
+    "median": 137.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-22T07:00:00Z",
+    "count": 245,
+    "median": 171.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-22T08:00:00Z",
+    "count": 239,
+    "median": 184.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-22T09:00:00Z",
+    "count": 236,
+    "median": 216.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-22T10:00:00Z",
+    "count": 205,
+    "median": 206.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-22T11:00:00Z",
+    "count": 246,
+    "median": 198.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-22T12:00:00Z",
+    "count": 268,
+    "median": 237.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-22T13:00:00Z",
+    "count": 324,
+    "median": 268.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-22T14:00:00Z",
+    "count": 280,
+    "median": 262.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-22T15:00:00Z",
+    "count": 271,
+    "median": 250.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-22T16:00:00Z",
+    "count": 233,
+    "median": 226.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-22T17:00:00Z",
+    "count": 200,
+    "median": 189.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-22T18:00:00Z",
+    "count": 207,
+    "median": 176.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-22T19:00:00Z",
+    "count": 192,
+    "median": 159.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-22T20:00:00Z",
+    "count": 153,
+    "median": 139.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-22T21:00:00Z",
+    "count": 102,
+    "median": 119.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-22T22:00:00Z",
+    "count": 125,
+    "median": 105.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-22T23:00:00Z",
+    "count": 133,
+    "median": 89.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-23T00:00:00Z",
+    "count": 118,
+    "median": 94.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-23T01:00:00Z",
+    "count": 119,
+    "median": 100.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-23T02:00:00Z",
+    "count": 110,
+    "median": 106.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-23T03:00:00Z",
+    "count": 141,
+    "median": 113.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-23T04:00:00Z",
+    "count": 138,
+    "median": 102.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-23T05:00:00Z",
+    "count": 141,
+    "median": 125.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-23T06:00:00Z",
+    "count": 156,
+    "median": 137.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-23T07:00:00Z",
+    "count": 177,
+    "median": 171.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-23T08:00:00Z",
+    "count": 231,
+    "median": 184.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-23T09:00:00Z",
+    "count": 226,
+    "median": 217.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-23T10:00:00Z",
+    "count": 207,
+    "median": 205.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-23T11:00:00Z",
+    "count": 229,
+    "median": 198.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-23T12:00:00Z",
+    "count": 257,
+    "median": 237.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-23T13:00:00Z",
+    "count": 250,
+    "median": 268.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-23T14:00:00Z",
+    "count": 370,
+    "median": 264.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-23T15:00:00Z",
+    "count": 282,
+    "median": 250.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-23T16:00:00Z",
+    "count": 271,
+    "median": 226.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-23T17:00:00Z",
+    "count": 215,
+    "median": 190.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-23T18:00:00Z",
+    "count": 185,
+    "median": 177.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-23T19:00:00Z",
+    "count": 151,
+    "median": 159.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-23T20:00:00Z",
+    "count": 166,
+    "median": 139.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-23T21:00:00Z",
+    "count": 131,
+    "median": 118.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-23T22:00:00Z",
+    "count": 101,
+    "median": 105.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-23T23:00:00Z",
+    "count": 90,
+    "median": 89.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-24T00:00:00Z",
+    "count": 100,
+    "median": 94.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-24T01:00:00Z",
+    "count": 102,
+    "median": 100.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-24T02:00:00Z",
+    "count": 95,
+    "median": 106.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-24T03:00:00Z",
+    "count": 124,
+    "median": 113.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-24T04:00:00Z",
+    "count": 88,
+    "median": 102.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-24T05:00:00Z",
+    "count": 119,
+    "median": 125.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-24T06:00:00Z",
+    "count": 142,
+    "median": 137.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-24T07:00:00Z",
+    "count": 156,
+    "median": 175.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-24T08:00:00Z",
+    "count": 175,
+    "median": 184.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-24T09:00:00Z",
+    "count": 278,
+    "median": 217.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-24T10:00:00Z",
+    "count": 191,
+    "median": 206.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-24T11:00:00Z",
+    "count": 222,
+    "median": 202.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-24T12:00:00Z",
+    "count": 189,
+    "median": 237.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-24T13:00:00Z",
+    "count": 268,
+    "median": 268.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-24T14:00:00Z",
+    "count": 296,
+    "median": 270.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-24T15:00:00Z",
+    "count": 278,
+    "median": 250.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-24T16:00:00Z",
+    "count": 241,
+    "median": 230.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-24T17:00:00Z",
+    "count": 247,
+    "median": 193.0,
+    "stall": false
+   },
+   {
+    "t": "2026-09-24T18:00:00Z",
+    "count": 155,
+    "median": 177.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-24T19:00:00Z",
+    "count": 66,
+    "median": 156.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-24T20:00:00Z",
+    "count": 16,
+    "median": 142.5,
+    "stall": true
+   },
+   {
+    "t": "2026-09-24T21:00:00Z",
+    "count": 56,
+    "median": 118.5,
+    "stall": false
+   },
+   {
+    "t": "2026-09-24T22:00:00Z",
+    "count": 0,
+    "median": 104.0,
+    "stall": true
+   },
+   {
+    "t": "2026-09-24T23:00:00Z",
+    "count": 0,
+    "median": 89.0,
+    "stall": true
+   },
+   {
+    "t": "2026-09-25T00:00:00Z",
+    "count": 0,
+    "median": 94.0,
+    "stall": true
+   },
+   {
+    "t": "2026-09-25T01:00:00Z",
+    "count": 0,
+    "median": 100.5,
+    "stall": true
+   },
+   {
+    "t": "2026-09-25T02:00:00Z",
+    "count": 0,
+    "median": 106.0,
+    "stall": true
+   },
+   {
+    "t": "2026-09-25T03:00:00Z",
+    "count": 0,
+    "median": 115.0,
+    "stall": true
+   },
+   {
+    "t": "2026-09-25T04:00:00Z",
+    "count": 0,
+    "median": 102.5,
+    "stall": true
+   },
+   {
+    "t": "2026-09-25T05:00:00Z",
+    "count": 0,
+    "median": 124.0,
+    "stall": true
+   },
+   {
+    "t": "2026-09-25T06:00:00Z",
+    "count": 0,
+    "median": 140.0,
+    "stall": true
+   },
+   {
+    "t": "2026-09-25T07:00:00Z",
+    "count": 0,
+    "median": 171.5,
+    "stall": true
+   },
+   {
+    "t": "2026-09-25T08:00:00Z",
+    "count": 0,
+    "median": 183.0,
+    "stall": true
+   },
+   {
+    "t": "2026-09-25T09:00:00Z",
+    "count": 0,
+    "median": 217.0,
+    "stall": true
+   },
+   {
+    "t": "2026-09-25T10:00:00Z",
+    "count": 0,
+    "median": 205.5,
+    "stall": true
+   },
+   {
+    "t": "2026-09-25T11:00:00Z",
+    "count": 0,
+    "median": 202.5,
+    "stall": true
+   },
+   {
+    "t": "2026-09-25T12:00:00Z",
+    "count": 0,
+    "median": 237.5,
+    "stall": true
+   },
+   {
+    "t": "2026-09-25T13:00:00Z",
+    "count": 0,
+    "median": 268.0,
+    "stall": true
+   },
+   {
+    "t": "2026-09-25T14:00:00Z",
+    "count": 0,
+    "median": 270.0,
+    "stall": true
+   },
+   {
+    "t": "2026-09-25T15:00:00Z",
+    "count": 0,
+    "median": 250.5,
+    "stall": true
+   },
+   {
+    "t": "2026-09-25T16:00:00Z",
+    "count": 0,
+    "median": 230.5,
+    "stall": true
+   },
+   {
+    "t": "2026-09-25T17:00:00Z",
+    "count": 0,
+    "median": 193.0,
+    "stall": true
+   },
+   {
+    "t": "2026-09-25T18:00:00Z",
+    "count": 0,
+    "median": 173.0,
+    "stall": true
+   },
+   {
+    "t": "2026-09-25T19:00:00Z",
+    "count": 0,
+    "median": 155.5,
+    "stall": true
+   },
+   {
+    "t": "2026-09-25T20:00:00Z",
+    "count": 0,
+    "median": 139.5,
+    "stall": true
+   },
+   {
+    "t": "2026-09-25T21:00:00Z",
+    "count": 0,
+    "median": 116.0,
+    "stall": true
+   },
+   {
+    "t": "2026-09-25T22:00:00Z",
+    "count": 0,
+    "median": 104.0,
+    "stall": true
+   },
+   {
+    "t": "2026-09-25T23:00:00Z",
+    "count": 0,
+    "median": 88.5,
+    "stall": true
+   },
+   {
+    "t": "2026-09-26T00:00:00Z",
+    "count": 0,
+    "median": 93.0,
+    "stall": true
+   },
+   {
+    "t": "2026-09-26T01:00:00Z",
+    "count": 0,
+    "median": 100.0,
+    "stall": true
+   },
+   {
+    "t": "2026-09-26T02:00:00Z",
+    "count": 0,
+    "median": 106.0,
+    "stall": true
+   },
+   {
+    "t": "2026-09-26T03:00:00Z",
+    "count": 0,
+    "median": 115.0,
+    "stall": true
+   },
+   {
+    "t": "2026-09-26T04:00:00Z",
+    "count": 0,
+    "median": 100.0,
+    "stall": true
+   },
+   {
+    "t": "2026-09-26T05:00:00Z",
+    "count": 0,
+    "median": 120.5,
+    "stall": true
+   },
+   {
+    "t": "2026-09-26T06:00:00Z",
+    "count": 0,
+    "median": 136.5,
+    "stall": true
+   },
+   {
+    "t": "2026-09-26T07:00:00Z",
+    "count": 0,
+    "median": 170.0,
+    "stall": true
+   },
+   {
+    "t": "2026-09-26T08:00:00Z",
+    "count": 0,
+    "median": 180.5,
+    "stall": true
+   },
+   {
+    "t": "2026-09-26T09:00:00Z",
+    "count": 0,
+    "median": 217.0,
+    "stall": true
+   },
+   {
+    "t": "2026-09-26T10:00:00Z",
+    "count": 0,
+    "median": 204.0,
+    "stall": true
+   },
+   {
+    "t": "2026-09-26T11:00:00Z",
+    "count": 0,
+    "median": 198.0,
+    "stall": true
+   },
+   {
+    "t": "2026-09-26T12:00:00Z",
+    "count": 0,
+    "median": 236.5,
+    "stall": true
+   },
+   {
+    "t": "2026-09-26T13:00:00Z",
+    "count": 0,
+    "median": 263.5,
+    "stall": true
+   },
+   {
+    "t": "2026-09-26T14:00:00Z",
+    "count": 0,
+    "median": 264.5,
+    "stall": true
+   },
+   {
+    "t": "2026-09-26T15:00:00Z",
+    "count": 0,
+    "median": 249.0,
+    "stall": true
+   },
+   {
+    "t": "2026-09-26T16:00:00Z",
+    "count": 0,
+    "median": 226.5,
+    "stall": true
+   },
+   {
+    "t": "2026-09-26T17:00:00Z",
+    "count": 0,
+    "median": 190.0,
+    "stall": true
+   },
+   {
+    "t": "2026-09-26T18:00:00Z",
+    "count": 0,
+    "median": 169.5,
+    "stall": true
+   }
+  ]
+ },
+ "sweep_control_only": [
+  {
+   "K": 0.1,
+   "N": 2,
+   "first_alarm_minus_T_hours": 4.92,
+   "control_alarms_total": 0
+  },
+  {
+   "K": 0.1,
+   "N": 3,
+   "first_alarm_minus_T_hours": 5.92,
+   "control_alarms_total": 0
+  },
+  {
+   "K": 0.1,
+   "N": 4,
+   "first_alarm_minus_T_hours": 6.92,
+   "control_alarms_total": 0
+  },
+  {
+   "K": 0.1,
+   "N": 6,
+   "first_alarm_minus_T_hours": 8.92,
+   "control_alarms_total": 0
+  },
+  {
+   "K": 0.25,
+   "N": 2,
+   "first_alarm_minus_T_hours": 4.92,
+   "control_alarms_total": 0
+  },
+  {
+   "K": 0.25,
+   "N": 3,
+   "first_alarm_minus_T_hours": 5.92,
+   "control_alarms_total": 0
+  },
+  {
+   "K": 0.25,
+   "N": 4,
+   "first_alarm_minus_T_hours": 6.92,
+   "control_alarms_total": 0
+  },
+  {
+   "K": 0.25,
+   "N": 6,
+   "first_alarm_minus_T_hours": 8.92,
+   "control_alarms_total": 0
+  },
+  {
+   "K": 0.5,
+   "N": 2,
+   "first_alarm_minus_T_hours": 1.92,
+   "control_alarms_total": 0
+  },
+  {
+   "K": 0.5,
+   "N": 3,
+   "first_alarm_minus_T_hours": 2.92,
+   "control_alarms_total": 0
+  },
+  {
+   "K": 0.5,
+   "N": 4,
+   "first_alarm_minus_T_hours": 3.92,
+   "control_alarms_total": 0
+  },
+  {
+   "K": 0.5,
+   "N": 6,
+   "first_alarm_minus_T_hours": 5.92,
+   "control_alarms_total": 0
+  }
+ ],
+ "evidence_sha256": "de42f20801ba13deb41c342586e02d3a7d1e9a9995aa4130cb05ce1c246fe20d"
+}

@@ -15,6 +15,7 @@ dependencies = [
 
 [project.scripts]
 counterledger = "counterledger:main"
+verify = "counterledger.verify:main"
 
 [build-system]
 requires = ["uv_build>=0.10.0,<0.11.0"]

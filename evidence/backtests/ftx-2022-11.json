@@ -1,0 +1,1424 @@
+{
+ "kind": "heartbeat-backtest",
+ "params_file": "data/heartbeat-params.json",
+ "params_sha256": "0c30e336fd196d10a362cc6e09f1c99afc123af736c2219830171b02f5e3db7d",
+ "hourly_file": "data/raw/ftx-2022-11/hourly.csv",
+ "hourly_sha256": "11ab07b83046debfb6f7c52f969ec71fdcf7796b52266746e713df1603ddb439",
+ "outflows_file": "data/raw/ftx-2022-11/outflows.csv.gz (release asset)",
+ "outflows_sha256": "8bb4ee2b97b4a74afe422ed6c7d73aef7fb96e113462a8699ef670d05189e1eb",
+ "outflows_rows": 815100,
+ "event_source": {
+  "T_source": "https://www.coindesk.com/business/2022/11/08/ftx-exchange-halts-all-crypto-withdrawals",
+  "T_quote": "Crypto exchange FTX has halted all non-fiat customer withdrawals, an FTX support employee confirmed in the company's official Telegram group Tuesday afternoon.",
+  "first_abnormal_quote": null,
+  "hot_wallets_source": "Etherscan labels via https://raw.githubusercontent.com/brianleect/etherscan-labels/923aba72c7e2d0682f7ae6194b6140bd90668dc9/data/etherscan/accounts/ftx.json"
+ },
+ "result": {
+  "event": "ftx-2022-11",
+  "K": 0.25,
+  "N": 3,
+  "T": "2022-11-08T21:51:25Z",
+  "T_kind": "first public confirmation (no exchange-published halt time found)",
+  "first_abnormal": null,
+  "alarms_in_event_window": [
+   "2022-11-08T14:00:00Z",
+   "2022-11-08T23:00:00Z"
+  ],
+  "first_alarm": "2022-11-08T14:00:00Z",
+  "first_alarm_minus_T_hours": -7.86,
+  "first_alarm_minus_first_abnormal_hours": null,
+  "event_window_hours_with_usable_baseline": 216,
+  "controls": [
+   {
+    "window": [
+     "2022-09-27T21:00:00Z",
+     "2022-10-04T21:00:00Z"
+    ],
+    "alarms": [],
+    "hours_with_usable_baseline": 168
+   },
+   {
+    "window": [
+     "2022-08-30T21:00:00Z",
+     "2022-09-06T21:00:00Z"
+    ],
+    "alarms": [],
+    "hours_with_usable_baseline": 168
+   }
+  ],
+  "control_alarms_total": 0,
+  "series": [
+   {
+    "t": "2022-11-01T21:00:00Z",
+    "count": 259,
+    "median": 228.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-01T22:00:00Z",
+    "count": 254,
+    "median": 196.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-01T23:00:00Z",
+    "count": 216,
+    "median": 174.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-02T00:00:00Z",
+    "count": 194,
+    "median": 169.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-02T01:00:00Z",
+    "count": 225,
+    "median": 200.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-02T02:00:00Z",
+    "count": 198,
+    "median": 208.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-02T03:00:00Z",
+    "count": 207,
+    "median": 246.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-02T04:00:00Z",
+    "count": 261,
+    "median": 232.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-02T05:00:00Z",
+    "count": 293,
+    "median": 255.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-02T06:00:00Z",
+    "count": 392,
+    "median": 329.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-02T07:00:00Z",
+    "count": 427,
+    "median": 381.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-02T08:00:00Z",
+    "count": 446,
+    "median": 411.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-02T09:00:00Z",
+    "count": 439,
+    "median": 405.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-02T10:00:00Z",
+    "count": 441,
+    "median": 410.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-02T11:00:00Z",
+    "count": 410,
+    "median": 382.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-02T12:00:00Z",
+    "count": 460,
+    "median": 408.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-02T13:00:00Z",
+    "count": 436,
+    "median": 403.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-02T14:00:00Z",
+    "count": 445,
+    "median": 449.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-02T15:00:00Z",
+    "count": 547,
+    "median": 408.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-02T16:00:00Z",
+    "count": 448,
+    "median": 359.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-02T17:00:00Z",
+    "count": 435,
+    "median": 324.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-02T18:00:00Z",
+    "count": 350,
+    "median": 282.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-02T19:00:00Z",
+    "count": 382,
+    "median": 257.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-02T20:00:00Z",
+    "count": 328,
+    "median": 231.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-02T21:00:00Z",
+    "count": 285,
+    "median": 236.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-02T22:00:00Z",
+    "count": 259,
+    "median": 199.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-02T23:00:00Z",
+    "count": 244,
+    "median": 178.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-03T00:00:00Z",
+    "count": 250,
+    "median": 169.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-03T01:00:00Z",
+    "count": 263,
+    "median": 205.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-03T02:00:00Z",
+    "count": 284,
+    "median": 208.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-03T03:00:00Z",
+    "count": 310,
+    "median": 246.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-03T04:00:00Z",
+    "count": 268,
+    "median": 241.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-03T05:00:00Z",
+    "count": 450,
+    "median": 255.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-03T06:00:00Z",
+    "count": 487,
+    "median": 329.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-03T07:00:00Z",
+    "count": 398,
+    "median": 381.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-03T08:00:00Z",
+    "count": 366,
+    "median": 416.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-03T09:00:00Z",
+    "count": 410,
+    "median": 423.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-03T10:00:00Z",
+    "count": 384,
+    "median": 415.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-03T11:00:00Z",
+    "count": 493,
+    "median": 387.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-03T12:00:00Z",
+    "count": 502,
+    "median": 411.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-03T13:00:00Z",
+    "count": 559,
+    "median": 407.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-03T14:00:00Z",
+    "count": 832,
+    "median": 449.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-03T15:00:00Z",
+    "count": 1055,
+    "median": 419.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-03T16:00:00Z",
+    "count": 592,
+    "median": 359.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-03T17:00:00Z",
+    "count": 680,
+    "median": 324.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-03T18:00:00Z",
+    "count": 547,
+    "median": 288.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-03T19:00:00Z",
+    "count": 386,
+    "median": 262.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-03T20:00:00Z",
+    "count": 476,
+    "median": 235.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-03T21:00:00Z",
+    "count": 268,
+    "median": 236.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-03T22:00:00Z",
+    "count": 330,
+    "median": 200.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-03T23:00:00Z",
+    "count": 382,
+    "median": 181.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-04T00:00:00Z",
+    "count": 564,
+    "median": 172.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-04T01:00:00Z",
+    "count": 523,
+    "median": 207.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-04T02:00:00Z",
+    "count": 413,
+    "median": 217.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-04T03:00:00Z",
+    "count": 331,
+    "median": 246.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-04T04:00:00Z",
+    "count": 306,
+    "median": 245.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-04T05:00:00Z",
+    "count": 293,
+    "median": 263.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-04T06:00:00Z",
+    "count": 365,
+    "median": 334.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-04T07:00:00Z",
+    "count": 412,
+    "median": 388.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-04T08:00:00Z",
+    "count": 465,
+    "median": 416.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-04T09:00:00Z",
+    "count": 459,
+    "median": 423.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-04T10:00:00Z",
+    "count": 710,
+    "median": 415.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-04T11:00:00Z",
+    "count": 484,
+    "median": 391.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-04T12:00:00Z",
+    "count": 529,
+    "median": 411.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-04T13:00:00Z",
+    "count": 476,
+    "median": 409.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-04T14:00:00Z",
+    "count": 590,
+    "median": 449.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-04T15:00:00Z",
+    "count": 637,
+    "median": 432.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-04T16:00:00Z",
+    "count": 455,
+    "median": 362.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-04T17:00:00Z",
+    "count": 389,
+    "median": 324.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-04T18:00:00Z",
+    "count": 336,
+    "median": 288.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-04T19:00:00Z",
+    "count": 358,
+    "median": 262.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-04T20:00:00Z",
+    "count": 285,
+    "median": 241.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-04T21:00:00Z",
+    "count": 286,
+    "median": 242.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-04T22:00:00Z",
+    "count": 236,
+    "median": 205.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-04T23:00:00Z",
+    "count": 219,
+    "median": 181.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-05T00:00:00Z",
+    "count": 254,
+    "median": 180.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-05T01:00:00Z",
+    "count": 321,
+    "median": 216.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-05T02:00:00Z",
+    "count": 306,
+    "median": 217.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-05T03:00:00Z",
+    "count": 408,
+    "median": 246.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-05T04:00:00Z",
+    "count": 405,
+    "median": 248.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-05T05:00:00Z",
+    "count": 340,
+    "median": 263.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-05T06:00:00Z",
+    "count": 478,
+    "median": 334.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-05T07:00:00Z",
+    "count": 368,
+    "median": 388.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-05T08:00:00Z",
+    "count": 385,
+    "median": 416.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-05T09:00:00Z",
+    "count": 336,
+    "median": 436.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-05T10:00:00Z",
+    "count": 364,
+    "median": 415.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-05T11:00:00Z",
+    "count": 350,
+    "median": 400.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-05T12:00:00Z",
+    "count": 470,
+    "median": 424.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-05T13:00:00Z",
+    "count": 443,
+    "median": 409.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-05T14:00:00Z",
+    "count": 485,
+    "median": 449.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-05T15:00:00Z",
+    "count": 387,
+    "median": 435.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-05T16:00:00Z",
+    "count": 435,
+    "median": 368.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-05T17:00:00Z",
+    "count": 458,
+    "median": 327.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-05T18:00:00Z",
+    "count": 360,
+    "median": 293.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-05T19:00:00Z",
+    "count": 303,
+    "median": 271.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-05T20:00:00Z",
+    "count": 280,
+    "median": 241.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-05T21:00:00Z",
+    "count": 235,
+    "median": 242.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-05T22:00:00Z",
+    "count": 229,
+    "median": 212.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-05T23:00:00Z",
+    "count": 229,
+    "median": 189.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-06T00:00:00Z",
+    "count": 347,
+    "median": 192.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-06T01:00:00Z",
+    "count": 318,
+    "median": 216.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-06T02:00:00Z",
+    "count": 306,
+    "median": 231.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-06T03:00:00Z",
+    "count": 333,
+    "median": 260.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-06T04:00:00Z",
+    "count": 301,
+    "median": 250.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-06T05:00:00Z",
+    "count": 287,
+    "median": 277.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-06T06:00:00Z",
+    "count": 390,
+    "median": 338.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-06T07:00:00Z",
+    "count": 459,
+    "median": 388.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-06T08:00:00Z",
+    "count": 535,
+    "median": 416.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-06T09:00:00Z",
+    "count": 695,
+    "median": 436.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-06T10:00:00Z",
+    "count": 656,
+    "median": 415.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-06T11:00:00Z",
+    "count": 794,
+    "median": 400.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-06T12:00:00Z",
+    "count": 762,
+    "median": 442.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-06T13:00:00Z",
+    "count": 1109,
+    "median": 411.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-06T14:00:00Z",
+    "count": 893,
+    "median": 469.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-06T15:00:00Z",
+    "count": 872,
+    "median": 435.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-06T16:00:00Z",
+    "count": 860,
+    "median": 374.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-06T17:00:00Z",
+    "count": 773,
+    "median": 333.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-06T18:00:00Z",
+    "count": 1073,
+    "median": 298.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-06T19:00:00Z",
+    "count": 1897,
+    "median": 272.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-06T20:00:00Z",
+    "count": 1432,
+    "median": 256.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-06T21:00:00Z",
+    "count": 1190,
+    "median": 242.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-06T22:00:00Z",
+    "count": 1464,
+    "median": 216.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-06T23:00:00Z",
+    "count": 1493,
+    "median": 199.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-07T00:00:00Z",
+    "count": 1582,
+    "median": 192.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-07T01:00:00Z",
+    "count": 1512,
+    "median": 216.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-07T02:00:00Z",
+    "count": 1652,
+    "median": 231.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-07T03:00:00Z",
+    "count": 1506,
+    "median": 260.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-07T04:00:00Z",
+    "count": 1359,
+    "median": 250.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-07T05:00:00Z",
+    "count": 177,
+    "median": 277.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-07T06:00:00Z",
+    "count": 2919,
+    "median": 338.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-07T07:00:00Z",
+    "count": 1791,
+    "median": 396.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-07T08:00:00Z",
+    "count": 1672,
+    "median": 416.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-07T09:00:00Z",
+    "count": 1808,
+    "median": 441.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-07T10:00:00Z",
+    "count": 1978,
+    "median": 421.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-07T11:00:00Z",
+    "count": 1866,
+    "median": 407.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-07T12:00:00Z",
+    "count": 2140,
+    "median": 453.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-07T13:00:00Z",
+    "count": 1902,
+    "median": 419.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-07T14:00:00Z",
+    "count": 1370,
+    "median": 486.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-07T15:00:00Z",
+    "count": 1416,
+    "median": 438.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-07T16:00:00Z",
+    "count": 1101,
+    "median": 389.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-07T17:00:00Z",
+    "count": 1117,
+    "median": 338.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-07T18:00:00Z",
+    "count": 1205,
+    "median": 306.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-07T19:00:00Z",
+    "count": 1195,
+    "median": 284.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-07T20:00:00Z",
+    "count": 1148,
+    "median": 256.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-07T21:00:00Z",
+    "count": 945,
+    "median": 242.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-07T22:00:00Z",
+    "count": 1026,
+    "median": 216.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-07T23:00:00Z",
+    "count": 770,
+    "median": 199.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-08T00:00:00Z",
+    "count": 586,
+    "median": 192.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-08T01:00:00Z",
+    "count": 548,
+    "median": 216.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-08T02:00:00Z",
+    "count": 557,
+    "median": 231.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-08T03:00:00Z",
+    "count": 1549,
+    "median": 260.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-08T04:00:00Z",
+    "count": 1632,
+    "median": 250.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-08T05:00:00Z",
+    "count": 918,
+    "median": 263.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-08T06:00:00Z",
+    "count": 831,
+    "median": 338.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-08T07:00:00Z",
+    "count": 1392,
+    "median": 396.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-08T08:00:00Z",
+    "count": 1368,
+    "median": 416.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-08T09:00:00Z",
+    "count": 1058,
+    "median": 441.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-08T10:00:00Z",
+    "count": 1498,
+    "median": 421.0,
+    "stall": false
+   },
+   {
+    "t": "2022-11-08T11:00:00Z",
+    "count": 22,
+    "median": 407.5,
+    "stall": true
+   },
+   {
+    "t": "2022-11-08T12:00:00Z",
+    "count": 21,
+    "median": 453.0,
+    "stall": true
+   },
+   {
+    "t": "2022-11-08T13:00:00Z",
+    "count": 25,
+    "median": 419.0,
+    "stall": true
+   },
+   {
+    "t": "2022-11-08T14:00:00Z",
+    "count": 19,
+    "median": 486.0,
+    "stall": true
+   },
+   {
+    "t": "2022-11-08T15:00:00Z",
+    "count": 34,
+    "median": 438.5,
+    "stall": true
+   },
+   {
+    "t": "2022-11-08T16:00:00Z",
+    "count": 42,
+    "median": 389.0,
+    "stall": true
+   },
+   {
+    "t": "2022-11-08T17:00:00Z",
+    "count": 0,
+    "median": 338.5,
+    "stall": true
+   },
+   {
+    "t": "2022-11-08T18:00:00Z",
+    "count": 0,
+    "median": 306.5,
+    "stall": true
+   },
+   {
+    "t": "2022-11-08T19:00:00Z",
+    "count": 96,
+    "median": 284.5,
+    "stall": false
+   },
+   {
+    "t": "2022-11-08T20:00:00Z",
+    "count": 33,
+    "median": 256.0,
+    "stall": true
+   },
+   {
+    "t": "2022-11-08T21:00:00Z",
+    "count": 24,
+    "median": 242.5,
+    "stall": true
+   },
+   {
+    "t": "2022-11-08T22:00:00Z",
+    "count": 17,
+    "median": 216.0,
+    "stall": true
+   },
+   {
+    "t": "2022-11-08T23:00:00Z",
+    "count": 24,
+    "median": 202.5,
+    "stall": true
+   },
+   {
+    "t": "2022-11-09T00:00:00Z",
+    "count": 16,
+    "median": 192.0,
+    "stall": true
+   },
+   {
+    "t": "2022-11-09T01:00:00Z",
+    "count": 19,
+    "median": 216.5,
+    "stall": true
+   },
+   {
+    "t": "2022-11-09T02:00:00Z",
+    "count": 9,
+    "median": 234.0,
+    "stall": true
+   },
+   {
+    "t": "2022-11-09T03:00:00Z",
+    "count": 17,
+    "median": 260.5,
+    "stall": true
+   },
+   {
+    "t": "2022-11-09T04:00:00Z",
+    "count": 19,
+    "median": 250.5,
+    "stall": true
+   },
+   {
+    "t": "2022-11-09T05:00:00Z",
+    "count": 17,
+    "median": 263.5,
+    "stall": true
+   },
+   {
+    "t": "2022-11-09T06:00:00Z",
+    "count": 23,
+    "median": 341.5,
+    "stall": true
+   },
+   {
+    "t": "2022-11-09T07:00:00Z",
+    "count": 22,
+    "median": 396.0,
+    "stall": true
+   },
+   {
+    "t": "2022-11-09T08:00:00Z",
+    "count": 20,
+    "median": 416.5,
+    "stall": true
+   },
+   {
+    "t": "2022-11-09T09:00:00Z",
+    "count": 18,
+    "median": 441.0,
+    "stall": true
+   },
+   {
+    "t": "2022-11-09T10:00:00Z",
+    "count": 13,
+    "median": 421.0,
+    "stall": true
+   },
+   {
+    "t": "2022-11-09T11:00:00Z",
+    "count": 13,
+    "median": 401.0,
+    "stall": true
+   },
+   {
+    "t": "2022-11-09T12:00:00Z",
+    "count": 11,
+    "median": 442.0,
+    "stall": true
+   },
+   {
+    "t": "2022-11-09T13:00:00Z",
+    "count": 15,
+    "median": 411.5,
+    "stall": true
+   },
+   {
+    "t": "2022-11-09T14:00:00Z",
+    "count": 5,
+    "median": 486.0,
+    "stall": true
+   },
+   {
+    "t": "2022-11-09T15:00:00Z",
+    "count": 10,
+    "median": 438.5,
+    "stall": true
+   },
+   {
+    "t": "2022-11-09T16:00:00Z",
+    "count": 13,
+    "median": 389.0,
+    "stall": true
+   },
+   {
+    "t": "2022-11-09T17:00:00Z",
+    "count": 8,
+    "median": 338.5,
+    "stall": true
+   },
+   {
+    "t": "2022-11-09T18:00:00Z",
+    "count": 10,
+    "median": 306.5,
+    "stall": true
+   },
+   {
+    "t": "2022-11-09T19:00:00Z",
+    "count": 9,
+    "median": 284.5,
+    "stall": true
+   },
+   {
+    "t": "2022-11-09T20:00:00Z",
+    "count": 5,
+    "median": 256.0,
+    "stall": true
+   },
+   {
+    "t": "2022-11-09T21:00:00Z",
+    "count": 7,
+    "median": 242.5,
+    "stall": true
+   },
+   {
+    "t": "2022-11-09T22:00:00Z",
+    "count": 1,
+    "median": 216.0,
+    "stall": true
+   },
+   {
+    "t": "2022-11-09T23:00:00Z",
+    "count": 4,
+    "median": 202.5,
+    "stall": true
+   },
+   {
+    "t": "2022-11-10T00:00:00Z",
+    "count": 5,
+    "median": 192.0,
+    "stall": true
+   },
+   {
+    "t": "2022-11-10T01:00:00Z",
+    "count": 16,
+    "median": 207.0,
+    "stall": true
+   },
+   {
+    "t": "2022-11-10T02:00:00Z",
+    "count": 4,
+    "median": 217.0,
+    "stall": true
+   },
+   {
+    "t": "2022-11-10T03:00:00Z",
+    "count": 4,
+    "median": 246.0,
+    "stall": true
+   },
+   {
+    "t": "2022-11-10T04:00:00Z",
+    "count": 25,
+    "median": 248.5,
+    "stall": true
+   },
+   {
+    "t": "2022-11-10T05:00:00Z",
+    "count": 3,
+    "median": 255.0,
+    "stall": true
+   },
+   {
+    "t": "2022-11-10T06:00:00Z",
+    "count": 6,
+    "median": 334.0,
+    "stall": true
+   },
+   {
+    "t": "2022-11-10T07:00:00Z",
+    "count": 14,
+    "median": 388.0,
+    "stall": true
+   },
+   {
+    "t": "2022-11-10T08:00:00Z",
+    "count": 17,
+    "median": 411.5,
+    "stall": true
+   },
+   {
+    "t": "2022-11-10T09:00:00Z",
+    "count": 11,
+    "median": 426.0,
+    "stall": true
+   },
+   {
+    "t": "2022-11-10T10:00:00Z",
+    "count": 10,
+    "median": 415.0,
+    "stall": true
+   },
+   {
+    "t": "2022-11-10T11:00:00Z",
+    "count": 3,
+    "median": 389.5,
+    "stall": true
+   },
+   {
+    "t": "2022-11-10T12:00:00Z",
+    "count": 1,
+    "median": 424.5,
+    "stall": true
+   },
+   {
+    "t": "2022-11-10T13:00:00Z",
+    "count": 6,
+    "median": 409.0,
+    "stall": true
+   },
+   {
+    "t": "2022-11-10T14:00:00Z",
+    "count": 10,
+    "median": 469.0,
+    "stall": true
+   },
+   {
+    "t": "2022-11-10T15:00:00Z",
+    "count": 72,
+    "median": 435.0,
+    "stall": true
+   },
+   {
+    "t": "2022-11-10T16:00:00Z",
+    "count": 45,
+    "median": 374.5,
+    "stall": true
+   },
+   {
+    "t": "2022-11-10T17:00:00Z",
+    "count": 65,
+    "median": 333.5,
+    "stall": true
+   },
+   {
+    "t": "2022-11-10T18:00:00Z",
+    "count": 70,
+    "median": 298.5,
+    "stall": true
+   },
+   {
+    "t": "2022-11-10T19:00:00Z",
+    "count": 14,
+    "median": 272.5,
+    "stall": true
+   },
+   {
+    "t": "2022-11-10T20:00:00Z",
+    "count": 16,
+    "median": 241.5,
+    "stall": true
+   }
+  ]
+ },
+ "sweep_control_only": [
+  {
+   "K": 0.1,
+   "N": 2,
+   "first_alarm_minus_T_hours": -8.86,
+   "control_alarms_total": 0
+  },
+  {
+   "K": 0.1,
+   "N": 3,
+   "first_alarm_minus_T_hours": -7.86,
+   "control_alarms_total": 0
+  },
+  {
+   "K": 0.1,
+   "N": 4,
+   "first_alarm_minus_T_hours": -6.86,
+   "control_alarms_total": 0
+  },
+  {
+   "K": 0.1,
+   "N": 6,
+   "first_alarm_minus_T_hours": 8.14,
+   "control_alarms_total": 0
+  },
+  {
+   "K": 0.25,
+   "N": 2,
+   "first_alarm_minus_T_hours": -8.86,
+   "control_alarms_total": 0
+  },
+  {
+   "K": 0.25,
+   "N": 3,
+   "first_alarm_minus_T_hours": -7.86,
+   "control_alarms_total": 0
+  },
+  {
+   "K": 0.25,
+   "N": 4,
+   "first_alarm_minus_T_hours": -6.86,
+   "control_alarms_total": 0
+  },
+  {
+   "K": 0.25,
+   "N": 6,
+   "first_alarm_minus_T_hours": -4.86,
+   "control_alarms_total": 0
+  },
+  {
+   "K": 0.5,
+   "N": 2,
+   "first_alarm_minus_T_hours": -8.86,
+   "control_alarms_total": 0
+  },
+  {
+   "K": 0.5,
+   "N": 3,
+   "first_alarm_minus_T_hours": -7.86,
+   "control_alarms_total": 0
+  },
+  {
+   "K": 0.5,
+   "N": 4,
+   "first_alarm_minus_T_hours": -6.86,
+   "control_alarms_total": 0
+  },
+  {
+   "K": 0.5,
+   "N": 6,
+   "first_alarm_minus_T_hours": -4.86,
+   "control_alarms_total": 0
+  }
+ ],
+ "evidence_sha256": "af0e352a8b25d4b9b37c972aeb66ff7230fb25e1d69e03d018eb9e9134a2feeb"
+}

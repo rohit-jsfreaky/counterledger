@@ -1,0 +1,990 @@
+{
+ "kind": "reserves",
+ "exchange": "coindcx",
+ "name": "CoinDCX",
+ "as_of": "2026-10-10T11:22:59Z",
+ "total_usd": 184081305.02,
+ "chains_usd": {
+  "Bitcoin": 107297911.65,
+  "Ethereum": 40793569.55,
+  "Ripple": 30371520.33,
+  "Cardano": 4441040.72,
+  "Binance": 1045559.86,
+  "Tron": 124324.97,
+  "Litecoin": 6456.5,
+  "Avalanche": 693.02,
+  "Solana": 189.89,
+  "Arbitrum": 34.49,
+  "Polygon": 3.98,
+  "Optimism": 0.02,
+  "Fantom": 0.0
+ },
+ "assets": [
+  {
+   "asset": "BTC",
+   "usd": 107297911.65,
+   "amount": 1296.30375
+  },
+  {
+   "asset": "XRP",
+   "usd": 30374336.45,
+   "amount": 21635605.76457
+  },
+  {
+   "asset": "WETH",
+   "usd": 22549891.49,
+   "amount": 9040.21189
+  },
+  {
+   "asset": "SHIB",
+   "usd": 8804765.63,
+   "amount": 1614981100693.0054
+  },
+  {
+   "asset": "ADA",
+   "usd": 4735123.56,
+   "amount": 18582576.192929998
+  },
+  {
+   "asset": "LINK",
+   "usd": 2213412.21,
+   "amount": 171728.4772
+  },
+  {
+   "asset": "PEPE",
+   "usd": 1922567.87,
+   "amount": 477754548657.1755
+  },
+  {
+   "asset": "ONDO",
+   "usd": 1308198.34,
+   "amount": 2654590.121
+  },
+  {
+   "asset": "FET",
+   "usd": 617822.03,
+   "amount": 2725606.1699699997
+  },
+  {
+   "asset": "PHA",
+   "usd": 515267.3,
+   "amount": 8618934.31
+  },
+  {
+   "asset": "GALA",
+   "usd": 450845.03,
+   "amount": 186434550.91988
+  },
+  {
+   "asset": "FLOKI",
+   "usd": 330493.16,
+   "amount": 11966349627.27094
+  },
+  {
+   "asset": "ENA",
+   "usd": 302985.57,
+   "amount": 1378547.83
+  },
+  {
+   "asset": "CAKE",
+   "usd": 226642.8,
+   "amount": 102200.75331
+  },
+  {
+   "asset": "CRV",
+   "usd": 210204.38,
+   "amount": 591355.58408
+  },
+  {
+   "asset": "ZIL",
+   "usd": 186103.16,
+   "amount": 52392413.68667
+  },
+  {
+   "asset": "JASMY",
+   "usd": 150817.62,
+   "amount": 30228187.2
+  },
+  {
+   "asset": "SUSHI",
+   "usd": 124599.71,
+   "amount": 526536.96373
+  },
+  {
+   "asset": "TRON",
+   "usd": 114385.13,
+   "amount": 345835.5404
+  },
+  {
+   "asset": "ZRO",
+   "usd": 103026.06,
+   "amount": 52572.38
+  },
+  {
+   "asset": "AAVE",
+   "usd": 101225.49,
+   "amount": 585.69841
+  },
+  {
+   "asset": "ETHFI",
+   "usd": 92168.92,
+   "amount": 136411.94
+  },
+  {
+   "asset": "YFI",
+   "usd": 80612.51,
+   "amount": 33.49985
+  },
+  {
+   "asset": "RSR",
+   "usd": 72772.37,
+   "amount": 46065389.166
+  },
+  {
+   "asset": "WLD",
+   "usd": 71528.14,
+   "amount": 132012.71871
+  },
+  {
+   "asset": "GRT",
+   "usd": 68063.92,
+   "amount": 2512041.01348
+  },
+  {
+   "asset": "APE",
+   "usd": 62697.7,
+   "amount": 412834.32424
+  },
+  {
+   "asset": "WMATIC",
+   "usd": 60186.75,
+   "amount": 597959.76044
+  },
+  {
+   "asset": "ATH",
+   "usd": 58012.02,
+   "amount": 8943832.98
+  },
+  {
+   "asset": "QNT",
+   "usd": 48614.45,
+   "amount": 195.41122
+  },
+  {
+   "asset": "FIL",
+   "usd": 47912.39,
+   "amount": 42642.90326
+  },
+  {
+   "asset": "CGPT",
+   "usd": 47620.21,
+   "amount": 2077291.63
+  },
+  {
+   "asset": "AIOZ",
+   "usd": 47000.49,
+   "amount": 414367.61
+  },
+  {
+   "asset": "MNT",
+   "usd": 45963.53,
+   "amount": 81977.69
+  },
+  {
+   "asset": "DOGE",
+   "usd": 43236.18,
+   "amount": 504969.23164
+  },
+  {
+   "asset": "DAI",
+   "usd": 35011.58,
+   "amount": 35013.1629
+  },
+  {
+   "asset": "PEOPLE",
+   "usd": 34572.68,
+   "amount": 4272023.6
+  },
+  {
+   "asset": "W",
+   "usd": 33928.65,
+   "amount": 2010996.8
+  },
+  {
+   "asset": "KNC",
+   "usd": 25437.64,
+   "amount": 185711.02705
+  },
+  {
+   "asset": "FORM",
+   "usd": 24622.03,
+   "amount": 89443.55
+  },
+  {
+   "asset": "STRK",
+   "usd": 23285.22,
+   "amount": 326534.1
+  },
+  {
+   "asset": "TWT",
+   "usd": 22813.56,
+   "amount": 43983.72935
+  },
+  {
+   "asset": "POL",
+   "usd": 17923.51,
+   "amount": 178071.43078
+  },
+  {
+   "asset": "GMT",
+   "usd": 17892.18,
+   "amount": 2029224.30718
+  },
+  {
+   "asset": "IQ",
+   "usd": 16377.45,
+   "amount": 19571188.0
+  },
+  {
+   "asset": "AMP",
+   "usd": 14709.99,
+   "amount": 22809818.4
+  },
+  {
+   "asset": "AEVO",
+   "usd": 14535.36,
+   "amount": 549988.0
+  },
+  {
+   "asset": "USDT",
+   "usd": 13856.07,
+   "amount": 13866.96878
+  },
+  {
+   "asset": "MASK",
+   "usd": 13169.56,
+   "amount": 27896.49057
+  },
+  {
+   "asset": "LTC",
+   "usd": 12813.99,
+   "amount": 201.63589000000002
+  },
+  {
+   "asset": "CTSI",
+   "usd": 12461.87,
+   "amount": 377063.92634999997
+  },
+  {
+   "asset": "BLUR",
+   "usd": 10888.43,
+   "amount": 589984.0
+  },
+  {
+   "asset": "PIXEL",
+   "usd": 10110.01,
+   "amount": 1500972.0
+  },
+  {
+   "asset": "POWR",
+   "usd": 9891.57,
+   "amount": 160029.6
+  },
+  {
+   "asset": "NMR",
+   "usd": 9628.49,
+   "amount": 716.79305
+  },
+  {
+   "asset": "IOTX",
+   "usd": 9521.2,
+   "amount": 2561843.85
+  },
+  {
+   "asset": "RLC",
+   "usd": 9494.54,
+   "amount": 9990.0
+  },
+  {
+   "asset": "AVA",
+   "usd": 9393.46,
+   "amount": 40006.91
+  },
+  {
+   "asset": "AXS",
+   "usd": 9118.13,
+   "amount": 7294.4253499999995
+  },
+  {
+   "asset": "USDC",
+   "usd": 8870.31,
+   "amount": 8872.5564
+  },
+  {
+   "asset": "MEME",
+   "usd": 8411.7,
+   "amount": 14742986.5
+  },
+  {
+   "asset": "COW",
+   "usd": 8257.14,
+   "amount": 56014.76
+  },
+  {
+   "asset": "AVAX",
+   "usd": 8021.69,
+   "amount": 758.0493
+  },
+  {
+   "asset": "KCS",
+   "usd": 7650.89,
+   "amount": 1001.3
+  },
+  {
+   "asset": "BIGTIME",
+   "usd": 7478.6,
+   "amount": 875120.46
+  },
+  {
+   "asset": "EGLD",
+   "usd": 7115.04,
+   "amount": 1787.86634
+  },
+  {
+   "asset": "PROM",
+   "usd": 5432.49,
+   "amount": 1027.23848
+  },
+  {
+   "asset": "BABYDOGE",
+   "usd": 5286.21,
+   "amount": 13720320156380.68
+  },
+  {
+   "asset": "WFTM",
+   "usd": 5234.01,
+   "amount": 112942.53017
+  },
+  {
+   "asset": "ID",
+   "usd": 5104.82,
+   "amount": 134990.0
+  },
+  {
+   "asset": "BANANA",
+   "usd": 4987.84,
+   "amount": 1284.14
+  },
+  {
+   "asset": "OGN",
+   "usd": 4893.78,
+   "amount": 141094.26917
+  },
+  {
+   "asset": "CELR",
+   "usd": 4498.03,
+   "amount": 1440970.09397
+  },
+  {
+   "asset": "ACH",
+   "usd": 4231.2,
+   "amount": 736771.48908
+  },
+  {
+   "asset": "WIN",
+   "usd": 4188.83,
+   "amount": 79797103.43258
+  },
+  {
+   "asset": "ARB",
+   "usd": 4164.92,
+   "amount": 22662.88
+  },
+  {
+   "asset": "PAXG",
+   "usd": 4084.64,
+   "amount": 0.9763
+  },
+  {
+   "asset": "EIGEN",
+   "usd": 4066.92,
+   "amount": 18003.03
+  },
+  {
+   "asset": "BUSD",
+   "usd": 4030.45,
+   "amount": 4037.4324500000002
+  },
+  {
+   "asset": "SNX",
+   "usd": 3980.89,
+   "amount": 16483.556660000002
+  },
+  {
+   "asset": "SKL",
+   "usd": 3898.92,
+   "amount": 764161.28049
+  },
+  {
+   "asset": "BAND",
+   "usd": 3743.88,
+   "amount": 15911.00758
+  },
+  {
+   "asset": "ANKR",
+   "usd": 3409.34,
+   "amount": 703728.43739
+  },
+  {
+   "asset": "MANA",
+   "usd": 3199.33,
+   "amount": 33388.67885
+  },
+  {
+   "asset": "CHR",
+   "usd": 3193.24,
+   "amount": 135424.61317
+  },
+  {
+   "asset": "MOG",
+   "usd": 3188.18,
+   "amount": 28994214063.2
+  },
+  {
+   "asset": "USUAL",
+   "usd": 2625.45,
+   "amount": 208058.4
+  },
+  {
+   "asset": "BICO",
+   "usd": 2607.8,
+   "amount": 134913.47743
+  },
+  {
+   "asset": "HOT",
+   "usd": 2493.62,
+   "amount": 5954030.9954
+  },
+  {
+   "asset": "WBTC",
+   "usd": 2450.11,
+   "amount": 0.02964
+  },
+  {
+   "asset": "BTCB",
+   "usd": 2056.46,
+   "amount": 0.02503
+  },
+  {
+   "asset": "ADX",
+   "usd": 1954.57,
+   "amount": 26829.24001
+  },
+  {
+   "asset": "ARPA",
+   "usd": 1883.0,
+   "amount": 152444.55158
+  },
+  {
+   "asset": "BOBA",
+   "usd": 1870.32,
+   "amount": 89286.0
+  },
+  {
+   "asset": "COTI",
+   "usd": 1712.41,
+   "amount": 131816.79465
+  },
+  {
+   "asset": "UNI",
+   "usd": 1706.57,
+   "amount": 228.53937
+  },
+  {
+   "asset": "TRB",
+   "usd": 1667.25,
+   "amount": 87.056
+  },
+  {
+   "asset": "NEAR",
+   "usd": 1630.84,
+   "amount": 309.37152
+  },
+  {
+   "asset": "MOVE",
+   "usd": 1544.04,
+   "amount": 172052.8
+  },
+  {
+   "asset": "LDO",
+   "usd": 1313.67,
+   "amount": 3016.63809
+  },
+  {
+   "asset": "RNDR",
+   "usd": 1127.53,
+   "amount": 586.8166
+  },
+  {
+   "asset": "PUNDIX",
+   "usd": 1105.2,
+   "amount": 9747.818
+  },
+  {
+   "asset": "BLZ",
+   "usd": 1006.64,
+   "amount": 102822.17097
+  },
+  {
+   "asset": "TUSD",
+   "usd": 980.26,
+   "amount": 980.9001
+  },
+  {
+   "asset": "BAT",
+   "usd": 866.36,
+   "amount": 6257.52734
+  },
+  {
+   "asset": "STETH",
+   "usd": 840.09,
+   "amount": 0.3368
+  },
+  {
+   "asset": "ZRX",
+   "usd": 812.43,
+   "amount": 6381.38273
+  },
+  {
+   "asset": "CVX",
+   "usd": 784.51,
+   "amount": 370.8477
+  },
+  {
+   "asset": "BCH",
+   "usd": 764.14,
+   "amount": 2.74271
+  },
+  {
+   "asset": "REQ",
+   "usd": 754.41,
+   "amount": 13730.51822
+  },
+  {
+   "asset": "EOS",
+   "usd": 647.94,
+   "amount": 4000.0
+  },
+  {
+   "asset": "PENDLE",
+   "usd": 554.06,
+   "amount": 260.00843
+  },
+  {
+   "asset": "CYBER",
+   "usd": 417.29,
+   "amount": 1194.73
+  },
+  {
+   "asset": "BNB",
+   "usd": 412.17,
+   "amount": 0.55048
+  },
+  {
+   "asset": "OCEAN",
+   "usd": 408.5,
+   "amount": 2848.9149
+  },
+  {
+   "asset": "CRO",
+   "usd": 403.35,
+   "amount": 6644.63292
+  },
+  {
+   "asset": "QKC",
+   "usd": 388.5,
+   "amount": 144024.7595
+  },
+  {
+   "asset": "XTZ",
+   "usd": 320.52,
+   "amount": 1099.0
+  },
+  {
+   "asset": "COMP",
+   "usd": 289.39,
+   "amount": 11.60856
+  },
+  {
+   "asset": "HIGH",
+   "usd": 217.64,
+   "amount": 6471.39
+  },
+  {
+   "asset": "STKAAVE",
+   "usd": 172.89,
+   "amount": 1.0
+  },
+  {
+   "asset": "TLM",
+   "usd": 146.88,
+   "amount": 99978.0
+  },
+  {
+   "asset": "SOL",
+   "usd": 139.32,
+   "amount": 1.2722799999999999
+  },
+  {
+   "asset": "NFT",
+   "usd": 127.76,
+   "amount": 543803996.47523
+  },
+  {
+   "asset": "WOO",
+   "usd": 116.95,
+   "amount": 9203.99292
+  },
+  {
+   "asset": "1INCH",
+   "usd": 101.69,
+   "amount": 1038.8048700000002
+  },
+  {
+   "asset": "REEF",
+   "usd": 89.72,
+   "amount": 1744153.78767
+  },
+  {
+   "asset": "RPL",
+   "usd": 75.62,
+   "amount": 39.87
+  },
+  {
+   "asset": "PHB",
+   "usd": 73.3,
+   "amount": 5642.9142
+  },
+  {
+   "asset": "MKR",
+   "usd": 56.7,
+   "amount": 0.03169
+  },
+  {
+   "asset": "AKRO",
+   "usd": 53.32,
+   "amount": 11738437.90554
+  },
+  {
+   "asset": "GNO",
+   "usd": 50.91,
+   "amount": 0.439
+  },
+  {
+   "asset": "ENJ",
+   "usd": 50.84,
+   "amount": 1585.24955
+  },
+  {
+   "asset": "GLM",
+   "usd": 48.45,
+   "amount": 364.0
+  },
+  {
+   "asset": "DIA",
+   "usd": 43.84,
+   "amount": 239.02
+  },
+  {
+   "asset": "OMG",
+   "usd": 39.34,
+   "amount": 657.32
+  },
+  {
+   "asset": "LRC",
+   "usd": 35.85,
+   "amount": 3562.82649
+  },
+  {
+   "asset": "WBNB",
+   "usd": 35.23,
+   "amount": 0.04712
+  },
+  {
+   "asset": "TRU",
+   "usd": 26.41,
+   "amount": 27879.8
+  },
+  {
+   "asset": "ELF",
+   "usd": 23.3,
+   "amount": 323.0
+  },
+  {
+   "asset": "DOODLES",
+   "usd": 15.71,
+   "amount": 9996.0
+  },
+  {
+   "asset": "YFII",
+   "usd": 13.9,
+   "amount": 0.4903
+  },
+  {
+   "asset": "MEW",
+   "usd": 10.47,
+   "amount": 22222.22222
+  },
+  {
+   "asset": "BTT",
+   "usd": 8.18,
+   "amount": 22402248.18709
+  },
+  {
+   "asset": "SNT",
+   "usd": 6.67,
+   "amount": 849.0
+  },
+  {
+   "asset": "STG",
+   "usd": 5.39,
+   "amount": 30.74402
+  },
+  {
+   "asset": "CHZ",
+   "usd": 4.96,
+   "amount": 320.65715
+  },
+  {
+   "asset": "STMATIC",
+   "usd": 3.39,
+   "amount": 29.39082
+  },
+  {
+   "asset": "NASTY",
+   "usd": 2.88,
+   "amount": 150000.0
+  },
+  {
+   "asset": "SAND",
+   "usd": 2.84,
+   "amount": 41.7
+  },
+  {
+   "asset": "MEAN",
+   "usd": 2.55,
+   "amount": 65535.0
+  },
+  {
+   "asset": "ATOM",
+   "usd": 2.09,
+   "amount": 1.08312
+  },
+  {
+   "asset": "CTC",
+   "usd": 1.33,
+   "amount": 12.6998
+  },
+  {
+   "asset": "BAKE",
+   "usd": 1.23,
+   "amount": 4706.36352
+  },
+  {
+   "asset": "VRA",
+   "usd": 0.96,
+   "amount": 86057.34093
+  },
+  {
+   "asset": "AGIX",
+   "usd": 0.51,
+   "amount": 710.04094
+  },
+  {
+   "asset": "BNX",
+   "usd": 0.46,
+   "amount": 1.47
+  },
+  {
+   "asset": "DOT",
+   "usd": 0.32,
+   "amount": 0.25656
+  },
+  {
+   "asset": "SOLCEX",
+   "usd": 0.19,
+   "amount": 92.0173
+  },
+  {
+   "asset": "$QNTM",
+   "usd": 0.16,
+   "amount": 1111.0
+  },
+  {
+   "asset": "MATIC",
+   "usd": 0.16,
+   "amount": 1.55449
+  },
+  {
+   "asset": "CAT",
+   "usd": 0.15,
+   "amount": 71451.79666
+  },
+  {
+   "asset": "$CWIF",
+   "usd": 0.14,
+   "amount": 4800000.0
+  },
+  {
+   "asset": "MAMA",
+   "usd": 0.08,
+   "amount": 501.0
+  },
+  {
+   "asset": "MONKY",
+   "usd": 0.07,
+   "amount": 1959656.0
+  },
+  {
+   "asset": "PFIRE",
+   "usd": 0.05,
+   "amount": 10000000.00001
+  },
+  {
+   "asset": "WAFFLES",
+   "usd": 0.03,
+   "amount": 60.0
+  },
+  {
+   "asset": "RDNT",
+   "usd": 0.03,
+   "amount": 45.17
+  },
+  {
+   "asset": "$BTC25",
+   "usd": 0.02,
+   "amount": 1000.0
+  },
+  {
+   "asset": "A47",
+   "usd": 0.02,
+   "amount": 14.0
+  },
+  {
+   "asset": "MIRAI",
+   "usd": 0.01,
+   "amount": 11.71503
+  },
+  {
+   "asset": "SC",
+   "usd": 0.01,
+   "amount": 8.888
+  },
+  {
+   "asset": "GME",
+   "usd": 0.01,
+   "amount": 11.0
+  },
+  {
+   "asset": "CONAN",
+   "usd": 0.01,
+   "amount": 58.0
+  },
+  {
+   "asset": "FTM",
+   "usd": 0.0,
+   "amount": 0.00043
+  },
+  {
+   "asset": "ETH",
+   "usd": 0.0,
+   "amount": 0.0
+  },
+  {
+   "asset": "USDT0",
+   "usd": 0.0,
+   "amount": 0.00201
+  },
+  {
+   "asset": "AVALANCHEUSDC",
+   "usd": 0.0,
+   "amount": 0.0003
+  },
+  {
+   "asset": "DOLLAR",
+   "usd": 0.0,
+   "amount": 1.0
+  },
+  {
+   "asset": "SPIKE",
+   "usd": 0.0,
+   "amount": 35.0
+  },
+  {
+   "asset": "MROCKS",
+   "usd": 0.0,
+   "amount": 1.0
+  },
+  {
+   "asset": "SI",
+   "usd": 0.0,
+   "amount": 10.0
+  },
+  {
+   "asset": "POV",
+   "usd": 0.0,
+   "amount": 4.323
+  },
+  {
+   "asset": "JUNGLE",
+   "usd": 0.0,
+   "amount": 7775.00343
+  },
+  {
+   "asset": "LMT",
+   "usd": 0.0,
+   "amount": 1.40207
+  },
+  {
+   "asset": "XPI",
+   "usd": 0.0,
+   "amount": 3.14
+  },
+  {
+   "asset": "BABA",
+   "usd": 0.0,
+   "amount": 10.0
+  },
+  {
+   "asset": "SINU",
+   "usd": 0.0,
+   "amount": 40.0
+  },
+  {
+   "asset": "POPDOG",
+   "usd": 0.0,
+   "amount": 2.0
+  },
+  {
+   "asset": "ALPACA",
+   "usd": 0.0,
+   "amount": 2.05
+  },
+  {
+   "asset": "API3",
+   "usd": 0.0,
+   "amount": 3e-05
+  },
+  {
+   "asset": "SPELL",
+   "usd": 0.0,
+   "amount": 1.0
+  }
+ ],
+ "source": {
+  "balances": "https://api.llama.fi/protocol/coindcx",
+  "addresses": "https://github.com/DefiLlama/DefiLlama-Adapters/blob/6656782872a773a13a7f250c835a2737d339c325/cex/coindcx.js",
+  "upstream": null
+ },
+ "note": "Reserves only. They say nothing about what the exchange owes its users."
+}

@@ -13,7 +13,7 @@ import json
 import os
 import time
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
 import httpx
 
@@ -63,8 +63,19 @@ def _throttle(host: str, min_gap: float) -> None:
     _last_call[host] = time.monotonic()
 
 
+class BadResponse(RuntimeError):
+    pass
+
+
 def _call(
-    method: str, url: str, params: dict | None, body: Any, headers: dict | None, min_gap: float, text: bool = False
+    method: str,
+    url: str,
+    params: dict | None,
+    body: Any,
+    headers: dict | None,
+    min_gap: float,
+    text: bool = False,
+    ok: Callable[[Any], bool] | None = None,
 ) -> Any:
     key = request_key(method, url, params, body) + ("-t" if text else "")
     path = _path(key)
@@ -75,15 +86,25 @@ def _call(
         raise CacheMiss(f"replay mode, no cache for {method} {url} {_scrub(params)}")
 
     host = httpx.URL(url).host
-    for attempt in range(5):
+    data: Any = None
+    for attempt in range(6):
         _throttle(host, min_gap)
-        r = _client_get().request(method, url, params=params, json=body, headers=headers)
-        if r.status_code == 429 or r.status_code >= 500:
-            time.sleep(2 ** attempt)
+        try:
+            r = _client_get().request(method, url, params=params, json=body, headers=headers)
+        except httpx.TransportError as e:  # timeouts, resets: retry
+            data = repr(e)
+            time.sleep(2**attempt)
             continue
-        break
-    r.raise_for_status()
-    data = r.text if text else r.json()
+        if r.status_code == 429 or r.status_code >= 500:
+            time.sleep(2**attempt)
+            continue
+        r.raise_for_status()
+        data = r.text if text else r.json()
+        if ok is None or ok(data):
+            break
+        time.sleep(2**attempt)  # API-level error (e.g. rate limit in a 200 body): retry, never cache it
+    else:
+        raise BadResponse(f"{method} {url} {_scrub(params)} -> {str(data)[:200]}")
 
     path.parent.mkdir(parents=True, exist_ok=True)
     record = {
@@ -96,8 +117,14 @@ def _call(
     return data
 
 
-def get_json(url: str, params: dict | None = None, headers: dict | None = None, min_gap: float = 0.25) -> Any:
-    return _call("GET", url, params, None, headers, min_gap)
+def get_json(
+    url: str,
+    params: dict | None = None,
+    headers: dict | None = None,
+    min_gap: float = 0.25,
+    ok: Callable[[Any], bool] | None = None,
+) -> Any:
+    return _call("GET", url, params, None, headers, min_gap, ok=ok)
 
 
 def get_text(url: str, params: dict | None = None, headers: dict | None = None, min_gap: float = 0.25) -> str:

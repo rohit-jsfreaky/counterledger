@@ -1,0 +1,10 @@
+{
+  "start_block": 25339245,
+  "end_block": 26063601,
+  "tail_end_block": 26099442,
+  "hot": 80,
+  "own": 19127,
+  "rows": 414148,
+  "written_at": "2026-10-10T17:55:35Z",
+  "outflows_sha256": "f47067cc9ae77b30ca2f67fd3c471f92d1f74b40d8460fc3d5aad554c8f4fe34"
+}

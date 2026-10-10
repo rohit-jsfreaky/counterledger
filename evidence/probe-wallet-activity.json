@@ -1,0 +1,80 @@
+{
+ "0x2faf487a4414fe77e2327f0bf4ae2a264a776ad2": {
+  "event": "ftx-2022-11",
+  "label": "FTX Exchange",
+  "eth_out_day": 59,
+  "token_out_day": 689
+ },
+ "0xc098b2a3aa256d2140208c3de6543aaef5cd3a94": {
+  "event": "ftx-2022-11",
+  "label": "FTX Exchange 2",
+  "eth_out_day": 677,
+  "token_out_day": 0
+ },
+ "0x618ffd1cdabee36ce5992a857cc7463f21272bd7": {
+  "event": "wazirx-2024-07",
+  "label": "WazirX: Withdrawals",
+  "eth_out_day": 8,
+  "token_out_day": 53
+ },
+ "0x0e293a9e57d22f6ec575b376e3e3bd8e642fd5fc": {
+  "event": "wazirx-2024-07",
+  "label": "WazirX 1",
+  "eth_out_day": 0,
+  "token_out_day": 0
+ },
+ "0xcdef28fe85ab08a6632c97fd90534666c1ae96a3": {
+  "event": "wazirx-2024-07",
+  "label": "WazirX 3",
+  "eth_out_day": 0,
+  "token_out_day": 0
+ },
+ "0x1b9509aeb1fbb605868d21caf2eeb6ac8351264d": {
+  "event": "wazirx-2024-07",
+  "label": "WazirX 4",
+  "eth_out_day": 0,
+  "token_out_day": 0
+ },
+ "0x305dcaea67a9d4152e54e68060c89db05fd67a7b": {
+  "event": "wazirx-2024-07",
+  "label": "WazirX 5",
+  "eth_out_day": 0,
+  "token_out_day": 0
+ },
+ "0x0389776e4d48384160cd5acde2f61ab9359e757e": {
+  "event": "wazirx-2024-07",
+  "label": "WazirX 6",
+  "eth_out_day": 0,
+  "token_out_day": 0
+ },
+ "0x196eeecf1a247ed7cadfb39a3125a321f8642aad": {
+  "event": "wazirx-2024-07",
+  "label": "WazirX 7",
+  "eth_out_day": 0,
+  "token_out_day": 0
+ },
+ "0xe6a421f24d330967a3af2f4cdb5c34067e7e4d75": {
+  "event": "bitget-2026-09",
+  "label": "Bitget: Hot Wallet 1",
+  "eth_out_day": 0,
+  "token_out_day": 0
+ },
+ "0xe2b406ec9227143a8830229eeb3eb6e24b5c60be": {
+  "event": "bitget-2026-09",
+  "label": "Bitget: Hot Wallet 2",
+  "eth_out_day": 0,
+  "token_out_day": 0
+ },
+ "0xf646d9b7d20babe204a89235774248ba18086dae": {
+  "event": "bitget-2026-09",
+  "label": "Bitget: Hot Wallet 3",
+  "eth_out_day": 0,
+  "token_out_day": 0
+ },
+ "0x149ded7438caf5e5bfdc507a6c25436214d445e1": {
+  "event": "bitget-2026-09",
+  "label": "Bitget: Hot Wallet 4",
+  "eth_out_day": 0,
+  "token_out_day": 0
+ }
+}

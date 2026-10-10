@@ -1,0 +1,46 @@
+{
+ "kind": "cover-backtest",
+ "event": "bitget-2026-09",
+ "T": "2026-09-24T19:05:00Z",
+ "params_file": "data/cover-params.json",
+ "params_sha256": "8671c950df694b216160b2ec5b17cf0fbeb52651fe7e0e7d01de81b4145edd3b",
+ "hourly_file": "data/raw/bitget-2026-09/hourly.csv",
+ "hourly_sha256": "fdefe252e07b5fa0c3b55b22c062eef792c25b3d213110f8a2d61ae9e72b141f",
+ "outflows_file": "data/raw/bitget-2026-09/outflows.csv.gz (release asset)",
+ "outflows_sha256": "f47067cc9ae77b30ca2f67fd3c471f92d1f74b40d8460fc3d5aad554c8f4fe34",
+ "outflows_rows": 414148,
+ "halts_in_event_window": [
+  {
+   "halt_confirmed": "2026-09-25T18:00:00Z",
+   "trailing24": 293,
+   "baseline_daily_median": 4128.0,
+   "payout": "2026-09-26T18:00:00Z",
+   "at_window_end": {
+    "trailing24": 0,
+    "baseline_daily_median": 4098.0
+   }
+  }
+ ],
+ "first_payout": "2026-09-26T18:00:00Z",
+ "first_payout_minus_T_hours": 46.92,
+ "nexus_earliest_claim_days_after_T": 100,
+ "controls": [
+  {
+   "window": [
+    "2026-08-13T19:00:00Z",
+    "2026-08-20T19:00:00Z"
+   ],
+   "halts": []
+  },
+  {
+   "window": [
+    "2026-07-16T19:00:00Z",
+    "2026-07-23T19:00:00Z"
+   ],
+   "halts": []
+  }
+ ],
+ "control_false_halts": 0,
+ "limit": "History has no stuck-withdrawal proofs, so this replay uses the on-chain rule alone.",
+ "evidence_sha256": "2fb19e40fcfc47c3fffa6496734b20d598cf99f536aaf033800203e30bef0bda"
+}

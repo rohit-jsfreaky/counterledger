@@ -1,0 +1,46 @@
+{
+ "kind": "cover-backtest",
+ "event": "ftx-2022-11",
+ "T": "2022-11-08T21:51:25Z",
+ "params_file": "data/cover-params.json",
+ "params_sha256": "8671c950df694b216160b2ec5b17cf0fbeb52651fe7e0e7d01de81b4145edd3b",
+ "hourly_file": "data/raw/ftx-2022-11/hourly.csv",
+ "hourly_sha256": "11ab07b83046debfb6f7c52f969ec71fdcf7796b52266746e713df1603ddb439",
+ "outflows_file": "data/raw/ftx-2022-11/outflows.csv.gz (release asset)",
+ "outflows_sha256": "8bb4ee2b97b4a74afe422ed6c7d73aef7fb96e113462a8699ef670d05189e1eb",
+ "outflows_rows": 815100,
+ "halts_in_event_window": [
+  {
+   "halt_confirmed": "2022-11-09T11:00:00Z",
+   "trailing24": 550,
+   "baseline_daily_median": 7859.5,
+   "payout": "2022-11-10T11:00:00Z",
+   "at_window_end": {
+    "trailing24": 226,
+    "baseline_daily_median": 7643.5
+   }
+  }
+ ],
+ "first_payout": "2022-11-10T11:00:00Z",
+ "first_payout_minus_T_hours": 37.14,
+ "nexus_earliest_claim_days_after_T": 100,
+ "controls": [
+  {
+   "window": [
+    "2022-09-27T21:00:00Z",
+    "2022-10-04T21:00:00Z"
+   ],
+   "halts": []
+  },
+  {
+   "window": [
+    "2022-08-30T21:00:00Z",
+    "2022-09-06T21:00:00Z"
+   ],
+   "halts": []
+  }
+ ],
+ "control_false_halts": 0,
+ "limit": "History has no stuck-withdrawal proofs, so this replay uses the on-chain rule alone.",
+ "evidence_sha256": "ef7b0cd64714409fa9b87a0f10563047d8e44453085f3a82f8d9cec77d92cf3e"
+}

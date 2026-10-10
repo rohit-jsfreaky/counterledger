@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "fixed_at": "2026-10-10T17:07:26Z",
+  "note": "Pre-registered BEFORE any cover/payout backtest was computed. Same rules as heartbeat-params: never edited, a change is a new version and every version's result is published.",
+  "halt_rule": "at the end of hour t, a halt is confirmed if the outflow count over the trailing 24 hours is < 0.10 x the median of the 24-hour totals of the previous 28 days (and that median >= 10)",
+  "halt_threshold_ratio": 0.10,
+  "min_daily_median": 10,
+  "why_daily": "daily totals stay usable for quiet wallets (WazirX ~83 outflows/day) where hourly medians are below 4",
+  "challenge_window_hours": 24,
+  "payout_time": "halt confirmed + challenge window, if the halt rule still holds at the end of the window",
+  "live_extra_condition": "k = 3 distinct stuck-withdrawal zkTLS proofs in the window (live only; history has no such proofs, so backtests use the on-chain rule alone and say so)",
+  "data_range_after_T_days": 7,
+  "baseline_to_compare": "Nexus Mutual Custody Cover: claimable after withdrawals are halted for >= 100 days (nexusmutual.io risk index)",
+  "result_metrics": ["payout_time - T in hours", "Nexus earliest claim = T + 100 days", "false payouts in the same control windows as the heartbeat (must be 0)"]
+}
