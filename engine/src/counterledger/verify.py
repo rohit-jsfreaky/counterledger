@@ -12,6 +12,8 @@ os.environ.setdefault("CL_MODE", "replay")
 from counterledger import cover_backtest, heartbeat  # noqa: E402
 from counterledger.paths import DATA_DIR, EVIDENCE_DIR  # noqa: E402
 
+RELEASE = "https://github.com/rohit-jsfreaky/counterledger/releases/download/data-v1"
+
 results: list[tuple[bool, str]] = []
 
 
@@ -36,7 +38,8 @@ def verify_backtests() -> None:
             check(same_file and same_counts, f"{ev['id']} hourly counts re-derived from all {meta['rows']:,} transfers "
                                              f"(outflows sha256 {meta['outflows_sha256'][:12]}…)")
         else:
-            print(f"INFO {ev['id']}: full transfer list not present; download the release asset to re-derive hourly.csv")
+            print(f"INFO {ev['id']}: full transfer list not present; to re-derive hourly.csv, download "
+                  f"{RELEASE}/{ev['id']}-outflows.csv.gz and save it as data/raw/{ev['id']}/outflows.csv.gz")
         for kind, fn, name in (("heartbeat", lambda: heartbeat.backtest(ev, hp), f"{ev['id']}.json"),
                                ("cover", lambda: cover_backtest.run(ev, cp), f"cover-{ev['id']}.json")):
             path = EVIDENCE_DIR / "backtests" / name
