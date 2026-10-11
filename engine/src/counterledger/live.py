@@ -219,7 +219,16 @@ def status(ex: str, hp: dict | None = None) -> dict:
     return doc
 
 
+def _keep_awake() -> None:
+    """Long backfills run unattended: ask Windows not to idle-sleep while this process lives (cleared on exit)."""
+    if sys.platform == "win32":
+        import ctypes
+
+        ctypes.windll.kernel32.SetThreadExecutionState(0x80000000 | 0x00000001)  # ES_CONTINUOUS | ES_SYSTEM_REQUIRED
+
+
 def main() -> None:
+    _keep_awake()
     want = sys.argv[1:] or EXCHANGES
     for ex in want:
         t = time.time()
