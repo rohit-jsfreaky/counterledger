@@ -215,14 +215,14 @@ export function CoverMarket({ pools, mint }: { pools: { id: string; name: string
           {tab === "buy" ? (
             <>
               <label className="mt-5 block text-[13px] font-medium text-dim" htmlFor="notional">Cover amount</label>
-              <div className="mt-1.5 flex items-center rounded-xl border border-line bg-ink px-4 focus-within:border-klein">
+              <div className="mt-1.5 flex items-center rounded-xl border border-line bg-ink px-4 focus-within:border-blue-2">
                 <input id="notional" type="number" min={1} value={notional} onChange={(e) => setNotional(Math.max(1, Number(e.target.value) || 1))} className="w-full bg-transparent py-3 font-mono text-lg outline-none" />
                 <span className="whitespace-nowrap text-sm text-dim">test-USDC</span>
               </div>
               <div className="mt-4 text-[13px] font-medium text-dim">Length</div>
               <div className="mt-1.5 grid grid-cols-3 gap-2">
                 {DAYS.map((d) => (
-                  <button key={d} onClick={() => setDays(d)} className={`rounded-xl border py-2.5 text-sm font-medium transition ${days === d ? "border-klein bg-klein/[0.05] text-klein" : "border-line hover:border-line-strong"}`}>
+                  <button key={d} onClick={() => setDays(d)} className={`rounded-xl border py-2.5 text-sm font-medium transition ${days === d ? "border-blue-2 bg-klein/[0.05] text-blue" : "border-line hover:border-line-strong"}`}>
                     {d} days
                   </button>
                 ))}
@@ -246,7 +246,7 @@ export function CoverMarket({ pools, mint }: { pools: { id: string; name: string
             <>
               <p className="mt-4 text-[14px] text-muted">Deposit test-USDC into the {p?.name ?? ""} pool. You earn the premiums and pay out if a halt is confirmed. Withdrawals pause while a trigger is pending.</p>
               <label className="mt-5 block text-[13px] font-medium text-dim" htmlFor="deposit">Deposit</label>
-              <div className="mt-1.5 flex items-center rounded-xl border border-line bg-ink px-4 focus-within:border-klein">
+              <div className="mt-1.5 flex items-center rounded-xl border border-line bg-ink px-4 focus-within:border-blue-2">
                 <input id="deposit" type="number" min={1} value={deposit} onChange={(e) => setDeposit(Math.max(1, Number(e.target.value) || 1))} className="w-full bg-transparent py-3 font-mono text-lg outline-none" />
                 <span className="whitespace-nowrap text-sm text-dim">test-USDC</span>
               </div>

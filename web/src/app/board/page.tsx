@@ -57,7 +57,7 @@ export default function Board() {
               <div className="col-span-2 flex items-center gap-3 lg:col-span-3">
                 <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-panel font-semibold text-muted">{r.name[0]}</span>
                 <div>
-                  <div className="font-semibold group-hover:text-klein">{r.name}</div>
+                  <div className="font-semibold group-hover:text-blue">{r.name}</div>
                   <div className="text-[12px] text-dim">{r.indian ? "India" : "Global"}{r.topAssets.length ? `, ${r.topAssets.slice(0, 3).join(", ")}` : ""}</div>
                 </div>
               </div>

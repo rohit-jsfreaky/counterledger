@@ -40,7 +40,7 @@ export default function Judges() {
       <ol className="grid gap-3">
         {PATH.map(([href, name, what], i) => (
           <li key={href}>
-            <Link href={href} className="card flex items-start gap-4 p-4 hover:border-klein">
+            <Link href={href} className="card flex items-start gap-4 p-4 hover:border-blue-2">
               <span className="num mt-0.5 text-dim">{i + 1}</span>
               <div className="flex-1">
                 <div className="font-medium">{name}</div>

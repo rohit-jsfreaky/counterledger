@@ -107,7 +107,7 @@ export function WalletButton({ className = "" }: { className?: string }) {
                 </button>
               ))}
               {demo && (
-                <button onClick={() => { select(demo.adapter.name); setOpen(false); }} className="flex w-full items-center gap-3 rounded-xl border border-klein/30 bg-klein/[0.04] px-4 py-3 text-left transition hover:bg-klein/[0.08]">
+                <button onClick={() => { select(demo.adapter.name); setOpen(false); }} className="flex w-full items-center gap-3 rounded-xl border border-blue-2/30 bg-klein/[0.04] px-4 py-3 text-left transition hover:bg-klein/[0.08]">
                   <img src={demo.adapter.icon} alt="" className="h-7 w-7 rounded-md" />
                   <span>
                     <span className="block font-medium">Use a demo wallet</span>

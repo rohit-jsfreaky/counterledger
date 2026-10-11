@@ -52,7 +52,7 @@ export default async function ExchangePage({ params }: { params: Promise<{ excha
       </div>
       <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-4">
         <div className="bg-surface px-6 py-5">
-          <div className="font-mono text-3xl font-medium text-klein">{row.score ?? "-"}<span className="text-base text-dim">/100</span></div>
+          <div className="font-mono text-3xl font-medium text-blue">{row.score ?? "-"}<span className="text-base text-dim">/100</span></div>
           <div className="mt-1 text-[13px] text-dim">score</div>
         </div>
         <div className="bg-surface px-6 py-5">

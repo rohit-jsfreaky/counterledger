@@ -43,13 +43,13 @@ export function FtxChart({ points, marks, alarmT }: { points: ChartPoint[]; mark
     <div>
       <svg ref={ref} viewBox={`0 0 ${W} ${H}`} className="h-auto w-full overflow-visible" role="img" aria-label="FTX withdrawals per hour from late October to 10 November 2022: a steady daily rhythm, then a collapse on 8 November.">
         {[0.25, 0.5, 0.75].map((f) => (
-          <line key={f} x1={0} x2={W} y1={PAD_T + f * (H - PAD_T - PAD_B)} y2={PAD_T + f * (H - PAD_T - PAD_B)} stroke="#e3e6eb" strokeWidth={1} vectorEffect="non-scaling-stroke" />
+          <line key={f} x1={0} x2={W} y1={PAD_T + f * (H - PAD_T - PAD_B)} y2={PAD_T + f * (H - PAD_T - PAD_B)} stroke="rgba(255,255,255,0.07)" strokeWidth={1} vectorEffect="non-scaling-stroke" />
         ))}
-        <motion.path d={area} fill="#002fa7" initial={{ opacity: 0 }} animate={{ opacity: play ? 0.06 : 0 }} transition={{ duration: 0.8, delay: reduce ? 0 : dur * 0.6 }} />
+        <motion.path d={area} fill="#5b7cff" initial={{ opacity: 0 }} animate={{ opacity: play ? 0.1 : 0 }} transition={{ duration: 0.8, delay: reduce ? 0 : dur * 0.6 }} />
         <motion.path
           d={before}
           fill="none"
-          stroke="#002fa7"
+          stroke="#8aa4ff"
           strokeWidth={1.75}
           strokeLinejoin="round"
           strokeLinecap="round"
@@ -60,7 +60,7 @@ export function FtxChart({ points, marks, alarmT }: { points: ChartPoint[]; mark
         <motion.path
           d={after}
           fill="none"
-          stroke="#b45309"
+          stroke="#f0b45a"
           strokeWidth={2}
           strokeLinejoin="round"
           strokeLinecap="round"
@@ -73,9 +73,9 @@ export function FtxChart({ points, marks, alarmT }: { points: ChartPoint[]; mark
           const cy = i % 2 ? PAD_T + 20 : PAD_T - 8;
           return (
             <motion.g key={m.n} initial={{ opacity: reduce ? 1 : 0 }} animate={{ opacity: play ? 1 : 0 }} transition={{ duration: 0.35, delay: reduce ? 0 : dur + 0.15 + i * 0.35 }}>
-              <line x1={mx} x2={mx} y1={cy + 12} y2={H} stroke={m.tone === "us" ? "#002fa7" : "#6b7280"} strokeWidth={1} strokeDasharray="3 4" vectorEffect="non-scaling-stroke" />
-              <circle cx={mx} cy={cy} r={12} fill={m.tone === "us" ? "#002fa7" : "#ffffff"} stroke={m.tone === "us" ? "#002fa7" : "#cdd2da"} strokeWidth={1.25} />
-              <text x={mx} y={cy + 4.5} textAnchor="middle" fontSize={12.5} fontWeight={600} fontFamily="var(--font-geist-mono)" fill={m.tone === "us" ? "#ffffff" : "#3d434f"}>{m.n}</text>
+              <line x1={mx} x2={mx} y1={cy + 12} y2={H} stroke={m.tone === "us" ? "#8aa4ff" : "#7d8492"} strokeWidth={1} strokeDasharray="3 4" vectorEffect="non-scaling-stroke" />
+              <circle cx={mx} cy={cy} r={12} fill={m.tone === "us" ? "#3d5fe0" : "#0d0f12"} stroke={m.tone === "us" ? "#8aa4ff" : "rgba(255,255,255,0.3)"} strokeWidth={1.25} />
+              <text x={mx} y={cy + 4.5} textAnchor="middle" fontSize={12.5} fontWeight={600} fontFamily="var(--font-jetbrains)" fill={m.tone === "us" ? "#ffffff" : "#b4bac6"}>{m.n}</text>
             </motion.g>
           );
         })}

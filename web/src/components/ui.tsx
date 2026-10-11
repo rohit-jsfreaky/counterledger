@@ -68,7 +68,7 @@ export function FloorCell({ floors, provers }: { floors: Floor[]; provers: numbe
 export function SectionTitle({ kicker, title, children }: { kicker?: string; title: string; children?: React.ReactNode }) {
   return (
     <div className="mb-10">
-      {kicker && <div className="mb-3 text-sm font-medium text-klein">{kicker}</div>}
+      {kicker && <div className="mb-3 text-sm font-medium text-blue">{kicker}</div>}
       <h1 className="max-w-[22ch] text-[34px] font-semibold leading-[1.05] tracking-[-0.03em] md:text-[46px]">{title}</h1>
       {children && <p className="mt-4 max-w-[68ch] text-[17px] leading-relaxed text-muted">{children}</p>}
     </div>
@@ -96,7 +96,7 @@ export function HourlyChart({
     .map((m) => ({ ...m, i: idx(m.t) }))
     .filter((m) => m.i >= 0)
     .map((m, row) => ({ ...m, row, pct: (m.i * bw * 100) / w }));
-  const color = (tone?: string) => (tone === "amber" ? "#b45309" : tone === "dim" ? "#6b7280" : "#002fa7");
+  const color = (tone?: string) => (tone === "amber" ? "#f0b45a" : tone === "dim" ? "#7d8492" : "#8aa4ff");
   return (
     <div className="relative" style={{ paddingTop: placed.length ? placed.length * 18 + 4 : 0 }}>
       {/* labels live in HTML so they never stretch with the chart */}
@@ -117,11 +117,11 @@ export function HourlyChart({
             y={y(p.count)}
             width={Math.max(bw - 1, 0.5)}
             height={height - y(p.count)}
-            fill={p.stall ? "#b45309" : "#002fa7"}
+            fill={p.stall ? "#f0b45a" : "#6e8bff"}
             opacity={p.stall ? 0.85 : 0.7}
           />
         ))}
-        {points.some((p) => p.median != null) && <path d={median} fill="none" stroke="#6b7280" strokeWidth="1.5" strokeDasharray="4 3" vectorEffect="non-scaling-stroke" />}
+        {points.some((p) => p.median != null) && <path d={median} fill="none" stroke="#7d8492" strokeWidth="1.5" strokeDasharray="4 3" vectorEffect="non-scaling-stroke" />}
         {placed.map((m) => (
           <line key={m.label} x1={m.i * bw} x2={m.i * bw} y1={0} y2={height} stroke={color(m.tone)} strokeWidth="1.5" vectorEffect="non-scaling-stroke" />
         ))}
@@ -150,7 +150,7 @@ export function Sparkline({ values, className = "", tone = "klein" }: { values: 
   if (values.length < 2) return null;
   const max = Math.max(1, ...values);
   const pts = values.map((v, i) => `${((i / (values.length - 1)) * 100).toFixed(2)},${(30 - (v / max) * 28).toFixed(2)}`).join(" ");
-  const c = tone === "amber" ? "#b45309" : "#002fa7";
+  const c = tone === "amber" ? "#f0b45a" : "#6e8bff";
   return (
     <svg viewBox="0 0 100 32" preserveAspectRatio="none" className={className} aria-hidden>
       <polyline points={`0,32 ${pts} 100,32`} fill={c} fillOpacity={0.08} stroke="none" />

@@ -4,41 +4,44 @@ import { Logo } from "./nav";
 
 export function Footer() {
   const st = devnet();
+  const col = (title: string, links: [string, string][]) => (
+    <div>
+      <div className="font-mono text-[13px] text-dim">{title}</div>
+      <ul className="mt-4 space-y-2.5">
+        {links.map(([h, l]) => (
+          <li key={h}>
+            {h.startsWith("http") ? (
+              <a href={h} target="_blank" rel="noreferrer" className="text-[15px] font-medium text-text/90 hover:text-text">{l}</a>
+            ) : (
+              <Link href={h} className="text-[15px] font-medium text-text/90 hover:text-text">{l}</Link>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
   return (
-    <footer className="border-t border-line bg-surface">
-      <div className="mx-auto grid max-w-[1280px] gap-10 px-5 py-14 text-sm lg:grid-cols-12 lg:px-8">
-        <div className="lg:col-span-5">
-          <Link href="/" className="flex items-center gap-2.5">
-            <Logo />
-            <span className="text-[15px] font-semibold tracking-tight">Counterledger</span>
-          </Link>
-          <p className="mt-4 max-w-[42ch] text-dim">
-            The users&apos; side of every exchange&apos;s books. A Solana devnet demo with test-USDC: the cover market is a protocol demo, not insurance, and the withdrawal watcher is a single signer today.
-          </p>
-        </div>
-        <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-7">
-          <div className="space-y-2.5">
-            <div className="font-medium">Product</div>
-            {[["/board", "Board"], ["/prove", "Prove my balance"], ["/cover", "Cover"]].map(([h, l]) => (
-              <Link key={h} href={h} className="block text-dim hover:text-text">{l}</Link>
-            ))}
-          </div>
-          <div className="space-y-2.5">
-            <div className="font-medium">Evidence</div>
-            {[["/replay", "Replays"], ["/break", "Try to break it"], ["/judges", "For judges"]].map(([h, l]) => (
-              <Link key={h} href={h} className="block text-dim hover:text-text">{l}</Link>
-            ))}
-          </div>
-          <div className="space-y-2.5">
-            <div className="font-medium">Code</div>
-            <a href="https://github.com/rohit-jsfreaky/counterledger" className="block text-dim hover:text-text">Source</a>
-            <a href={`https://explorer.solana.com/address/${st.programId}?cluster=devnet`} className="block text-dim hover:text-text">Program on devnet</a>
+    <footer className="bg-[#0b0b0c]">
+      <div className="mx-auto max-w-[1360px] px-5 pb-10 pt-16 lg:px-10">
+        <Link href="/" className="inline-flex items-center gap-2.5">
+          <Logo size={26} />
+          <span className="text-[19px] font-semibold tracking-[-0.02em]">Counterledger</span>
+        </Link>
+        <p className="mt-2 text-[15px] text-dim">The users&apos; side of every exchange&apos;s books</p>
+
+        <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          {col("Product", [["/board", "Board"], ["/prove", "Prove my balance"], ["/cover", "Cover"]])}
+          {col("Evidence", [["/replay", "Replays"], ["/break", "Try to break it"], ["/judges", "For judges"]])}
+          {col("Code", [["https://github.com/rohit-jsfreaky/counterledger", "GitHub"], [`https://explorer.solana.com/address/${st.programId}?cluster=devnet`, "Program on devnet"]])}
+          <div>
+            <div className="font-mono text-[13px] text-dim">Run it yourself</div>
+            <p className="mt-4 text-[15px] font-medium">Recompute every number on this site</p>
+            <code className="mt-3 block rounded-[10px] border border-line bg-black px-4 py-3 font-mono text-[13px] text-muted">uv run verify</code>
           </div>
         </div>
-      </div>
-      <div className="border-t border-line">
-        <div className="mx-auto flex max-w-[1280px] flex-wrap justify-between gap-2 px-5 py-5 text-[13px] text-dim lg:px-8">
-          <span>Every number comes from a published evidence file that <span className="font-mono">uv run verify</span> recomputes.</span>
+
+        <div className="mt-16 flex flex-wrap justify-between gap-3 border-t border-line pt-6 font-mono text-[12px] text-dim">
+          <span>Solana devnet, test-USDC only. Cover is a protocol demo, not insurance. The watcher is a single signer today.</span>
           <span>Proven floors are a minimum, never the total.</span>
         </div>
       </div>

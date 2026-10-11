@@ -116,7 +116,7 @@ export function ProveFlow({ providers }: { providers: readonly Provider[] }) {
                 key={p.exchange}
                 disabled={!p.recordable}
                 onClick={() => setExchange(p.exchange)}
-                className={`rounded-xl border p-4 text-left transition ${exchange === p.exchange ? "border-klein bg-klein/[0.04] ring-1 ring-klein" : "border-line bg-surface hover:border-line-strong"} ${p.recordable ? "" : "cursor-not-allowed opacity-55"}`}
+                className={`rounded-xl border p-4 text-left transition ${exchange === p.exchange ? "border-blue-2 bg-klein/[0.04] ring-1 ring-blue-2" : "border-line bg-surface hover:border-line-strong"} ${p.recordable ? "" : "cursor-not-allowed opacity-55"}`}
               >
                 <div className="flex items-center justify-between">
                   <span className="font-semibold">{p.name}</span>
@@ -146,7 +146,7 @@ export function ProveFlow({ providers }: { providers: readonly Provider[] }) {
             {step === "done" ? (
               <span className="inline-flex items-center gap-1.5 rounded-full bg-ok/10 px-2.5 py-1 text-[12px] font-medium text-ok"><CheckCircle size={14} weight="fill" /> Verified on Solana</span>
             ) : busy ? (
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-klein/10 px-2.5 py-1 text-[12px] font-medium text-klein"><CircleNotch size={13} className="animate-spin" /> In progress</span>
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-klein/10 px-2.5 py-1 text-[12px] font-medium text-blue"><CircleNotch size={13} className="animate-spin" /> In progress</span>
             ) : (
               <span className="rounded-full bg-panel px-2.5 py-1 text-[12px] text-dim">Not started</span>
             )}
@@ -202,7 +202,7 @@ function StepRow({ n, state, title, last, children }: { n: number; state: string
       {!last && <span aria-hidden className={`absolute bottom-0 left-[15px] top-9 w-px ${state === "done" ? "bg-klein" : "bg-line"}`} />}
       <span
         className={`relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full font-mono text-[13px] font-semibold ${
-          state === "done" ? "bg-klein text-white" : state === "active" ? "bg-surface text-klein ring-2 ring-klein" : "bg-panel text-dim ring-1 ring-line"
+          state === "done" ? "bg-klein text-white" : state === "active" ? "bg-surface text-blue ring-2 ring-blue-2" : "bg-panel text-dim ring-1 ring-line"
         }`}
       >
         {state === "done" ? <Check size={15} weight="bold" /> : n}
