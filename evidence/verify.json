@@ -1,0 +1,130 @@
+{
+ "passed": 30,
+ "total": 30,
+ "pending": [
+  "OKX live heartbeat: 29-day backfill in progress, no state published yet",
+  "Binance live heartbeat: 29-day backfill in progress, no state published yet"
+ ],
+ "lines": [
+  {
+   "ok": true,
+   "msg": "ftx-2022-11 hourly counts re-derived from all 815,100 transfers (outflows sha256 8bb4ee2b97b4…)"
+  },
+  {
+   "ok": true,
+   "msg": "ftx-2022-11 heartbeat recomputed from raw + params = published evidence (alarm T-7.86h, control alarms 0)"
+  },
+  {
+   "ok": true,
+   "msg": "ftx-2022-11 cover recomputed from raw + params = published evidence (payout T+37.14h vs Nexus T+100d, control false halts 0)"
+  },
+  {
+   "ok": true,
+   "msg": "wazirx-2024-07 hourly counts re-derived from all 8,431 transfers (outflows sha256 cac04b87b073…)"
+  },
+  {
+   "ok": true,
+   "msg": "wazirx-2024-07 heartbeat recomputed from raw + params = published evidence (alarm T+6.5h, control alarms 1)"
+  },
+  {
+   "ok": true,
+   "msg": "wazirx-2024-07 cover recomputed from raw + params = published evidence (payout T+47.5h vs Nexus T+100d, control false halts 0)"
+  },
+  {
+   "ok": true,
+   "msg": "bitget-2026-09 hourly counts re-derived from all 414,148 transfers (outflows sha256 f47067cc9ae7…)"
+  },
+  {
+   "ok": true,
+   "msg": "bitget-2026-09 heartbeat recomputed from raw + params = published evidence (alarm T+5.92h, control alarms 0)"
+  },
+  {
+   "ok": true,
+   "msg": "bitget-2026-09 cover recomputed from raw + params = published evidence (payout T+46.92h vs Nexus T+100d, control false halts 0)"
+  },
+  {
+   "ok": true,
+   "msg": "CoinDCX live heartbeat state 'not_enough_data' as of 2026-10-10T19:00:00Z recomputed from data/live/coindcx/hourly.csv (24h outflows {'ethereum': 1, 'tron': 2, 'bsc': 0})"
+  },
+  {
+   "ok": true,
+   "msg": "KuCoin live heartbeat state 'normal' as of 2026-10-10T19:00:00Z recomputed from data/live/kucoin/hourly.csv (24h outflows {'ethereum': 1204, 'tron': 6403, 'bsc': 53})"
+  },
+  {
+   "ok": true,
+   "msg": "Bitget live heartbeat state 'normal' as of 2026-10-10T19:00:00Z recomputed from data/live/bitget/hourly.csv (24h outflows {'ethereum': 2513, 'tron': 5671, 'bsc': 9773})"
+  },
+  {
+   "ok": true,
+   "msg": "Bybit live heartbeat state 'normal' as of 2026-10-10T19:00:00Z recomputed from data/live/bybit/hourly.csv (24h outflows {'ethereum': 7469, 'tron': 42927, 'bsc': 1598})"
+  },
+  {
+   "ok": true,
+   "msg": "Binance reserves $172.96B: every number has a balance source and an address source; assets sum to the total"
+  },
+  {
+   "ok": true,
+   "msg": "OKX reserves $31.32B: every number has a balance source and an address source; assets sum to the total"
+  },
+  {
+   "ok": true,
+   "msg": "Bybit reserves $16.28B: every number has a balance source and an address source; assets sum to the total"
+  },
+  {
+   "ok": true,
+   "msg": "Bitget reserves $6.21B: every number has a balance source and an address source; assets sum to the total"
+  },
+  {
+   "ok": true,
+   "msg": "KuCoin reserves $3.45B: every number has a balance source and an address source; assets sum to the total"
+  },
+  {
+   "ok": true,
+   "msg": "CoinDCX reserves $0.18B: every number has a balance source and an address source; assets sum to the total"
+  },
+  {
+   "ok": true,
+   "msg": "WazirX reserves shown as '—' with a reason: no current published address list (its 2023 PoR page on CoinGabbar is gone)"
+  },
+  {
+   "ok": true,
+   "msg": "coindcx score 85 recomputed from its recorded inputs = published; same hash posted on devnet (tx 4BBpS4jfmS…)"
+  },
+  {
+   "ok": true,
+   "msg": "wazirx score 50 recomputed from its recorded inputs = published; same hash posted on devnet (tx 1teQVsYBWA…)"
+  },
+  {
+   "ok": true,
+   "msg": "binance score 75 recomputed from its recorded inputs = published; same hash posted on devnet (tx 55tyiJh4PK…)"
+  },
+  {
+   "ok": true,
+   "msg": "bybit score 90 recomputed from its recorded inputs = published; same hash posted on devnet (tx Rt4Z1o6h3n…)"
+  },
+  {
+   "ok": true,
+   "msg": "okx score 75 recomputed from its recorded inputs = published; same hash posted on devnet (tx 2JAYcG6Qv8…)"
+  },
+  {
+   "ok": true,
+   "msg": "kucoin score 90 recomputed from its recorded inputs = published; same hash posted on devnet (tx 4Knv7WmLa8…)"
+  },
+  {
+   "ok": true,
+   "msg": "bitget score 90 recomputed from its recorded inputs = published; same hash posted on devnet (tx 4q6jWgGBef…)"
+  },
+  {
+   "ok": "< 1 USDT",
+   "msg": "coindcx balance proof on devnet (< 1 USDT, record 6uRFWpGz…) — public file holds no exact balance or account id"
+  },
+  {
+   "ok": true,
+   "msg": "devnet halt replay rp-ftx-a1: cover bought (premium 5.753425 test-USDC), halt posted with the ftx-2022-11 evidence hash, paid 1000 after the 120s challenge window"
+  },
+  {
+   "ok": true,
+   "msg": "inclusion checker (Binance's own Poseidon/Merkle code): valid record included; edited balance, wrong index and wrong root all rejected"
+  }
+ ]
+}

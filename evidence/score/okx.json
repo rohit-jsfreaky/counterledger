@@ -1,7 +1,7 @@
 {
  "kind": "score",
  "exchange": "okx",
- "as_of": "2026-10-11T08:00:00Z",
+ "as_of": "2026-10-11T12:00:00Z",
  "score": 75,
  "deductions": [
   {
@@ -35,11 +35,11 @@
   },
   "chain": {
    "account": "4MKuvbma6kbJMGuQXzq6HNy67to3WF9nfRcRywCh3Soh",
-   "slot": 509841361,
-   "data_sha256": "066ee9efb75729c7737e016f8c6fc49f7ab542abee027c297067aaaac382ca17"
+   "slot": 509903058,
+   "data_sha256": "de59f3054de799ace865d63d834a8a0a988ab2df360e64570eb3fb060fe753d0"
   }
  },
  "params_file": "data/score-params.json",
  "note": "Shows how much of the books can be seen and proven from outside. Not a solvency rating.",
- "evidence_sha256": "f5708ce213986109f889ee1ec23c9f568a8622b3c690c87b0b90c5dfbd155ed7"
+ "evidence_sha256": "fcf242b2f6c2a48daf5b5cc569c03fd81252ee6af822d8870b306cc9871618a9"
 }

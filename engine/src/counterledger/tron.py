@@ -10,7 +10,7 @@ from counterledger import cache
 URL = "https://api.trongrid.io/v1/accounts/{address}/transactions/trc20"
 USDT = "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t"
 PAGE = 200
-MIN_GAP = 0.1
+MIN_GAP = 0.25  # two backfills can share the key; stay well under TronGrid limits
 
 
 def _ok(d: Any) -> bool:

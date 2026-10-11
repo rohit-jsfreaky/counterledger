@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import csv
 import json
+import os
 import sys
 import time
 from collections import Counter, defaultdict
@@ -49,16 +50,19 @@ def _eth_rows(addr: str, own: set[str], token_sym: dict[str, str], b0: int, b1: 
     return out
 
 
-def _bsc_rows(addr: str, own: set[str], tokens: list[str], b0: int, b1: int, t1: int) -> list[dict]:
+def _bsc_rows(addr: str, own: set[str], tokens: list[str], b0: int, b1: int, t1: int,
+              network: str = "bsc-mainnet", chain: str = "bsc", native: str = "BNB") -> list[dict]:
+    """NodeReal nr_getAssetTransfers rows → outflows. Also used for Ethereum when CL_ETH_SOURCE=nodereal: same signal
+    as the Etherscan path (native value > 0 + allow-listed tokens, successful, to outside the own set)."""
     out = []
     for cat, contracts in (("external", None), ("20", tokens)):
-        for r in bsc.transfers_from(addr, b0, b1, cat, contracts):
+        for r in bsc.transfers_from(addr, b0, b1, cat, contracts, network=network):
             ts = int(r.get("blockTimeStamp") or r.get("blockTimestamp") or 0)
             to = (r.get("to") or "").lower()
             if (not to or to in own or ts >= t1 or int(r.get("value") or "0x0", 16) == 0
                     or str(r.get("receiptsStatus", 1)) == "0"):
                 continue
-            out.append({"chain": "bsc", "ts": ts, "hash": r["hash"], "asset": r.get("asset") or "BNB",
+            out.append({"chain": chain, "ts": ts, "hash": r["hash"], "asset": r.get("asset") or native,
                         "from": addr, "to": to, "value": str(int(r["value"], 16))})
     return out
 
@@ -103,9 +107,16 @@ def update(ex: str, now: int | None = None) -> dict:
     if hot_bsc:
         bb0_default, bb1 = bsc.block_at(t0, t1), bsc.block_at(t1, t1)
 
+    eth_via_nodereal = os.environ.get("CL_ETH_SOURCE") == "nodereal"
+    eth_tokens = [v.lower() for v in hp["tokens"].values()]
+
     def eth_job(a: str) -> list[dict]:
         start = state["ethereum"].get(a, b0_default - 1) + 1
-        return _eth_rows(a, own_eth, token_sym, start, b1, t1) if start <= b1 else []
+        if start > b1:
+            return []
+        if eth_via_nodereal:
+            return _bsc_rows(a, own_eth, eth_tokens, start, b1, t1, network="eth-mainnet", chain="ethereum", native="ETH")
+        return _eth_rows(a, own_eth, token_sym, start, b1, t1)
 
     def bsc_job(a: str) -> list[dict]:
         start = state["bsc"].get(a, bb0_default - 1) + 1

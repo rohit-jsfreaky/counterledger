@@ -1,7 +1,7 @@
 {
  "kind": "score",
  "exchange": "wazirx",
- "as_of": "2026-10-11T08:00:00Z",
+ "as_of": "2026-10-11T12:00:00Z",
  "score": 50,
  "deductions": [
   {
@@ -34,11 +34,11 @@
   },
   "chain": {
    "account": "9FT7iAujMRYhRSAyNLMLxQfr8WjXYE5RodAbpZWrd2z5",
-   "slot": 509841357,
-   "data_sha256": "17fdb39c0d01df8582fb4796049bc17722bb472b9bd2d0eeb97ce676f67f085f"
+   "slot": 509903055,
+   "data_sha256": "8c7748e07b6e8bd5213f9a8436a1a27483bdc3aac29b32df703f111e1253fe3d"
   }
  },
  "params_file": "data/score-params.json",
  "note": "Shows how much of the books can be seen and proven from outside. Not a solvency rating.",
- "evidence_sha256": "24c7e47118587b70c5e914a2d3879202ab111e50794957ad68d2b00245fa7a13"
+ "evidence_sha256": "a0543836492376edd90592eba0eed51a085fe02f9a911e4fbe51f9e33f6f0135"
 }

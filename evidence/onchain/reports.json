@@ -9,41 +9,48 @@
   },
   "score": {
    "value": 85,
-   "as_of": "2026-10-11T08:00:00Z",
-   "evidence_sha256": "50620ead2c66def3cf54d54bebd31cdcdc526ec6925caa2c9242162c45774c5c",
-   "tx": "2GywbYGwWL64NLnVzjhekYdMRcZhmVSSfUpxWHDAxdP4g2wpWTzqh7dvHbs6zF15nNB7r3QPxQQE9jvCsztnxWeE"
+   "as_of": "2026-10-11T12:00:00Z",
+   "evidence_sha256": "acbf3e1df1f91d66a0b5a80efd5e2f04862540276e59fbcd8d176edda6b290ef",
+   "tx": "4BBpS4jfmSEaYDi6LCt5VtmoMKyfu2gVPb98BW8fkj8w4CsLeYgJiVaVWaz2JzmPAUn3EDgNTAVjm2PKpr7U4Nia"
   }
  },
  "wazirx": {
   "score": {
    "value": 50,
-   "as_of": "2026-10-11T08:00:00Z",
-   "evidence_sha256": "24c7e47118587b70c5e914a2d3879202ab111e50794957ad68d2b00245fa7a13",
-   "tx": "54SNV5iKZ54Zp3JyRfkJ2P5UNbPqwdCF3UK5Y84EZkMoAJsgLEq7pCYAKyDpKsjeit8bgASRn5EyqYnR3isM8wjT"
+   "as_of": "2026-10-11T12:00:00Z",
+   "evidence_sha256": "a0543836492376edd90592eba0eed51a085fe02f9a911e4fbe51f9e33f6f0135",
+   "tx": "1teQVsYBWApotYV2WtVvCab6tq1gt3oJRs7N1TTFrXB5JKJDCn13Mn7PTVYc66asc68gDXSHv8gxBsWBSQYRvKt"
   }
  },
  "binance": {
   "score": {
    "value": 75,
-   "as_of": "2026-10-11T08:00:00Z",
-   "evidence_sha256": "20acd4b082f6ce8adf821748b2ba18fdccfd5e0fe39d1d28cd491e0a952099df",
-   "tx": "3NbNB92pUKXzGx2F3rcYdfkjei1kgcvV16ASaEQkFim9tmMdqhpaB6V5C1G5PaVKgRZ7KPgxLRkU318Hv6eDsx4p"
+   "as_of": "2026-10-11T12:00:00Z",
+   "evidence_sha256": "786d85cc44ca3d2e06c545e01194047399701fbe8b74b707c9df6d8c0e070715",
+   "tx": "55tyiJh4PKC5J8Z65158FEwiafRvWzzKi8KeEqT8uVxy8ELSRaBLWQmom72FfHeS5drr7qp8HmA8yfb9GHhNrYUF"
   }
  },
  "bybit": {
   "score": {
-   "value": 75,
-   "as_of": "2026-10-11T08:00:00Z",
-   "evidence_sha256": "ef3b77d77dbfcc365b08fbf34d41a370d96466e78746ff0d4f42807e270d06ac",
-   "tx": "5sm9brKNjAYeVvsL2XTAAecEwzcWphgrsDPWPLjUikf1aNyJiizZFb9P4yRRCrF2BLoWeavgE7GWWbwQSvGoKeb"
+   "value": 90,
+   "as_of": "2026-10-11T12:00:00Z",
+   "evidence_sha256": "36d32eeb3ff96599dbd413d28bb82998b28475cf735be5973daeea93fa56d8f1",
+   "tx": "Rt4Z1o6h3nKN8dXvgQHCNkrjs4SWBSYqgme13QHkpa1bEHkqtpVU2vmbHC7QY9HXeZg5aS6mMRBkZmW6b5BKL2y"
+  },
+  "heartbeat": {
+   "state": "normal",
+   "value": 1,
+   "as_of": "2026-10-10T19:00:00Z",
+   "evidence_sha256": "bd42a1212852fc0e8e386bd42c6b285b22e3aa3fe1fc169665d13f2067bf0a22",
+   "tx": "3e1gEt9HTkmtHaFdmErHbeHfCgLgqHsnCeEXb9Q1YWEXkVf1m2W9LSaVi8532GgqYD6mEXJqadECLS7YkZc2dW4z"
   }
  },
  "okx": {
   "score": {
    "value": 75,
-   "as_of": "2026-10-11T08:00:00Z",
-   "evidence_sha256": "f5708ce213986109f889ee1ec23c9f568a8622b3c690c87b0b90c5dfbd155ed7",
-   "tx": "5YgfNRH2JKErv29edd1DtWS5FDnU1Lc9bN5Wu79FiQf6vY5dRtBTa7bbWykJakspJJeKf6Vhvu8ZpsjJFPXc5Yos"
+   "as_of": "2026-10-11T12:00:00Z",
+   "evidence_sha256": "fcf242b2f6c2a48daf5b5cc569c03fd81252ee6af822d8870b306cc9871618a9",
+   "tx": "2JAYcG6Qv8hMYHbJPXPe3gs8WRpAMhre3jCqFu4x5pTMKL14TbkBD1BjYoLjS1JDD1PZ5DEmJHAzkw519eWnekuy"
   }
  },
  "kucoin": {
@@ -56,9 +63,9 @@
   },
   "score": {
    "value": 90,
-   "as_of": "2026-10-11T08:00:00Z",
-   "evidence_sha256": "5a838c1fb9d3c4acb131f0b9b4720d800055983a4f0884753daa07c7370e5639",
-   "tx": "2gnoEZ3ewJjoK7pb9JKuT5qQ8riUy9roGGeVaZBxqyXKuDmC98NF4WzkX5ff5aDDH3NkSfSVgzF7k8cHRTiPhx3M"
+   "as_of": "2026-10-11T12:00:00Z",
+   "evidence_sha256": "c1fbf4731c28593a0a5cb4acdf378db82572f7789d31132adb4308e04adb1fde",
+   "tx": "4Knv7WmLa8PugsRq3SSRfzavFk3g7UNMNiBnfCBtH8mETbxymmmYAh4azwCNzXvZY9NYfPkKjwZJhKGRDjt89EYb"
   }
  },
  "bitget": {
@@ -71,9 +78,9 @@
   },
   "score": {
    "value": 90,
-   "as_of": "2026-10-11T08:00:00Z",
-   "evidence_sha256": "7ba34aaa7ab80824af84b21cdd27c84709ced9960df70ea1138f6773abc055b9",
-   "tx": "4tGSuKmiLNewp3rwEJw2CVKAwfiT4jSE4U5PfoDVjGuubX1DZvGMLL6QDSYAqLTKkcNnnjc56NKbRmbXTWPW6mnN"
+   "as_of": "2026-10-11T12:00:00Z",
+   "evidence_sha256": "aa59902b8a0acfa504a1d109b6266e2be5a75140c1843b33b20e576d05bc7b78",
+   "tx": "4q6jWgGBefumWiaXAtFvHvTqHYwWSrhRiqdATew1NUMjTyGpKXQPZtLfuwNJx3d3PC6dxczaQqVVDHrNPc3AXX3T"
   }
  }
 }

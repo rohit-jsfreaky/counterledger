@@ -1,5 +1,7 @@
-"""BSC history via NodeReal MegaNode (free plan, archive data). The API key lives in the URL path, so every call is
-cached under a key-free URL. Free public BSC RPCs refuse eth_getLogs history (probed 11 Oct), hence NodeReal."""
+"""BSC (and, optionally, Ethereum) history via NodeReal MegaNode (free plan, archive data). The API key lives in the
+URL path, so every call is cached under a key-free URL. Free public BSC RPCs refuse eth_getLogs history (probed 11 Oct),
+hence NodeReal. `network="eth-mainnet"` gives a second Ethereum source with its own rate limit (Etherscan's free limit
+is per account, so extra Etherscan keys do not add speed)."""
 
 from __future__ import annotations
 
@@ -8,18 +10,17 @@ from typing import Any, Iterator
 
 from counterledger import cache
 
-PUBLIC_URL = "https://bsc-mainnet.nodereal.io/v1/<key>"
-MAX_SPAN = 100_000  # nr_getAssetTransfers: toBlock - fromBlock must be <= 100000
+URL_TEMPLATE = "https://{network}.nodereal.io/v1/<key>"
+PUBLIC_URL = URL_TEMPLATE.format(network="bsc-mainnet")
+MAX_SPAN = {"bsc-mainnet": 100_000, "eth-mainnet": 999}  # nr_getAssetTransfers block-range limits (seen 11 Oct)
 MIN_GAP = 0.35
 
 
-def _url() -> str:
-    return PUBLIC_URL.replace("<key>", os.environ.get("NODEREAL_API_KEY", ""))
-
-
-def _rpc(method: str, params: list, rid: int = 1) -> Any:
+def _rpc(method: str, params: list, rid: int = 1, network: str = "bsc-mainnet") -> Any:
+    public = URL_TEMPLATE.format(network=network)
+    real = public.replace("<key>", os.environ.get("NODEREAL_API_KEY", ""))
     body = {"jsonrpc": "2.0", "id": rid, "method": method, "params": params}
-    return cache.post_json(_url(), body, min_gap=MIN_GAP, ok=cache.rpc_ok, key_url=PUBLIC_URL)["result"]
+    return cache.post_json(real, body, min_gap=MIN_GAP, ok=cache.rpc_ok, key_url=public)["result"]
 
 
 def head(as_of: int) -> int:
@@ -56,11 +57,12 @@ def block_at(ts: int, as_of: int) -> int:
     return lo
 
 
-def transfers_from(address: str, b0: int, b1: int, category: str, contracts: list[str] | None = None) -> Iterator[dict]:
-    """All transfers sent FROM address in blocks [b0, b1], oldest first. category: "external" (native BNB) or "20"."""
+def transfers_from(address: str, b0: int, b1: int, category: str, contracts: list[str] | None = None,
+                   network: str = "bsc-mainnet") -> Iterator[dict]:
+    """All transfers sent FROM address in blocks [b0, b1], oldest first. category: "external" (native coin) or "20"."""
     cur = b0
     while cur <= b1:
-        end = min(cur + MAX_SPAN, b1)
+        end = min(cur + MAX_SPAN[network], b1)
         page_key = None
         while True:
             q: dict[str, Any] = {"category": [category], "fromBlock": hex(cur), "toBlock": hex(end),
@@ -69,7 +71,7 @@ def transfers_from(address: str, b0: int, b1: int, category: str, contracts: lis
                 q["contractAddresses"] = contracts
             if page_key:
                 q["pageKey"] = page_key
-            r = _rpc("nr_getAssetTransfers", [q])
+            r = _rpc("nr_getAssetTransfers", [q], network=network)
             yield from r.get("transfers") or []
             page_key = r.get("pageKey")
             if not page_key or not r.get("transfers"):

@@ -1,0 +1,38 @@
+{
+ "kind": "inclusion-testvectors",
+ "verifier_code": "github.com/binance/zkmerkle-proof-of-solvency@a7addd9326722f8d5fcd6c8ac52a06358bf996c5",
+ "cross_check": "valid.json -> Binance's own `verifier -user`: 'verify pass!!!'; edited_balance.json -> 'verify failed...' (run 11 Oct 2026)",
+ "binance_repo_sample_note": "Binance's bundled src/verifier/config/user_config.json fails Binance's own verifier at this commit (stale sample); not used.",
+ "limit": "Not run on a real Binance user record: the builder has no Binance account, and a new account would not be in Binance's tree before the deadline.",
+ "vectors": [
+  {
+   "record": "tools/inclusion/testdata/valid.json",
+   "expected_included": true,
+   "included": true,
+   "leaf": "2fd1d376d81fbb337034562c367eaf31e75d0ba0e54e8ecce979d79d70bf13cf",
+   "ok": true
+  },
+  {
+   "record": "tools/inclusion/testdata/edited_balance.json",
+   "expected_included": false,
+   "included": false,
+   "leaf": "26fec52c56b839944690bd0c4e622531e9e25091ad4bd012e894dc7d6af78265",
+   "ok": true
+  },
+  {
+   "record": "tools/inclusion/testdata/wrong_index.json",
+   "expected_included": false,
+   "included": false,
+   "leaf": "2fd1d376d81fbb337034562c367eaf31e75d0ba0e54e8ecce979d79d70bf13cf",
+   "ok": true
+  },
+  {
+   "record": "tools/inclusion/testdata/wrong_root.json",
+   "expected_included": false,
+   "included": false,
+   "leaf": "2fd1d376d81fbb337034562c367eaf31e75d0ba0e54e8ecce979d79d70bf13cf",
+   "ok": true
+  }
+ ],
+ "evidence_sha256": "08aa518782595d750ae09ff340b2ebca3d5846f42ce17481cc88ac0bd99cdcd5"
+}

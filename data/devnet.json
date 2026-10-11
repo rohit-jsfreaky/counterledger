@@ -109,5 +109,48 @@
       "event": "ftx-2022-11",
       "file": "evidence/onchain/replay-ftx-2022-11-a1.json"
     }
+  },
+  "break": {
+    "note": "Attacker wallets for /break simulations. Buffers hold public claim info; nothing is ever sent from the web app.",
+    "exchange": "coindcx",
+    "nullifier": "0x5ecb9d89668cf0cb5ceea960edda41acf2bfa6f50aff1f92b29e5069b1740a75",
+    "signed": [
+      {
+        "owner": "0x87f1e40c09cbd6c3f64a90a35e67afb01709ae51",
+        "timestampS": 1791665574,
+        "epoch": 1,
+        "signature": "0x0113c1330eff9a45628eae0aff4184dd9ab3c8074c71d12e842d5d7cd294fd3a7905d655ef995c1e8d204361192594675d49f62b56edc946e5466bbf588e9def1b"
+      },
+      {
+        "owner": "0x87f1e40c09cbd6c3f64a90a35e67afb01709ae51",
+        "timestampS": 1791665586,
+        "epoch": 1,
+        "signature": "0xadd8bce33555394098eceecf38aa868efcfbe330497214762e4569dea5ebb1f24ffbdbb799efba7a8ee1f9d217dda18b97ca324394429601ccecabb08c3fb6f21c"
+      }
+    ],
+    "forger": {
+      "wallet": "5SRfEDBtQUw3CZQv4HGFdaPQy1mNNoVzdCjWN1YpCApq",
+      "buffer": "D28idnSxUoyB1tVqjNzP3Phfu8vNTzufBqg7uWnKNSyf",
+      "txs": [
+        "256a8fPNegLYWe6ZoZGMTMoQdTg4CjN6jPi53vSftqL5bKQmqJiR34YgRAH2Kxzt1UNR8d53vxV48z6M4LvqdAN5",
+        "5gpUinFdRjXr7GsRqFgMdVxBdAWdGMtC3FCoQhf5AvNGhZJuqbThNfcwtF8Bj2ix4FimFYG272HsZAJ4Y2RUwDeS",
+        "2s1Dr7tJNWJ5VRM4pvkyvgGoS1bwkkKZUbATCfSLgc5Abskv2RQSAPU7Dcd9kvefPZPv7aqHHhxcjiQnzzzGhRYR",
+        "ajmwqoqGxptCEGf3rn9YKsNXey2dUdhbrnjfCBVYmwv8cGrpMxSCYVtExnNFiTVbVWJUBNj5tKYBaCjbXxKL4Ch",
+        "i97SHY3fjKPfotQsbAtvfn6kuU9frmGmKxGY9ETLAJqnXhACJNPqM898bMv4rK3WNhMcmSAMwkUi6oBjn2xRqhh",
+        "2j8zRqPEtoNKdE9yfS5p29k2EPijTdJeJ6cCy8JLGC3kzQDtejNmuVBj9yQU2uqfBfVEFprFHXgiWHixuDZ6rFTu"
+      ]
+    },
+    "replayer": {
+      "wallet": "EwBzq1hV2hi8cs97naGyuypuSnK3oHVW2mFTyq18AwLL",
+      "buffer": "5JJMgGW9QrRf3N2Gyx32jR6WipdpSaJDSCifH3ZyQLca",
+      "txs": [
+        "3Z7VX1uhfJEhu3oL42x7KvJn3RNxDTp6onXLQ9wjaU8V8qwob6VsuMrEqxSXubF5wx1NUwDbLxGGrZqgsU35eTZM",
+        "5SkB7yqGdDYfgYgdGUFjXdJ12y69t8RXXYpeKSJkUXLX1r7Y6gBCzmoHa1dKt1VukDsm7Ee4UYXocENhtn8tRjEd",
+        "4GdpbW5tU9XKnQoaifACyvx9mbQquGdR2SuuWT3T2Qh87wTxGmD9UEKakNmcyxBtFjDETfDXHDcmGvuMShCbHyvc",
+        "2wL1Qh1B9nY2g2YFVX8dyxfJKARXKKE4cmAK7QY85RjeEAtrS3mpGLQpExBDSwmggZh42BttdHaCYTTqjmr8idsr",
+        "5PYEEUFXswMcDxLAFMbqmjNLW99B2iRBNKiYnCMnfkMNvFvPdiXfWw6kCHqFSm4qYYaLFXGTAGjkkTZaLwd3xARW",
+        "2JK9G83YWrFPHZCV91RABHeZ6KZfvPQ39UighprVZAtowAjyXenEiyP83Vt8cjo1cfLBRzCijVqtcSNqkfjEq36E"
+      ]
+    }
   }
 }

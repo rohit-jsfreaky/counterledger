@@ -1,7 +1,7 @@
 {
  "kind": "score",
  "exchange": "coindcx",
- "as_of": "2026-10-11T08:00:00Z",
+ "as_of": "2026-10-11T12:00:00Z",
  "score": 85,
  "deductions": [
   {
@@ -39,11 +39,11 @@
   },
   "chain": {
    "account": "ExbPbj8dcJga7rbJGNVNr9TN6Lq7cu2nESPwvxLi4BoP",
-   "slot": 509841357,
-   "data_sha256": "c00372eb2b984f770f6b280ff0db88e93e4ce565e4066e0927711fc3c7f55500"
+   "slot": 509903055,
+   "data_sha256": "10d90a1c3d3c9d9efcbfab14bc66de8554dda019b5dc6def6f1afd00eea69aa4"
   }
  },
  "params_file": "data/score-params.json",
  "note": "Shows how much of the books can be seen and proven from outside. Not a solvency rating.",
- "evidence_sha256": "50620ead2c66def3cf54d54bebd31cdcdc526ec6925caa2c9242162c45774c5c"
+ "evidence_sha256": "acbf3e1df1f91d66a0b5a80efd5e2f04862540276e59fbcd8d176edda6b290ef"
 }

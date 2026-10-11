@@ -1,7 +1,7 @@
 {
  "kind": "score",
  "exchange": "kucoin",
- "as_of": "2026-10-11T08:00:00Z",
+ "as_of": "2026-10-11T12:00:00Z",
  "score": 90,
  "deductions": [
   {
@@ -32,11 +32,11 @@
   },
   "chain": {
    "account": "FYKEasFSWwycRz62STHB8PtCcJXDZBXcU5BfEda3yAu8",
-   "slot": 509841361,
-   "data_sha256": "346fd50e84c5e09f39a28fb00f5c56c6f7edc383d88bc34a8dc3e8ee3b97eb5e"
+   "slot": 509903060,
+   "data_sha256": "a71653258121086845357ea0e243a25aee96267387a41aa3ef046624943c4cda"
   }
  },
  "params_file": "data/score-params.json",
  "note": "Shows how much of the books can be seen and proven from outside. Not a solvency rating.",
- "evidence_sha256": "5a838c1fb9d3c4acb131f0b9b4720d800055983a4f0884753daa07c7370e5639"
+ "evidence_sha256": "c1fbf4731c28593a0a5cb4acdf378db82572f7789d31132adb4308e04adb1fde"
 }

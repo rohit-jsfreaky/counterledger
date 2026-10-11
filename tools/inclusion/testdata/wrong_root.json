@@ -1,0 +1,56 @@
+{
+  "AccountIndex": 2,
+  "AccountIdHash": "0000000000000000000000000000000000000000000000000000000000000042",
+  "TotalEquity": 15000000,
+  "TotalDebt": 8000,
+  "TotalCollateral": 4000,
+  "Root": "1a4940fecdbf2f7d8fe9c4f16083ceb587f69f0b9af0d02d528235757536668f",
+  "Assets": [
+    {
+      "Index": 0,
+      "Equity": 3000000,
+      "Debt": 2000,
+      "Loan": 0,
+      "Margin": 0,
+      "PortfolioMargin": 0
+    },
+    {
+      "Index": 3,
+      "Equity": 25002,
+      "Debt": 0,
+      "Loan": 20,
+      "Margin": 0,
+      "PortfolioMargin": 0
+    }
+  ],
+  "Proof": [
+    "Aj3a13cdkYYjLSZxw0+yXASBJfIiO9xTGtDc6LYuBgk=",
+    "JfHG6lTD62aeiLTTetvBi0G9Zb8Cix+v8qHgQ2yBq5o=",
+    "HsEHOrRpiI650OtPZCZT5r19HaestYHsFNo9FZhK29w=",
+    "Bfd935sQkaFG0u6keaAr3kwfZtxT7aBLxpjBv87mxEI=",
+    "GOzvFDJcnCQGIlpR/i/XPSMf1Ztr+Bi8flHwQ/2OtvU=",
+    "KkclBagJApH2Yp8M+mKrIFnU7LjQt28EMiPMpH6dQmk=",
+    "FWhhjzWzScHRDmMaOvmz1y2H8seNEpVt+5zxSpkbL5g=",
+    "F//tYykHrOwPc2eL2n9loqE4cCPmS7oT82nuWdKVS5I=",
+    "BQUW/GSyx7d++VLtqlJgB3UgS3td00kBZwx+gYqdhkI=",
+    "CX3CsFsCDe/uLqgF32dN6opeP6zsby5OtyH65WlTOFo=",
+    "GwKU6iMGHDT/cWXO1GQ75FUTobiz85RXvN1f35KcQuI=",
+    "Ksn5vEKEYp16F+vvblsaB5+F86M20kig9VKjDuzraLw=",
+    "HY1KU47xTzOWvz2DJzBwO1vO+wZ7tbbmBfhWuD09liQ=",
+    "Dr0CiB0xe+l+KsCQMr5fBEBh5yDU3R2w7qEGmHzrUCw=",
+    "HiyLbCOIJ7J4eQ2sgp+HWtYFypWwv85BEflMIfcEu1g=",
+    "Ck4RLJEEqw4f2W4BkepiwqtuH2vP4o/pJ0Y2daob6VU=",
+    "B9qUG9+LeC2odoe12fBnlkHJAJ5AeGx1TkIlMqzAWIY=",
+    "JmYsJrMBXScyekhIX375R5JlA14Kf0YuR4d33zWBWG8=",
+    "Chis1F143VuP/E97TnSwljQE2sjii8seHGCA/UrZw1c=",
+    "BSyAGaUwsJSRkIr9W3sRedR1MH4mBrReIhnKlQ+GqAU=",
+    "F/C7Bs7czyih/hhRynRGMJR7+VnFtNF4NvEDtR9KSjU=",
+    "BS65qpc3OdxH7f2us+qt5YS1J13/OIFFSFJ8XdYcf7s=",
+    "A8nLyvB+T0XBOVBpUAPD5G3FIzpKEst5FyN1/E8x6X4=",
+    "IBvTojZBKA9Hoe8T2/wmWMFXclscRA01TT7U/P9Hdkw=",
+    "G2CxLbhRmc1ed2P1r+m+0txINsdfWyQXlb0Hz8/RVSo=",
+    "K/PKFaI2uejoWJTwttXwdobZrw06oEK6ncCN+PLhmCI=",
+    "A0kdSxKzRgbWZ0/R2yI9E+xpxx4uZhElwln19XPEhyo=",
+    "FbMFF3x1BrXP88vc65fB2tp+M1lMaSGuqOL04xPquaY="
+  ]
+}

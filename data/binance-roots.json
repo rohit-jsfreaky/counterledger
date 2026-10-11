@@ -1,0 +1,53 @@
+{
+ "note": "Account-tree roots Binance publishes on its Proof of Reserves page (fetched through the cache, 11 Oct 2026). A user record is 'included' only if its root is one of these.",
+ "roots": [
+  {
+   "root": "0f69d534f0d2519d3aea38d8daee35e01a508581021067cb8948635e5d55f800",
+   "snapshot": "01/10/26 00:00:00 UTC | BTC Block Height 969369",
+   "auditDate": "01/10/26",
+   "auditor": "zk-SNARKs",
+   "auditId": "PR01OCT26",
+   "source": {
+    "page": "https://www.binance.com/en/proof-of-reserves",
+    "api": "https://www.binance.com/bapi/apex/v1/public/apex/market/query/userReserveAuditProofSnapshot",
+    "body": {
+     "time": "01/10/26 00:00:00 UTC | BTC Block Height 969369",
+     "pageIndex": 0,
+     "pageSize": 0
+    }
+   }
+  },
+  {
+   "root": "126c4cc56981e9f7a8acab364719fca183e75996864b0b13d30fb3c1836be53d",
+   "snapshot": "01/09/26 00:00:00 UTC | BTC Block Height 964957",
+   "auditDate": "01/09/26",
+   "auditor": "zk-SNARKs",
+   "auditId": "PR01SEP26",
+   "source": {
+    "page": "https://www.binance.com/en/proof-of-reserves",
+    "api": "https://www.binance.com/bapi/apex/v1/public/apex/market/query/userReserveAuditProofSnapshot",
+    "body": {
+     "time": "01/09/26 00:00:00 UTC | BTC Block Height 964957",
+     "pageIndex": 0,
+     "pageSize": 0
+    }
+   }
+  },
+  {
+   "root": "14b8970ff08bf6410b10dc01782fb8dd4996ef18adfa735f6b90137f051760ae",
+   "snapshot": "01/08/26 00:00:00 UTC | BTC Block Height 962079",
+   "auditDate": "01/08/26",
+   "auditor": "zk-SNARKs",
+   "auditId": "PR01AUG26",
+   "source": {
+    "page": "https://www.binance.com/en/proof-of-reserves",
+    "api": "https://www.binance.com/bapi/apex/v1/public/apex/market/query/userReserveAuditProofSnapshot",
+    "body": {
+     "time": "01/08/26 00:00:00 UTC | BTC Block Height 962079",
+     "pageIndex": 0,
+     "pageSize": 0
+    }
+   }
+  }
+ ]
+}

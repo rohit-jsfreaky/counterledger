@@ -22,8 +22,14 @@ def _ok(d: Any) -> bool:
     return "no transactions found" in str(d.get("message", "")).lower() or "no records found" in str(d.get("result", "")).lower()
 
 
+def _key() -> str:
+    """Which key this process uses: CL_ETHERSCAN_KEY=2 → ETHERSCAN_API_KEY_2 (lets parallel runs use separate keys)."""
+    n = os.environ.get("CL_ETHERSCAN_KEY", "1")
+    return os.environ.get("ETHERSCAN_API_KEY" if n in ("", "1") else f"ETHERSCAN_API_KEY_{n}", "")
+
+
 def _get(chainid: int, **params: Any) -> Any:
-    p = {"chainid": chainid, **params, "apikey": os.environ.get("ETHERSCAN_API_KEY", "")}
+    p = {"chainid": chainid, **params, "apikey": _key()}
     return cache.get_json(URL, p, min_gap=MIN_GAP, ok=_ok)["result"]
 
 

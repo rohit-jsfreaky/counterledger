@@ -1,0 +1,76 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  engine:
+    name: engine · pytest + uv run verify
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: tools/inclusion/go.mod
+          cache-dependency-path: tools/inclusion/go.sum
+      - name: Fetch the full transfer lists (release data-v1) so verify re-derives every hourly count
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for ev in ftx-2022-11 wazirx-2024-07 bitget-2026-09; do
+            gh release download data-v1 --repo "$GITHUB_REPOSITORY" --pattern "$ev-outflows.csv.gz" --output "data/raw/$ev/outflows.csv.gz" \
+              || echo "::warning::release asset $ev-outflows.csv.gz not available; verify will skip that re-derivation"
+          done
+      - name: pytest
+        working-directory: engine
+        run: uv run pytest -q
+      - name: uv run verify (replay mode, no keys, no network)
+        working-directory: engine
+        env:
+          CL_MODE: replay
+        run: uv run verify
+
+  program:
+    name: program · build-sbf + LiteSVM tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            ~/.cache/solana
+            program/target
+          key: program-${{ hashFiles('program/Cargo.lock') }}
+      - name: Install Solana CLI 3.1.10 (same as the devnet deploy)
+        run: |
+          sh -c "$(curl -sSfL https://release.anza.xyz/v3.1.10/install)"
+          echo "$HOME/.local/share/solana/install/active_release/bin" >> "$GITHUB_PATH"
+      - name: Build the program (.so)
+        working-directory: program
+        run: cargo build-sbf --manifest-path programs/counterledger/Cargo.toml
+      - name: Unit + LiteSVM tests
+        working-directory: program
+        run: cargo test --manifest-path programs/counterledger/Cargo.toml
+
+  web:
+    name: web · next build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - working-directory: web
+        run: npm ci
+      - working-directory: web
+        run: npm run build

@@ -61,3 +61,5 @@ desktop.ini
 data/raw/*/outflows.csv.gz
 data/live/*/outflows.csv
 .mcp.json
+tools/inclusion/inclusion
+tools/inclusion/inclusion.exe

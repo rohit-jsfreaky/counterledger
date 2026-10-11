@@ -1,0 +1,2551 @@
+{
+  "address": "5DCUGtXcR4DcBi7FpyRv1fGtUS3zTHJy9kXoDH8yxG9K",
+  "metadata": {
+    "name": "counterledger",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "add_exchange",
+      "discriminator": [
+        76,
+        219,
+        216,
+        65,
+        187,
+        236,
+        0,
+        6
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "config"
+          ]
+        },
+        {
+          "name": "config",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "exchange",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  101,
+                  120,
+                  99,
+                  104,
+                  97,
+                  110,
+                  103,
+                  101
+                ]
+              },
+              {
+                "kind": "arg",
+                "path": "id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "id",
+          "type": "string"
+        },
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "provider_hashes",
+          "type": {
+            "vec": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "buy_cover",
+      "discriminator": [
+        43,
+        59,
+        234,
+        123,
+        199,
+        21,
+        0,
+        167
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "exchange",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  101,
+                  120,
+                  99,
+                  104,
+                  97,
+                  110,
+                  103,
+                  101
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "exchange.id",
+                "account": "Exchange"
+              }
+            ]
+          }
+        },
+        {
+          "name": "pool",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "exchange"
+              }
+            ]
+          }
+        },
+        {
+          "name": "vault",
+          "writable": true
+        },
+        {
+          "name": "owner_token",
+          "writable": true
+        },
+        {
+          "name": "cover",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  118,
+                  101,
+                  114
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool"
+              },
+              {
+                "kind": "arg",
+                "path": "index"
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "notional",
+          "type": "u64"
+        },
+        {
+          "name": "days",
+          "type": "u16"
+        },
+        {
+          "name": "index",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "cancel_trigger",
+      "discriminator": [
+        208,
+        139,
+        249,
+        52,
+        247,
+        33,
+        57,
+        223
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "signer": true,
+          "relations": [
+            "config"
+          ]
+        },
+        {
+          "name": "config",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "pool",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool.exchange",
+                "account": "Pool"
+              }
+            ]
+          }
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "claim_cover",
+      "discriminator": [
+        149,
+        6,
+        213,
+        94,
+        5,
+        202,
+        216,
+        111
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "signer": true,
+          "relations": [
+            "cover"
+          ]
+        },
+        {
+          "name": "pool",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool.exchange",
+                "account": "Pool"
+              }
+            ]
+          },
+          "relations": [
+            "cover"
+          ]
+        },
+        {
+          "name": "vault",
+          "writable": true
+        },
+        {
+          "name": "owner_token",
+          "writable": true
+        },
+        {
+          "name": "cover",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  118,
+                  101,
+                  114
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool"
+              },
+              {
+                "kind": "account",
+                "path": "cover.index",
+                "account": "Cover"
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "close_claim_buffer",
+      "discriminator": [
+        97,
+        219,
+        11,
+        222,
+        186,
+        83,
+        123,
+        166
+      ],
+      "accounts": [
+        {
+          "name": "prover",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "buffer",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  108,
+                  97,
+                  105,
+                  109,
+                  115
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "prover"
+              }
+            ]
+          }
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "create_pool",
+      "discriminator": [
+        233,
+        146,
+        209,
+        142,
+        207,
+        104,
+        64,
+        188
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "config"
+          ]
+        },
+        {
+          "name": "config",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "exchange",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  101,
+                  120,
+                  99,
+                  104,
+                  97,
+                  110,
+                  103,
+                  101
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "exchange.id",
+                "account": "Exchange"
+              }
+            ]
+          }
+        },
+        {
+          "name": "usdc_mint"
+        },
+        {
+          "name": "pool",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "exchange"
+              }
+            ]
+          }
+        },
+        {
+          "name": "vault",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  97,
+                  117,
+                  108,
+                  116
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool"
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "cap_bps",
+          "type": "u16"
+        },
+        {
+          "name": "base_rate_bps",
+          "type": "u16"
+        }
+      ]
+    },
+    {
+      "name": "expire_cover",
+      "discriminator": [
+        219,
+        175,
+        104,
+        78,
+        225,
+        105,
+        173,
+        105
+      ],
+      "accounts": [
+        {
+          "name": "pool",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool.exchange",
+                "account": "Pool"
+              }
+            ]
+          },
+          "relations": [
+            "cover"
+          ]
+        },
+        {
+          "name": "cover",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  118,
+                  101,
+                  114
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool"
+              },
+              {
+                "kind": "account",
+                "path": "cover.index",
+                "account": "Cover"
+              }
+            ]
+          }
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "finalize_trigger",
+      "discriminator": [
+        245,
+        15,
+        67,
+        168,
+        43,
+        195,
+        214,
+        16
+      ],
+      "accounts": [
+        {
+          "name": "config",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "exchange",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  101,
+                  120,
+                  99,
+                  104,
+                  97,
+                  110,
+                  103,
+                  101
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "exchange.id",
+                "account": "Exchange"
+              }
+            ]
+          }
+        },
+        {
+          "name": "pool",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "exchange"
+              }
+            ]
+          }
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "initialize",
+      "discriminator": [
+        175,
+        175,
+        109,
+        31,
+        13,
+        152,
+        155,
+        237
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "usdc_mint"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "observer",
+          "type": "pubkey"
+        },
+        {
+          "name": "attestors",
+          "type": {
+            "vec": {
+              "array": [
+                "u8",
+                20
+              ]
+            }
+          }
+        },
+        {
+          "name": "challenge_window_secs",
+          "type": "i64"
+        }
+      ]
+    },
+    {
+      "name": "lp_deposit",
+      "discriminator": [
+        27,
+        77,
+        210,
+        69,
+        12,
+        43,
+        148,
+        16
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "pool",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool.exchange",
+                "account": "Pool"
+              }
+            ]
+          }
+        },
+        {
+          "name": "vault",
+          "writable": true
+        },
+        {
+          "name": "owner_token",
+          "writable": true
+        },
+        {
+          "name": "position",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  108,
+                  112
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool"
+              },
+              {
+                "kind": "account",
+                "path": "owner"
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "lp_withdraw",
+      "discriminator": [
+        205,
+        206,
+        130,
+        170,
+        173,
+        51,
+        11,
+        169
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "signer": true,
+          "relations": [
+            "position"
+          ]
+        },
+        {
+          "name": "pool",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool.exchange",
+                "account": "Pool"
+              }
+            ]
+          }
+        },
+        {
+          "name": "vault",
+          "writable": true
+        },
+        {
+          "name": "owner_token",
+          "writable": true
+        },
+        {
+          "name": "position",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  108,
+                  112
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool"
+              },
+              {
+                "kind": "account",
+                "path": "owner"
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        }
+      ],
+      "args": [
+        {
+          "name": "shares",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "open_claim_buffer",
+      "discriminator": [
+        156,
+        104,
+        14,
+        250,
+        81,
+        40,
+        138,
+        198
+      ],
+      "accounts": [
+        {
+          "name": "prover",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "buffer",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  108,
+                  97,
+                  105,
+                  109,
+                  115
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "prover"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "capacity",
+          "type": "u32"
+        }
+      ]
+    },
+    {
+      "name": "open_trigger",
+      "discriminator": [
+        175,
+        11,
+        162,
+        155,
+        149,
+        25,
+        130,
+        28
+      ],
+      "accounts": [
+        {
+          "name": "observer",
+          "signer": true,
+          "relations": [
+            "config"
+          ]
+        },
+        {
+          "name": "config",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "exchange",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  101,
+                  120,
+                  99,
+                  104,
+                  97,
+                  110,
+                  103,
+                  101
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "exchange.id",
+                "account": "Exchange"
+              }
+            ]
+          }
+        },
+        {
+          "name": "pool",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "exchange"
+              }
+            ]
+          }
+        }
+      ],
+      "args": [
+        {
+          "name": "evidence_hash",
+          "type": {
+            "array": [
+              "u8",
+              32
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "post_heartbeat",
+      "discriminator": [
+        54,
+        92,
+        224,
+        63,
+        211,
+        138,
+        44,
+        213
+      ],
+      "accounts": [
+        {
+          "name": "observer",
+          "signer": true,
+          "relations": [
+            "config"
+          ]
+        },
+        {
+          "name": "config",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "exchange",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  101,
+                  120,
+                  99,
+                  104,
+                  97,
+                  110,
+                  103,
+                  101
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "exchange.id",
+                "account": "Exchange"
+              }
+            ]
+          }
+        }
+      ],
+      "args": [
+        {
+          "name": "value",
+          "type": "u16"
+        },
+        {
+          "name": "as_of",
+          "type": "i64"
+        },
+        {
+          "name": "evidence_hash",
+          "type": {
+            "array": [
+              "u8",
+              32
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "post_score",
+      "discriminator": [
+        127,
+        223,
+        222,
+        154,
+        161,
+        111,
+        88,
+        150
+      ],
+      "accounts": [
+        {
+          "name": "observer",
+          "signer": true,
+          "relations": [
+            "config"
+          ]
+        },
+        {
+          "name": "config",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "exchange",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  101,
+                  120,
+                  99,
+                  104,
+                  97,
+                  110,
+                  103,
+                  101
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "exchange.id",
+                "account": "Exchange"
+              }
+            ]
+          }
+        }
+      ],
+      "args": [
+        {
+          "name": "value",
+          "type": "u16"
+        },
+        {
+          "name": "as_of",
+          "type": "i64"
+        },
+        {
+          "name": "evidence_hash",
+          "type": {
+            "array": [
+              "u8",
+              32
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "record_proof",
+      "discriminator": [
+        144,
+        172,
+        144,
+        35,
+        124,
+        170,
+        93,
+        80
+      ],
+      "accounts": [
+        {
+          "name": "prover",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "config",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "exchange",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  101,
+                  120,
+                  99,
+                  104,
+                  97,
+                  110,
+                  103,
+                  101
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "exchange.id",
+                "account": "Exchange"
+              }
+            ]
+          }
+        },
+        {
+          "name": "buffer",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  108,
+                  97,
+                  105,
+                  109,
+                  115
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "prover"
+              }
+            ]
+          }
+        },
+        {
+          "name": "proof_record",
+          "docs": [
+            "One record per (exchange, nullifier): a second proof from the same account in the same epoch fails here."
+          ],
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  114,
+                  111,
+                  111,
+                  102
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "exchange"
+              },
+              {
+                "kind": "arg",
+                "path": "nullifier"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "nullifier",
+          "type": {
+            "array": [
+              "u8",
+              32
+            ]
+          }
+        },
+        {
+          "name": "claims",
+          "type": {
+            "vec": {
+              "defined": {
+                "name": "SignedClaimArgs"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "set_provider_hashes",
+      "discriminator": [
+        56,
+        176,
+        134,
+        218,
+        209,
+        125,
+        96,
+        127
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "signer": true,
+          "relations": [
+            "config"
+          ]
+        },
+        {
+          "name": "config",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "exchange",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  101,
+                  120,
+                  99,
+                  104,
+                  97,
+                  110,
+                  103,
+                  101
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "exchange.id",
+                "account": "Exchange"
+              }
+            ]
+          }
+        }
+      ],
+      "args": [
+        {
+          "name": "provider_hashes",
+          "type": {
+            "vec": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "update_config",
+      "discriminator": [
+        29,
+        158,
+        252,
+        191,
+        10,
+        83,
+        219,
+        99
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "signer": true,
+          "relations": [
+            "config"
+          ]
+        },
+        {
+          "name": "config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "args": [
+        {
+          "name": "observer",
+          "type": "pubkey"
+        },
+        {
+          "name": "attestors",
+          "type": {
+            "vec": {
+              "array": [
+                "u8",
+                20
+              ]
+            }
+          }
+        },
+        {
+          "name": "challenge_window_secs",
+          "type": "i64"
+        }
+      ]
+    },
+    {
+      "name": "write_claim_buffer",
+      "discriminator": [
+        78,
+        226,
+        157,
+        38,
+        83,
+        84,
+        230,
+        168
+      ],
+      "accounts": [
+        {
+          "name": "prover",
+          "signer": true
+        },
+        {
+          "name": "buffer",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  108,
+                  97,
+                  105,
+                  109,
+                  115
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "prover"
+              }
+            ]
+          }
+        }
+      ],
+      "args": [
+        {
+          "name": "offset",
+          "type": "u32"
+        },
+        {
+          "name": "bytes",
+          "type": "bytes"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "ClaimBuffer",
+      "discriminator": [
+        182,
+        212,
+        179,
+        243,
+        17,
+        41,
+        146,
+        71
+      ]
+    },
+    {
+      "name": "Config",
+      "discriminator": [
+        155,
+        12,
+        170,
+        224,
+        30,
+        250,
+        204,
+        130
+      ]
+    },
+    {
+      "name": "Cover",
+      "discriminator": [
+        104,
+        157,
+        160,
+        193,
+        104,
+        133,
+        228,
+        74
+      ]
+    },
+    {
+      "name": "Exchange",
+      "discriminator": [
+        30,
+        200,
+        220,
+        149,
+        3,
+        61,
+        104,
+        50
+      ]
+    },
+    {
+      "name": "LpPosition",
+      "discriminator": [
+        105,
+        241,
+        37,
+        200,
+        224,
+        2,
+        252,
+        90
+      ]
+    },
+    {
+      "name": "Pool",
+      "discriminator": [
+        241,
+        154,
+        109,
+        4,
+        17,
+        177,
+        109,
+        188
+      ]
+    },
+    {
+      "name": "ProofRecord",
+      "discriminator": [
+        237,
+        59,
+        155,
+        172,
+        204,
+        117,
+        87,
+        44
+      ]
+    }
+  ],
+  "events": [
+    {
+      "name": "CoverBought",
+      "discriminator": [
+        128,
+        196,
+        83,
+        24,
+        47,
+        194,
+        179,
+        102
+      ]
+    },
+    {
+      "name": "CoverPaid",
+      "discriminator": [
+        177,
+        40,
+        158,
+        71,
+        245,
+        68,
+        53,
+        11
+      ]
+    },
+    {
+      "name": "ProofRecorded",
+      "discriminator": [
+        55,
+        159,
+        128,
+        127,
+        158,
+        254,
+        93,
+        145
+      ]
+    },
+    {
+      "name": "ReportPosted",
+      "discriminator": [
+        107,
+        195,
+        99,
+        88,
+        123,
+        189,
+        39,
+        104
+      ]
+    },
+    {
+      "name": "TriggerChanged",
+      "discriminator": [
+        125,
+        228,
+        58,
+        190,
+        5,
+        18,
+        66,
+        182
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "NotAdmin",
+      "msg": "Only the admin can do this"
+    },
+    {
+      "code": 6001,
+      "name": "NotObserver",
+      "msg": "Only the observer can post reports"
+    },
+    {
+      "code": 6002,
+      "name": "TooMany",
+      "msg": "Too many entries"
+    },
+    {
+      "code": 6003,
+      "name": "TooLong",
+      "msg": "Text too long"
+    },
+    {
+      "code": 6004,
+      "name": "BadBuffer",
+      "msg": "Claim buffer is malformed"
+    },
+    {
+      "code": 6005,
+      "name": "BufferOutOfRange",
+      "msg": "Claim buffer write is out of range"
+    },
+    {
+      "code": 6006,
+      "name": "WrongClaimCount",
+      "msg": "Expected exactly two signed claims (account id + balance)"
+    },
+    {
+      "code": 6007,
+      "name": "UntrustedAttestor",
+      "msg": "Claim signature does not recover to a trusted Reclaim attestor"
+    },
+    {
+      "code": 6008,
+      "name": "BadSignature",
+      "msg": "Claim signature is malformed"
+    },
+    {
+      "code": 6009,
+      "name": "BadContext",
+      "msg": "Claim context is not valid for this proof"
+    },
+    {
+      "code": 6010,
+      "name": "UnknownProvider",
+      "msg": "Claim was made with a provider this exchange does not accept"
+    },
+    {
+      "code": 6011,
+      "name": "WrongProver",
+      "msg": "Claim is bound to a different wallet"
+    },
+    {
+      "code": 6012,
+      "name": "StaleClaim",
+      "msg": "Claim is too old"
+    },
+    {
+      "code": 6013,
+      "name": "FutureClaim",
+      "msg": "Claim timestamp is in the future"
+    },
+    {
+      "code": 6014,
+      "name": "EpochMismatch",
+      "msg": "The two claims belong to different epochs"
+    },
+    {
+      "code": 6015,
+      "name": "BadAmount",
+      "msg": "Balance could not be read"
+    },
+    {
+      "code": 6016,
+      "name": "StaleReport",
+      "msg": "Report is older than the one already posted"
+    },
+    {
+      "code": 6017,
+      "name": "OutOfRange",
+      "msg": "Value out of range"
+    },
+    {
+      "code": 6018,
+      "name": "NoScore",
+      "msg": "No score has been posted for this exchange yet"
+    },
+    {
+      "code": 6019,
+      "name": "HaltSignalActive",
+      "msg": "Cover is not sold while a halt signal is active"
+    },
+    {
+      "code": 6020,
+      "name": "ExposureCap",
+      "msg": "Pool exposure cap reached"
+    },
+    {
+      "code": 6021,
+      "name": "ZeroAmount",
+      "msg": "Amount must be positive"
+    },
+    {
+      "code": 6022,
+      "name": "InsufficientFree",
+      "msg": "Not enough free assets in the pool"
+    },
+    {
+      "code": 6023,
+      "name": "TriggerActive",
+      "msg": "A trigger is pending or final"
+    },
+    {
+      "code": 6024,
+      "name": "NoTrigger",
+      "msg": "No trigger is open"
+    },
+    {
+      "code": 6025,
+      "name": "NoHalt",
+      "msg": "Heartbeat does not show a confirmed halt"
+    },
+    {
+      "code": 6026,
+      "name": "ChallengeWindow",
+      "msg": "Challenge window has not passed yet"
+    },
+    {
+      "code": 6027,
+      "name": "ChallengeOver",
+      "msg": "Challenge window is over"
+    },
+    {
+      "code": 6028,
+      "name": "CoverNotActive",
+      "msg": "Cover was not active at the trigger time"
+    },
+    {
+      "code": 6029,
+      "name": "CoverSettled",
+      "msg": "Cover already settled"
+    },
+    {
+      "code": 6030,
+      "name": "CoverLive",
+      "msg": "Cover has not expired"
+    },
+    {
+      "code": 6031,
+      "name": "Overflow",
+      "msg": "Math overflow"
+    }
+  ],
+  "types": [
+    {
+      "name": "AssetFloor",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "asset",
+            "docs": [
+              "Ticker, zero-padded (e.g. \"USDT\")."
+            ],
+            "type": {
+              "array": [
+                "u8",
+                12
+              ]
+            }
+          },
+          {
+            "name": "amount",
+            "docs": [
+              "Sum of proven balances, 6 decimals. A minimum, not the total."
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "provers",
+            "type": "u32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ClaimBuffer",
+      "docs": [
+        "Holds the claim info (provider, parameters, context) of a proof while it is uploaded in chunks; one Solana",
+        "transaction is too small for it. Closed by record_proof."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "data",
+            "type": "bytes"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Config",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "observer",
+            "docs": [
+              "Posts heartbeat + score reports. A single signer in v1 — said out loud in the README."
+            ],
+            "type": "pubkey"
+          },
+          {
+            "name": "attestors",
+            "docs": [
+              "Ethereum addresses of the Reclaim attestors whose claim signatures are accepted."
+            ],
+            "type": {
+              "vec": {
+                "array": [
+                  "u8",
+                  20
+                ]
+              }
+            }
+          },
+          {
+            "name": "usdc_mint",
+            "docs": [
+              "Devnet test-USDC mint used by every cover pool."
+            ],
+            "type": "pubkey"
+          },
+          {
+            "name": "challenge_window_secs",
+            "docs": [
+              "Time between a trigger opening and becoming final, during which it can be cancelled."
+            ],
+            "type": "i64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Cover",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "pool",
+            "type": "pubkey"
+          },
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "index",
+            "type": "u64"
+          },
+          {
+            "name": "notional",
+            "type": "u64"
+          },
+          {
+            "name": "premium",
+            "type": "u64"
+          },
+          {
+            "name": "start",
+            "type": "i64"
+          },
+          {
+            "name": "expiry",
+            "type": "i64"
+          },
+          {
+            "name": "claimed",
+            "type": "bool"
+          },
+          {
+            "name": "expired",
+            "type": "bool"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CoverBought",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "pool",
+            "type": "pubkey"
+          },
+          {
+            "name": "cover",
+            "type": "pubkey"
+          },
+          {
+            "name": "notional",
+            "type": "u64"
+          },
+          {
+            "name": "premium",
+            "type": "u64"
+          },
+          {
+            "name": "rate_bps",
+            "type": "u64"
+          },
+          {
+            "name": "expiry",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CoverPaid",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "pool",
+            "type": "pubkey"
+          },
+          {
+            "name": "cover",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Exchange",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "id",
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "provider_hashes",
+            "docs": [
+              "Reclaim provider hashes (claim context `providerHash`) accepted as proofs for this exchange."
+            ],
+            "type": {
+              "vec": {
+                "array": [
+                  "u8",
+                  32
+                ]
+              }
+            }
+          },
+          {
+            "name": "prover_count",
+            "type": "u32"
+          },
+          {
+            "name": "floors",
+            "type": {
+              "vec": {
+                "defined": {
+                  "name": "AssetFloor"
+                }
+              }
+            }
+          },
+          {
+            "name": "heartbeat",
+            "type": {
+              "defined": {
+                "name": "Report"
+              }
+            }
+          },
+          {
+            "name": "score",
+            "type": {
+              "defined": {
+                "name": "Report"
+              }
+            }
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LpPosition",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "pool",
+            "type": "pubkey"
+          },
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "shares",
+            "type": "u64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Pool",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange",
+            "type": "pubkey"
+          },
+          {
+            "name": "vault",
+            "type": "pubkey"
+          },
+          {
+            "name": "total_shares",
+            "type": "u64"
+          },
+          {
+            "name": "assets",
+            "docs": [
+              "test-USDC the pool holds (deposits + premiums - withdrawals - payouts)."
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "exposure",
+            "docs": [
+              "Notional of live covers."
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "cap_bps",
+            "docs": [
+              "Max exposure as a share of assets."
+            ],
+            "type": "u16"
+          },
+          {
+            "name": "base_rate_bps",
+            "type": "u16"
+          },
+          {
+            "name": "covers_sold",
+            "type": "u64"
+          },
+          {
+            "name": "trigger_opened_at",
+            "type": "i64"
+          },
+          {
+            "name": "triggered_at",
+            "type": "i64"
+          },
+          {
+            "name": "trigger_evidence",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          },
+          {
+            "name": "vault_bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ProofRecord",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange",
+            "type": "pubkey"
+          },
+          {
+            "name": "prover",
+            "type": "pubkey"
+          },
+          {
+            "name": "nullifier",
+            "docs": [
+              "keccak(domain, exchange id, hashed account id, epoch) — never the account id itself."
+            ],
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          },
+          {
+            "name": "asset",
+            "type": {
+              "array": [
+                "u8",
+                12
+              ]
+            }
+          },
+          {
+            "name": "bucket",
+            "docs": [
+              "Balance bucket: 0 <1, 1 <10, 2 <100, 3 <1k, 4 <10k, 5 >=10k (asset units)."
+            ],
+            "type": "u8"
+          },
+          {
+            "name": "epoch",
+            "type": "u32"
+          },
+          {
+            "name": "claim_ids",
+            "docs": [
+              "Reclaim claim identifiers of the proofs that made this record."
+            ],
+            "type": {
+              "array": [
+                {
+                  "array": [
+                    "u8",
+                    32
+                  ]
+                },
+                2
+              ]
+            }
+          },
+          {
+            "name": "recorded_at",
+            "type": "i64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ProofRecorded",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange",
+            "type": "pubkey"
+          },
+          {
+            "name": "nullifier",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          },
+          {
+            "name": "asset",
+            "type": {
+              "array": [
+                "u8",
+                12
+              ]
+            }
+          },
+          {
+            "name": "bucket",
+            "type": "u8"
+          },
+          {
+            "name": "epoch",
+            "type": "u32"
+          },
+          {
+            "name": "floor_amount",
+            "type": "u64"
+          },
+          {
+            "name": "floor_provers",
+            "type": "u32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Report",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "value",
+            "type": "u16"
+          },
+          {
+            "name": "as_of",
+            "type": "i64"
+          },
+          {
+            "name": "evidence_hash",
+            "docs": [
+              "sha256 of the evidence JSON in the repo; `verify` recomputes it."
+            ],
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "ReportPosted",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange",
+            "type": "pubkey"
+          },
+          {
+            "name": "kind",
+            "type": "u8"
+          },
+          {
+            "name": "value",
+            "type": "u16"
+          },
+          {
+            "name": "as_of",
+            "type": "i64"
+          },
+          {
+            "name": "evidence_hash",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "SignedClaimArgs",
+      "docs": [
+        "The signed part of a claim, passed as an instruction argument (the long claim info lives in the buffer)."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "owner",
+            "type": "string"
+          },
+          {
+            "name": "timestamp_s",
+            "type": "u32"
+          },
+          {
+            "name": "epoch",
+            "type": "u32"
+          },
+          {
+            "name": "signature",
+            "type": {
+              "array": [
+                "u8",
+                65
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "TriggerChanged",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "pool",
+            "type": "pubkey"
+          },
+          {
+            "name": "state",
+            "type": "u8"
+          },
+          {
+            "name": "at",
+            "type": "i64"
+          }
+        ]
+      }
+    }
+  ],
+  "constants": [
+    {
+      "name": "BUFFER_SEED",
+      "type": "bytes",
+      "value": "[99, 108, 97, 105, 109, 115]"
+    },
+    {
+      "name": "CONFIG_SEED",
+      "type": "bytes",
+      "value": "[99, 111, 110, 102, 105, 103]"
+    },
+    {
+      "name": "COVER_SEED",
+      "type": "bytes",
+      "value": "[99, 111, 118, 101, 114]"
+    },
+    {
+      "name": "EXCHANGE_SEED",
+      "type": "bytes",
+      "value": "[101, 120, 99, 104, 97, 110, 103, 101]"
+    },
+    {
+      "name": "LP_SEED",
+      "type": "bytes",
+      "value": "[108, 112]"
+    },
+    {
+      "name": "POOL_SEED",
+      "type": "bytes",
+      "value": "[112, 111, 111, 108]"
+    },
+    {
+      "name": "PROOF_SEED",
+      "type": "bytes",
+      "value": "[112, 114, 111, 111, 102]"
+    },
+    {
+      "name": "VAULT_SEED",
+      "type": "bytes",
+      "value": "[118, 97, 117, 108, 116]"
+    }
+  ]
+}

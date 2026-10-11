@@ -1,0 +1,1543 @@
+<html class="dark" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><title>Counterledger | Institutional Verifiable Liabilities</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface-variant": "#c4c5d6", "surface-container-lowest": "#0c0e12", "on-secondary": "#002681", "secondary": "#b7c4ff", "surface-container-highest": "#333539", "on-tertiary-container": "#df9c36", "secondary-fixed": "#dce1ff", "tertiary": "#ffb956", "inverse-surface": "#e2e2e8", "tertiary-fixed-dim": "#ffb956", "surface-container-low": "#1a1c20", "on-primary-fixed-variant": "#1439af", "inverse-on-surface": "#2f3035", "outline": "#8e909f", "primary-container": "#002fa7", "error-container": "#93000a", "on-primary-container": "#90a4ff", "surface-container-high": "#282a2e", "tertiary-container": "#583700", "surface": "#111317", "primary-fixed": "#dde1ff", "secondary-fixed-dim": "#b7c4ff", "on-error-container": "#ffdad6", "on-surface": "#e2e2e8", "on-secondary-container": "#a8b9ff", "surface-variant": "#333539", "surface-dim": "#111317", "on-tertiary-fixed": "#2a1800", "primary": "#b8c4ff", "on-background": "#e2e2e8", "on-secondary-fixed": "#001551", "error": "#ffb4ab", "surface-bright": "#37393e", "on-primary": "#002486", "inverse-primary": "#3654c8", "surface-tint": "#b8c4ff", "on-tertiary": "#462b00", "on-primary-fixed": "#001355", "outline-variant": "#444653", "primary-fixed-dim": "#b8c4ff", "on-tertiary-fixed-variant": "#643f00", "tertiary-fixed": "#ffddb5", "surface-container": "#1e2024", "secondary-container": "#053ebd", "on-error": "#690005", "on-secondary-fixed-variant": "#0039b4", "background": "#111317" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin": "1rem", "space-xs": "0.25rem", "space-md": "0.75rem", "space-xl": "1.5rem", "gutter": "0.75rem", "space-sm": "0.5rem", "space-lg": "1rem" }, "fontFamily": { "body-md": ["IBM Plex Sans"], "telemetry-lg": ["IBM Plex Mono"], "telemetry-md": ["IBM Plex Mono"], "headline-md": ["IBM Plex Sans"], "headline-xl": ["IBM Plex Sans"], "headline-xl-mobile": ["IBM Plex Sans"], "label-caps": ["IBM Plex Sans"], "headline-lg": ["IBM Plex Sans"], "telemetry-sm": ["IBM Plex Mono"], "body-sm": ["IBM Plex Sans"], "body-lg": ["IBM Plex Sans"] }, "fontSize": { "body-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "telemetry-lg": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "500" }], "telemetry-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-md": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-xl-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-caps": ["10px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "telemetry-sm": ["11px", { "lineHeight": "14px", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "body-lg": ["15px", { "lineHeight": "22px", "fontWeight": "400" }] } } } };</script><style data-stitch-injected="">
+  /* Hide scrollbars on ALL elements (Webkit) */
+  *::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbars on ALL elements (Firefox) */
+  * {
+    scrollbar-width: none;
+  }
+
+  /* Suppress horizontal overflow and legacy IE/Edge */
+  html, body {
+    overflow-x: hidden !important;
+    -ms-overflow-style: none;
+    min-height: auto !important;
+  }
+
+  /* Global text selection highlight color override inside all iframe modes */
+  ::selection {
+    background-color: rgba(96, 86, 240, 0.3) !important;
+    color: inherit !important;
+  }
+  ::-moz-selection {
+    background-color: rgba(96, 86, 240, 0.3) !important;
+    color: inherit !important;
+  }
+
+  /* Suppress browser default focus outlines and box-shadow glows globally */
+  *:focus, *:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+</style><script data-stitch-injected="">(function un(){window.addEventListener(`message`,async function(e){let t=e.data;if(!t||t.type!==`capture_screenshot`||e.source!==window.parent)return;let n=t.requestId,r=t.captureEngineSource,i=t.options||{},a=window.innerWidth,o=window.innerHeight,s=window.scrollX,c=window.scrollY,l=document.documentElement,u=l.style.width,d=l.style.height,f=l.style.overflow,p=l.style.position;try{if(!window.snapdom&&r){let e=document.createElement(`script`);e.setAttribute(`data-stitch-injected`,``),e.textContent=r,document.head.appendChild(e)}let e=window.snapdom;if(!e){window.parent.postMessage({type:`screenshot_error`,requestId:n,errorCode:`CAPTURE_ENGINE_UNAVAILABLE`,error:`Capture engine not available. Ensure source is sent with the capture request.`},`*`);return}let t=i.exclude||[`[data-stitch-injected]`];window.scrollTo(0,0),l.style.width=a+`px`,l.style.height=o+`px`,l.style.overflow=`hidden`,l.style.position=`relative`;let u=await(await e(document.documentElement,{exclude:t,embedFonts:!0,scale:i.scale||1,plugins:[{name:`stitch-viewport-clip`,afterClone:function(e){let t=e.clone;if(!(t instanceof HTMLElement))return;t.style.position=`relative`,t.style.width=a+`px`,t.style.height=o+`px`,t.style.overflow=`hidden`;let n=[],r=t.querySelectorAll(`*`);for(let e=0;e<r.length;e++){let t=r[e];t instanceof HTMLElement&&(t.style.position||(t.__snapdomComputedStyle||window.getComputedStyle(t)).position)===`fixed`&&n.push(t)}if(s!==0||c!==0){let e=t.querySelector(`body`);e&&(e.style.marginTop=-c+`px`,e.style.marginLeft=-s+`px`)}for(let e=0;e<n.length;e++)n[e].style.position=`absolute`,t.appendChild(n[e])}}]})).toCanvas({width:a,height:o}),d=i.format||`image/jpeg`,f=i.quality??.8,p=u.toDataURL(d,f);window.parent.postMessage({type:`screenshot_captured`,requestId:n,dataUrl:p,width:a,height:o},`*`)}catch(e){window.parent.postMessage({type:`screenshot_error`,requestId:n,error:e instanceof Error?e.message:String(e)},`*`)}finally{l.style.width=u,l.style.height=d,l.style.overflow=f,l.style.position=p,window.scrollTo(s,c)}})})();</script><script data-stitch-injected="">(function pn(){let e=`__stitch-highlight-css`,t=`stitch-highlight-element`,n=null;function r(){if(document.getElementById(e))return;let n=document.createElement(`style`);n.id=e,n.textContent=[`@keyframes stitch-highlight-pulse {`,`  0%, 100% { box-shadow: 0 0 0 3px rgba(113,105,237,0.8), 0 0 12px 4px rgba(113,105,237,0.3); }`,`  50%      { box-shadow: 0 0 0 3px rgba(113,105,237,0.4), 0 0 6px 2px rgba(113,105,237,0.15); }`,`}`,`.`+t+` {`,`  outline: 3px solid rgba(113,105,237,0.8) !important;`,`  outline-offset: 2px !important;`,`  animation: stitch-highlight-pulse 1.5s ease-in-out infinite !important;`,`  border-radius: inherit;`,`}`].join(`
+`),document.head.appendChild(n)}function i(e){let t=e.toLowerCase().trim(),n=document.createTreeWalker(document.body,NodeFilter.SHOW_ELEMENT,null),r=null,i=-1,a=n.nextNode();for(;a;){if((a.textContent||``).trim().toLowerCase().includes(t)){let e=0,t=a.parentElement;for(;t;)e++,t=t.parentElement;e>i&&(i=e,r=a)}a=n.nextNode()}return r}function a(e){setTimeout(function(){let t=e.getBoundingClientRect(),n=window.innerWidth||1,r=window.innerHeight||1;window.parent.postMessage({type:`stitch:highlight-element-rect`,normalizedX:(t.left+t.width/2)/n,normalizedY:(t.top+t.height/2)/r,normalizedWidth:t.width/n,normalizedHeight:t.height/r},`*`)},400)}window.addEventListener(`message`,function(e){if(!e.data||e.data.type!==`stitch:highlight-element`)return;n&&=(n.classList.remove(t),null);let{text:o,selector:s}=e.data;if(!o&&!s)return;r();let c=null;if(o&&(c=i(o)),!c&&s)try{c=document.querySelector(s)}catch{}c&&(c.classList.add(t),c.scrollIntoView({behavior:`smooth`,block:`center`}),n=c,a(c))})})();</script><script data-stitch-injected="">
+      window.__PROTOTYPE_LINKS__ = [];
+      window.__PROTOTYPE_INITIAL_STATE__ = "1";
+      
+  (function() {
+    const SCRIPT_VERSION = '2.0.0 - Unified Run/Connect';
+
+    // --- Cleanup Previous Instance ---
+    if (window.__PROTOTYPE_V2_CLEANUP__ && typeof window.__PROTOTYPE_V2_CLEANUP__ === 'function') {
+      window.__PROTOTYPE_V2_CLEANUP__();
+    }
+
+    // --- Configuration ---
+    const HOVER_CLASS = 'interactive-hover';
+    const SELECTED_CLASS = 'interactive-selected';
+    const CONNECTED_CLASS = 'interactive-connected';
+    const RUN_LINK_CLASS = 'prototype-link-hover';
+    const HOTSPOT_CLASS = 'prototype-hotspot';
+    
+    // Style IDs
+    const CONNECT_STYLE_ID = 'interactive-mode-styles';
+    const RUN_STYLE_ID = 'prototype-run-styles';
+
+    // Tags that support inline text editing via double-click
+    var TEXT_EDITABLE_TAGS = {
+      H1:1, H2:1, H3:1, H4:1, H5:1, H6:1,
+      P:1, SPAN:1, BUTTON:1, A:1, LABEL:1,
+      LI:1, TD:1, TH:1, BLOCKQUOTE:1
+    };
+
+    // State
+    let mode = 'run'; // 'run' | 'connect'
+    let currentState = window.__PROTOTYPE_INITIAL_STATE__ || '1';
+    let links = window.__PROTOTYPE_LINKS__ || [];
+    let hotspotsVisible = window.__HOTSPOTS_INITIAL__ !== undefined ? window.__HOTSPOTS_INITIAL__ : true;
+    let selectedElement = null;
+    let interactive = true; // false when parent UI (edit dialog) should suppress iframe interactions
+
+    // --- Helper: XPath Evaluator ---
+    function getElementByXPath(xpath) {
+      const evaluate = (expr) => {
+        try {
+          return document.evaluate(
+            expr, 
+            document, 
+            null, 
+            XPathResult.FIRST_ORDERED_NODE_TYPE, 
+            null
+          ).singleNodeValue;
+        } catch (e) {
+          console.warn('XPath evaluation failed:', expr, e);
+          return null;
+        }
+      };
+
+      // 1. Try direct evaluation
+      let result = evaluate(xpath);
+      
+      // 2. Try lowercased evaluation
+      if (!result) {
+        const lower = xpath.toLowerCase();
+        if (lower !== xpath) {
+             result = evaluate(lower);
+        }
+      }
+
+      // 3. Manual Traversal Fallback (Robust against case/browser quirks)
+      if (!result) {
+        try {
+          const parts = xpath.split('/').filter(p => p && p !== 'html'); // internal path often starts after html? or includes it. 
+          // Our getXPath returns e.g. "id('foo')" or "body/div[1]..."
+          
+          if (xpath.startsWith('id(')) {
+             // Already handled by evaluate usually, but manual fallback:
+             const idContent = xpath.match(/id("([^"]+)")/);
+             if (idContent && idContent[1]) {
+               return document.getElementById(idContent[1]);
+             }
+          }
+
+          let current = document.body; // Start at body? Or root?
+          // If path starts with "body", we start at document.body and consume it? 
+          // getXPathForElement returns "body/div[1]" if starting at body.
+          // So if parts[0] is "body", we use current=document.body and shift.
+          
+          if (parts[0].toLowerCase().startsWith('body')) {
+             parts.shift();
+          } else if (parts[0].toLowerCase().startsWith('html')) {
+             parts.shift();
+             if (parts.length > 0 && parts[0].toLowerCase().startsWith('body')) parts.shift();
+          }
+
+          for (const part of parts) {
+             // part is like "div[2]" or "span" (implies [1])
+             const match = part.match(/^([a-z0-9-_]+)(?:[(d+)])?$/i);
+             if (!match) {
+               current = null;
+               break;
+             }
+             
+             const tagName = match[1].toUpperCase();
+             const index = match[2] ? parseInt(match[2], 10) : 1;
+             
+             // Find nth child with this tag
+             let count = 0;
+             let found = null;
+             const children = current.children; // .children only includes Elements (skips text), which matches XPath element indexing usually?
+             // Wait, XPath "div[2]" means 2nd child that IS a div.
+             // .children is all elements.
+             
+             for (let i = 0; i < children.length; i++) {
+               const child = children[i];
+               if (child.tagName === tagName) {
+                 count++;
+                 if (count === index) {
+                   found = child;
+                   break;
+                 }
+               }
+             }
+             
+             if (!found) {
+               current = null; 
+               break;
+             }
+             current = found;
+          }
+          
+          if (current) result = current;
+          
+        } catch(e) {
+          console.warn('Manual XPath traversal failed:', e);
+        }
+      }
+
+      return result;
+    }
+
+    // --- Helper: Get XPath for Element (Reverse) ---
+    function getXPathForElement(element) {
+      if (element.id !== '') return 'id("' + element.id + '")';
+      if (element === document.body) return element.tagName.toLowerCase();
+
+      let ix = 0;
+      const siblings = element.parentNode ? element.parentNode.childNodes : [];
+      
+      for (let i = 0; i < siblings.length; i++) {
+        const sibling = siblings[i];
+        if (sibling === element) {
+          return getXPathForElement(element.parentNode) + '/' + element.tagName.toLowerCase() + '[' + (ix + 1) + ']';
+        }
+        if (sibling.nodeType === 1 && sibling.tagName === element.tagName) {
+          ix++;
+        }
+      }
+    }
+
+    // --- Position-safe class helpers ---
+    // position:relative is only needed for "static" elements so that
+    // z-index and ::before labels work.  Fixed/sticky/absolute elements
+    // already support z-index, so overriding their position breaks layout
+    // (e.g. a fixed header collapses into normal flow and disappears).
+    var REPOSITION_ATTR = 'data-interactive-reposition';
+
+    function addInteractiveClass(el, cls) {
+      var needsReposition = window.getComputedStyle(el).position === 'static';
+      el.classList.add(cls);
+      if (needsReposition) {
+        el.setAttribute(REPOSITION_ATTR, '');
+      }
+    }
+
+    function removeInteractiveClass(el, cls) {
+      el.classList.remove(cls);
+      // Only remove reposition attr if no other interactive class remains
+      if (!el.classList.contains(HOVER_CLASS) &&
+          !el.classList.contains(SELECTED_CLASS) &&
+          !el.classList.contains(CONNECTED_CLASS)) {
+        el.removeAttribute(REPOSITION_ATTR);
+      }
+    }
+
+    // --- CSS Injection ---
+    function injectConnectStyles() {
+      if (document.getElementById(CONNECT_STYLE_ID)) return;
+
+      const css = `
+        /* Cursor change for the whole page */
+        body[data-mode="connect"] {
+          cursor: crosshair !important;
+        }
+
+        /* position:relative only for originally-static elements (via JS attr) */
+        [${REPOSITION_ATTR}] {
+          position: relative;
+        }
+
+        /* Connected State - Blue/Green (Persistent) */
+        .${CONNECTED_CLASS} {
+          outline: 2px dashed #4287f5 !important;
+          z-index: 9990; 
+        }
+
+        /* Hover State - Blurple */
+        .${HOVER_CLASS} {
+          outline: 2px solid #5E56E7 !important;
+          z-index: 9999;
+        }
+
+        /* Selected State - Same Blurple (Persistent) */
+        .${SELECTED_CLASS} {
+          outline: 2px solid #5E56E7 !important;
+          box-shadow: 0 0 0 2px #5E56E7 !important;
+          z-index: 10000;
+        }
+
+        /* Label Tag */
+        .${CONNECTED_CLASS}::before,
+        .${HOVER_CLASS}::before,
+        .${SELECTED_CLASS}::before {
+          content: attr(data-interactive-label);
+          position: absolute;
+          top: -24px;
+          left: -2px;
+          padding: 2px 8px;
+          font-size: 12px !important;
+          line-height: 1 !important;
+          height: auto !important;
+          display: block !important;
+          font-family: monospace !important;
+          font-weight: normal !important;
+          font-style: normal !important;
+          text-transform: none !important;
+          letter-spacing: normal !important;
+          border-radius: 4px 4px 0 0;
+          white-space: nowrap;
+          pointer-events: none;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+          z-index: 10001;
+        }
+
+        /* Specific Colors for Labels */
+        .${CONNECTED_CLASS}::before {
+          background: #4287f5;
+          color: white;
+          content: "Connected"; 
+        }
+        
+        .${HOVER_CLASS}::before,
+        .${SELECTED_CLASS}::before {
+          background: #5E56E7;
+          color: white;
+        }
+      `;
+
+      const style = document.createElement('style');
+      style.id = CONNECT_STYLE_ID;
+      style.textContent = css;
+      document.head.appendChild(style);
+    }
+
+    function injectRunStyles() {
+      if (document.getElementById(RUN_STYLE_ID)) return;
+      const style = document.createElement('style');
+      style.id = RUN_STYLE_ID;
+      style.textContent = `
+        .${RUN_LINK_CLASS} { cursor: pointer !important; }
+        .${HOTSPOT_CLASS} {
+          outline: 2px dashed rgba(66, 135, 245, 0.7) !important;
+          outline-offset: 2px;
+          animation: hotspot-pulse 2s ease-in-out infinite;
+        }
+        @keyframes hotspot-pulse {
+          0%, 100% { outline-color: rgba(66, 135, 245, 0.5); }
+          50% { outline-color: rgba(66, 135, 245, 0.9); }
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+    // --- Core Logic: Connect Mode ---
+    function updateConnectMode() {
+      document.body.setAttribute('data-mode', 'connect');
+      injectConnectStyles();
+      highlightConnections();
+      
+      // Clear run mode artifacts
+      document.querySelectorAll('.' + RUN_LINK_CLASS).forEach(el => el.classList.remove(RUN_LINK_CLASS));
+    }
+
+    function highlightConnections() {
+      // Clear existing
+      document.querySelectorAll('.' + CONNECTED_CLASS).forEach(el => {
+         removeInteractiveClass(el, CONNECTED_CLASS);
+         el.removeAttribute('data-interactive-label');
+      });
+
+      // Highlight based on current state links? 
+      // Or ALL links for this screen? Usually all links for this screen logic.
+      // But we receive potentially filtered links. 
+      // For now, let's use all links passed to us.
+      if (!links) {
+        return;
+      }
+
+      links.forEach(link => {
+        // Show all connections in Connect mode, regardless of state
+        // if (link.state !== '1') return;
+
+        try {
+           let safeXpath = link.xpath;
+           if (!safeXpath.startsWith('/') && !safeXpath.startsWith('id(')) {
+             safeXpath = '//' + safeXpath;
+           }
+
+           const element = getElementByXPath(safeXpath);
+           if (element) {
+             addInteractiveClass(element, CONNECTED_CLASS);
+             element.setAttribute('data-interactive-label', 'Connected');
+           }
+        } catch (e) {}
+      });
+    }
+    
+    function handleConnectHover(e) {
+      if (mode !== 'connect') return;
+      // Don't show hover borders when interactions are paused or element is selected
+      if (!interactive || selectedElement) return;
+      
+      // Cleanup previous hover
+      document.querySelectorAll('.' + HOVER_CLASS).forEach(el => {
+         removeInteractiveClass(el, HOVER_CLASS);
+         el.removeAttribute('data-interactive-label');
+      });
+
+      const target = e.target;
+      if (target === document.body || target === document.documentElement) return;
+
+      // Skip page-level wrappers — they create stacking contexts that
+      // cover fixed/sticky headers and footers.
+      var SKIP_HOVER = { MAIN:1, BODY:1, HTML:1 };
+      if (SKIP_HOVER[target.tagName]) return;
+
+      // Don't hover if selected
+      if (target.classList.contains(SELECTED_CLASS)) return;
+
+      addInteractiveClass(target, HOVER_CLASS);
+      
+      // Determine label
+      let label = 'Select';
+      if (target.classList.contains(CONNECTED_CLASS)) label = 'Connected';
+      
+      target.setAttribute('data-interactive-label', label);
+    }
+
+    function handleConnectClick(e) {
+      if (mode !== 'connect') return;
+
+      // Don't intercept clicks originating from contentEditable elements.
+      // When editing text in a <button> or <a>, pressing Space fires a
+      // synthetic click; we must still preventDefault() to block form
+      // submission / navigation, but skip the selection logic so the
+      // space character is inserted normally.
+      const target = e.target;
+      if (target && (target.isContentEditable || target.closest?.('[contenteditable]'))) {
+        e.preventDefault();
+        return;
+      }
+
+      e.preventDefault();
+      e.stopPropagation();
+      if (!interactive) return;
+
+      // If an element is already selected, deselect it (click anywhere to dismiss)
+      if (selectedElement) {
+        removeInteractiveClass(selectedElement, SELECTED_CLASS);
+        selectedElement.removeAttribute('data-interactive-label');
+        selectedElement = null;
+        window.parent.postMessage({ type: 'elementDeselected' }, '*');
+        return;
+      }
+
+      // target is already declared above
+      
+      // Toggle selection
+      if (target.classList.contains(SELECTED_CLASS)) {
+        // Deselect
+        removeInteractiveClass(target, SELECTED_CLASS);
+        target.removeAttribute('data-interactive-label');
+        selectedElement = null;
+        
+        window.parent.postMessage({
+          type: 'elementDeselected' 
+        }, '*');
+
+        // Re-apply hover if mouse is still there?
+      } else {
+        // Clear previous selection
+        if (selectedElement) {
+           removeInteractiveClass(selectedElement, SELECTED_CLASS);
+           selectedElement.removeAttribute('data-interactive-label');
+        }
+
+        // Skip page-level container wrappers — clicking on padding of a
+        // <main> or <body> selects the container which produces a useless
+        // overlay. We intentionally keep HEADER, FOOTER, NAV, SECTION
+        // etc. selectable since users may want to edit them directly.
+        var SKIP_TAGS = { MAIN:1, BODY:1, HTML:1 };
+        if (SKIP_TAGS[target.tagName] && target.children.length > 0) {
+          selectedElement = null;
+          return;
+        }
+        
+        selectedElement = target;
+        addInteractiveClass(selectedElement, SELECTED_CLASS);
+        selectedElement.setAttribute('data-interactive-label', 'Selected');
+        
+        // Remove hover class to avoid double border
+        removeInteractiveClass(selectedElement, HOVER_CLASS);
+
+        // Send to parent
+        const xpath = getXPathForElement(selectedElement);
+        const rect = selectedElement.getBoundingClientRect();
+
+        // Check if clicked element matches any stored link (resolve stored xpaths to compare DOM nodes)
+        let storedXpath = null;
+        if (links && links.length > 0) {
+          for (const link of links) {
+            try {
+              let safeXpath = link.xpath;
+              if (!safeXpath.startsWith('/') && !safeXpath.startsWith('id(')) {
+                safeXpath = '//' + safeXpath;
+              }
+              const el = getElementByXPath(safeXpath);
+              if (el === selectedElement) {
+                storedXpath = link.xpath;
+                break;
+              }
+            } catch (err) {}
+          }
+        }
+
+        window.parent.postMessage({
+          type: 'elementClicked',
+          payload: { 
+            xpath: storedXpath || xpath,
+            tagName: selectedElement.tagName,
+            text: (selectedElement.textContent || '').substring(0, 100),
+            attributes: Array.from(selectedElement.attributes).map(a => a.name + '="' + a.value + '"').join(' '),
+            outerHTML: (selectedElement.outerHTML || '').substring(0, 500),
+            hasBackgroundImage: !!(selectedElement.style && selectedElement.style.backgroundImage && selectedElement.style.backgroundImage.includes('url(')),
+            rect: {
+              x: rect.x,
+              y: rect.y,
+              width: rect.width,
+              height: rect.height,
+              top: rect.top,
+              right: rect.right,
+              bottom: rect.bottom,
+              left: rect.left
+            }
+          }
+        }, '*');
+      }
+    }
+
+    // --- Core Logic: Run Mode ---
+    function updateRunMode() {
+      document.body.removeAttribute('data-mode');
+      injectRunStyles();
+      addRunInteractivity();
+      
+      // Clear connect mode artifacts
+      document.querySelectorAll('.' + HOVER_CLASS).forEach(el => {
+          removeInteractiveClass(el, HOVER_CLASS);
+          el.removeAttribute('data-interactive-label');
+      });
+       document.querySelectorAll('.' + SELECTED_CLASS).forEach(el => {
+          removeInteractiveClass(el, SELECTED_CLASS);
+          el.removeAttribute('data-interactive-label');
+      });
+      document.querySelectorAll('.' + CONNECTED_CLASS).forEach(el => {
+          removeInteractiveClass(el, CONNECTED_CLASS);
+          el.removeAttribute('data-interactive-label');
+      });
+    }
+
+    // Timer handle for pending hotspot scans — ensures only one scan is active
+    var _hotspotTimer = null;
+
+    function addRunInteractivity(retryCount) {
+      if (!links) return;
+      retryCount = retryCount || 0;
+
+      // Cancel any pending retry to prevent overlapping scans
+      if (_hotspotTimer) {
+        clearTimeout(_hotspotTimer);
+        _hotspotTimer = null;
+      }
+      
+      // 1. Clear existing
+      document.querySelectorAll('.' + RUN_LINK_CLASS).forEach(el => {
+        el.classList.remove(RUN_LINK_CLASS);
+        el.classList.remove(HOTSPOT_CLASS);
+      });
+
+      // 2. Add highlights
+      var foundCount = 0;
+      for (const link of links) {
+        const isExact = (link.state === currentState);
+        const isDefault = (link.state === '1');
+        if (!isExact && !isDefault) continue;
+
+        try {
+          let safeXpath = link.xpath;
+          if (!safeXpath.startsWith('/') && !safeXpath.startsWith('id(')) {
+            safeXpath = '//' + safeXpath;
+          }
+          const el = getElementByXPath(safeXpath);
+          if (el) {
+            el.classList.add(RUN_LINK_CLASS);
+            if (hotspotsVisible) el.classList.add(HOTSPOT_CLASS);
+            foundCount++;
+          }
+        } catch (err) {}
+      }
+
+
+
+      // Retry with increasing delays if we have links but couldn't find elements
+      if (links.length > 0 && foundCount === 0 && retryCount < 5) {
+        var delays = [100, 200, 400, 600, 1000];
+        _hotspotTimer = setTimeout(function() {
+          _hotspotTimer = null;
+          addRunInteractivity(retryCount + 1);
+        }, delays[retryCount]);
+      }
+    }
+
+    function toggleHotspots(show) {
+      hotspotsVisible = show;
+      document.querySelectorAll('.' + RUN_LINK_CLASS).forEach(el => {
+        if (show) el.classList.add(HOTSPOT_CLASS);
+        else el.classList.remove(HOTSPOT_CLASS);
+      });
+    }
+
+    function handleRunClick(e) {
+      if (mode !== 'run') return;
+      
+      // Prevent default navigation for all links
+      const anchor = e.target.closest('a');
+      if (anchor) {
+        e.preventDefault();
+      }
+
+      if (!links || links.length === 0) return;
+
+      let bestLink = null;
+      let bestPriority = 0;
+
+      for (const link of links) {
+        const isExact = (link.state === currentState);
+        const isDefault = (link.state === '1');
+        if (!isExact && !isDefault) continue;
+
+        try {
+          let safeXpath = link.xpath;
+          if (!safeXpath.startsWith('/') && !safeXpath.startsWith('id(')) {
+            safeXpath = '//' + safeXpath;
+          }
+          const el = getElementByXPath(safeXpath);
+          
+          if (el && (el === e.target || el.contains(e.target))) {
+            const priority = isExact ? 2 : 1;
+            if (priority > bestPriority) {
+              bestLink = link;
+              bestPriority = priority;
+            }
+          }
+        } catch (err) {
+            console.error('Error checking link:', link, err);
+        }
+      }
+
+      if (bestLink) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.parent.postMessage({
+          type: 'navigate',
+          payload: {
+            targetScreenId: bestLink.targetScreenId,
+            transition: bestLink.transition
+          }
+        }, '*');
+      }
+    }
+
+    // --- Main Event Dispatcher ---
+    function onMouseOver(e) {
+      if (mode === 'connect') handleConnectHover(e);
+    }
+
+    function onClick(e) {
+      // Notify parent of any click inside the iframe (used to dismiss
+      // the welcome message — iframe clicks don't bubble to parent DOM)
+      window.parent.postMessage({ type: 'iframeClicked' }, '*');
+      if (mode === 'connect') handleConnectClick(e);
+      else if (mode === 'run') handleRunClick(e);
+    }
+
+    function onDblClick(e) {
+      if (mode !== 'connect' || !interactive) return;
+
+      var target = e.target;
+      if (!target || target === document.body || target === document.documentElement) return;
+
+      // Only trigger for text-editable elements
+      if (!TEXT_EDITABLE_TAGS[target.tagName]) return;
+
+      e.preventDefault();
+      e.stopPropagation();
+
+      var xpath = getXPathForElement(target);
+
+      // Check if clicked element matches a stored link xpath
+      var storedXpath = null;
+      if (links && links.length > 0) {
+        for (var i = 0; i < links.length; i++) {
+          try {
+            var safeXpath = links[i].xpath;
+            if (!safeXpath.startsWith('/') && !safeXpath.startsWith('id(')) {
+              safeXpath = '//' + safeXpath;
+            }
+            if (getElementByXPath(safeXpath) === target) {
+              storedXpath = links[i].xpath;
+              break;
+            }
+          } catch (err) {}
+        }
+      }
+
+      // Tell parent to go directly into text edit mode
+      window.parent.postMessage({
+        type: 'textEditRequested',
+        payload: { xpath: storedXpath || xpath }
+      }, '*');
+    }
+
+    // --- HTML Serialization (used by text edit and image replace) ---
+    function getEditedHtml() {
+      const clone = document.documentElement.cloneNode(true);
+
+      // 1. Remove contenteditable attributes
+      clone.querySelectorAll('[contenteditable]').forEach(function(e) {
+        e.removeAttribute('contenteditable');
+        e.removeAttribute('spellcheck');
+      });
+
+      // 2. Remove injected script/style elements
+      clone.querySelectorAll('script[data-stitch-injected]').forEach(function(e) {
+        e.remove();
+      });
+      clone.querySelectorAll('style[data-stitch-injected]').forEach(function(e) {
+        e.remove();
+      });
+      // Remove prototype edit/run mode style tags by ID
+      var modeStyle = clone.querySelector('#interactive-mode-styles');
+      if (modeStyle) modeStyle.remove();
+      var runStyle = clone.querySelector('#prototype-run-styles');
+      if (runStyle) runStyle.remove();
+
+      // 3. Remove prototype interactive classes and attributes
+      var protoClasses = ['interactive-selected', 'interactive-connected',
+        'interactive-hover', 'interactive-active', 'prototype-hotspot'];
+      protoClasses.forEach(function(cls) {
+        clone.querySelectorAll('.' + cls).forEach(function(e) {
+          e.classList.remove(cls);
+        });
+      });
+      // Also strip from body
+      clone.querySelector('body')?.classList.remove('interactive-active');
+      // Remove data-interactive-label and data-interactive-reposition attributes
+      clone.querySelectorAll('[data-interactive-label]').forEach(function(e) {
+        e.removeAttribute('data-interactive-label');
+      });
+      clone.querySelectorAll('[' + REPOSITION_ATTR + ']').forEach(function(e) {
+        e.removeAttribute(REPOSITION_ATTR);
+      });
+
+      // 4. Remove editing highlight inline styles
+      clone.querySelectorAll('[style]').forEach(function(e) {
+        e.style.outline = '';
+        e.style.outlineOffset = '';
+        e.style.cursor = '';
+        if (!e.getAttribute('style')?.trim()) {
+          e.removeAttribute('style');
+        }
+      });
+
+      return '<!DOCTYPE html>' + clone.outerHTML;
+    }
+
+    // --- Message Listener ---
+    function handleMessage(event) {
+      if (!event.data || typeof event.data !== 'object') return;
+      const { type, payload } = event.data;
+      
+      if (type === 'setMode') {
+        const newMode = payload.mode; // 'run' or 'connect' (mapped from 'edit' -> 'connect')
+        if (newMode && newMode !== mode) {
+          mode = newMode;
+          if (mode === 'connect') updateConnectMode();
+          else updateRunMode();
+        }
+      } else if (type === 'setState') {
+        const newStateId = payload?.stateId;
+        if (newStateId && newStateId !== currentState) {
+          currentState = newStateId;
+          if (mode === 'run') updateRunMode();
+        }
+      } else if (type === 'updateLinks') {
+         // Debounce link updates to prevent rapid broadcasts from
+         // clearing and re-scanning hotspots repeatedly
+         links = payload.links || [];
+         if (window.__updateLinksTimer) clearTimeout(window.__updateLinksTimer);
+         window.__updateLinksTimer = setTimeout(function() {
+           window.__updateLinksTimer = null;
+           if (mode === 'run') updateRunMode();
+           else updateConnectMode();
+         }, 50);
+      } else if (type === 'showHotspots') {
+         toggleHotspots(!!payload?.show);
+      } else if (type === 'clearSelection') {
+         if (selectedElement) {
+            removeInteractiveClass(selectedElement, SELECTED_CLASS);
+            selectedElement.removeAttribute('data-interactive-label');
+            selectedElement = null;
+         }
+      } else if (type === 'enableTextEdit') {
+         // --- Direct text editing ---
+         const xpath = payload?.xpath;
+         if (!xpath) return;
+         let safeXpath = xpath;
+         if (!safeXpath.startsWith('/') && !safeXpath.startsWith('id(')) {
+           safeXpath = '//' + safeXpath;
+         }
+         const el = getElementByXPath(safeXpath);
+         if (!el || !(el instanceof HTMLElement)) return;
+
+         // Track the element being edited
+         let textEditElement = el;
+
+         // Make editable
+         textEditElement.setAttribute('contenteditable', 'true');
+         textEditElement.setAttribute('spellcheck', 'false');
+         textEditElement.style.outline = '2px solid #4287f5';
+         textEditElement.style.outlineOffset = '2px';
+         textEditElement.style.cursor = 'text';
+         textEditElement.focus();
+
+         // Select all text so user can start typing immediately
+         const range = document.createRange();
+         range.selectNodeContents(textEditElement);
+         const sel = window.getSelection();
+         if (sel) {
+           sel.removeAllRanges();
+           sel.addRange(range);
+         }
+
+         // getEditedHtml is defined at the outer scope
+
+         // Debounce text extraction to avoid O(N) DOM cloning on every keystroke
+         let textEditTimeout;
+         function sendHtml() {
+           window.parent.postMessage({
+             type: 'textChanged',
+             payload: { html: getEditedHtml() }
+           }, '*');
+         }
+         function onTextInput() {
+           clearTimeout(textEditTimeout);
+           textEditTimeout = setTimeout(sendHtml, 300);
+         }
+
+         // Cleanup on blur
+         function onTextBlur() {
+           // Flush any pending debounced update and send final text
+           clearTimeout(textEditTimeout);
+           sendHtml();
+
+           // Cleanup
+           textEditElement.removeAttribute('contenteditable');
+           textEditElement.removeAttribute('spellcheck');
+           textEditElement.style.outline = '';
+           textEditElement.style.outlineOffset = '';
+           textEditElement.style.cursor = '';
+           textEditElement.removeEventListener('input', onTextInput);
+           textEditElement.removeEventListener('blur', onTextBlur);
+
+           // Notify parent that text editing ended
+           window.parent.postMessage({
+             type: 'textEditEnded'
+           }, '*');
+         }
+
+         textEditElement.addEventListener('input', onTextInput);
+         textEditElement.addEventListener('blur', onTextBlur);
+
+         // Store cleanup for disableTextEdit message
+         window.__stitchTextEditCleanup = function() {
+           textEditElement.removeAttribute('contenteditable');
+           textEditElement.removeAttribute('spellcheck');
+           textEditElement.style.outline = '';
+           textEditElement.style.outlineOffset = '';
+           textEditElement.style.cursor = '';
+           textEditElement.removeEventListener('input', onTextInput);
+           textEditElement.removeEventListener('blur', onTextBlur);
+           textEditElement.blur();
+         };
+      } else if (type === 'disableTextEdit') {
+         if (window.__stitchTextEditCleanup) {
+           window.__stitchTextEditCleanup();
+           window.__stitchTextEditCleanup = null;
+         }
+      } else if (type === 'replaceImage') {
+         // --- Image replacement ---
+         const xpath = payload?.xpath;
+         const newSrc = payload?.src;
+         if (!xpath || !newSrc) return;
+         let safeXpath = xpath;
+         if (!safeXpath.startsWith('/') && !safeXpath.startsWith('id(')) {
+           safeXpath = '//' + safeXpath;
+         }
+         const imgEl = getElementByXPath(safeXpath);
+         if (!imgEl || !(imgEl instanceof HTMLElement)) return;
+
+         // Swap image source
+         const tag = imgEl.tagName.toLowerCase();
+         if (tag === 'img') {
+           imgEl.setAttribute('src', newSrc);
+         } else {
+           // Background image element
+           imgEl.style.backgroundImage = 'url("' + newSrc + '")';
+         }
+
+         // Send updated HTML to parent for persistence
+         window.parent.postMessage({
+           type: 'textChanged',
+           payload: { html: getEditedHtml() }
+         }, '*');
+      } else if (type === 'setInteractive') {
+         interactive = !!payload?.interactive;
+         if (!interactive) {
+           // Clear hovers when disabling
+           document.querySelectorAll('.' + HOVER_CLASS).forEach(el => {
+             removeInteractiveClass(el, HOVER_CLASS);
+             el.removeAttribute('data-interactive-label');
+           });
+         }
+       }
+    }
+
+    window.addEventListener('message', handleMessage);
+
+    // --- Initialization ---
+    document.addEventListener('mouseover', onMouseOver, true);
+    document.addEventListener('click', onClick, true); // Capture phase to prevent default
+    document.addEventListener('dblclick', onDblClick, true);
+
+    // Esc key to deselect in connect mode + space key fix for contentEditable buttons
+    function onKeyDown(e) {
+      // Fix: <button> and <a> elements have a native activation behavior on
+      // Space (fires a click). When contentEditable is active on such elements,
+      // the browser prioritises activation over text insertion. Prevent the
+      // native activation and manually insert the space character instead.
+      if (e.key === ' ' && !e.repeat) {
+        const t = e.target;
+        if (t && t.isContentEditable) {
+          e.preventDefault();
+          document.execCommand('insertText', false, ' ');
+          return;
+        }
+      }
+
+      if (e.key === 'Escape' && mode === 'connect' && selectedElement) {
+        removeInteractiveClass(selectedElement, SELECTED_CLASS);
+        selectedElement.removeAttribute('data-interactive-label');
+        selectedElement = null;
+        window.parent.postMessage({ type: 'elementDeselected' }, '*');
+      }
+    }
+    document.addEventListener('keydown', onKeyDown, true);
+
+    // Clear hover borders when mouse leaves the iframe entirely
+    function onMouseLeave() {
+      document.querySelectorAll('.' + HOVER_CLASS).forEach(el => {
+        removeInteractiveClass(el, HOVER_CLASS);
+        el.removeAttribute('data-interactive-label');
+      });
+    }
+    document.addEventListener('mouseleave', onMouseLeave);
+
+    // Cleanup function
+    window.__PROTOTYPE_V2_CLEANUP__ = function() {
+      document.removeEventListener('mouseover', onMouseOver, true);
+      document.removeEventListener('click', onClick, true);
+      document.removeEventListener('dblclick', onDblClick, true);
+      document.removeEventListener('keydown', onKeyDown, true);
+      document.removeEventListener('mouseleave', onMouseLeave);
+      window.removeEventListener('message', handleMessage);
+      // Remove styles
+      const connectStyle = document.getElementById(CONNECT_STYLE_ID);
+      if (connectStyle) connectStyle.remove();
+      const runStyle = document.getElementById(RUN_STYLE_ID);
+      if (runStyle) runStyle.remove();
+    };
+
+    // Start in default mode
+    function init() {
+      if (!document.body) {
+        // Should not happen if script is at end of body, but just in case
+        console.warn('PrototypeV2: document.body not ready during init');
+        return;
+      }
+      if (mode === 'run') updateRunMode();
+      else updateConnectMode();
+
+      // Notify parent that script is ready to receive messages (links, mode, state)
+      window.parent.postMessage({ type: 'iframe_heartbeat' }, '*');
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+
+  })();
+
+    </script><style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.left-0{left:0px}.right-0{right:0px}.top-0{top:0px}.-right-12{right:-3rem}.-top-12{top:-3rem}.left-2\.5{left:0.625rem}.left-3{left:0.75rem}.top-2{top:0.5rem}.top-3{top:0.75rem}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-1\.5{margin-bottom:0.375rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-space-lg{margin-bottom:1rem}.mb-space-md{margin-bottom:0.75rem}.ml-2{margin-left:0.5rem}.mt-0\.5{margin-top:0.125rem}.mt-1{margin-top:0.25rem}.mt-2{margin-top:0.5rem}.mt-3{margin-top:0.75rem}.mt-6{margin-top:1.5rem}.mt-auto{margin-top:auto}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-1{height:0.25rem}.h-1\.5{height:0.375rem}.h-14{height:3.5rem}.h-2{height:0.5rem}.h-32{height:8rem}.h-8{height:2rem}.h-full{height:100%}.min-h-\[884px\]{min-height:884px}.w-full{width:100%}.w-1{width:0.25rem}.w-1\.5{width:0.375rem}.w-2{width:0.5rem}.w-32{width:8rem}.w-40{width:10rem}.w-8{width:2rem}.w-fit{width:-moz-fit-content;width:fit-content}.min-w-\[760px\]{min-width:760px}.max-w-2xl{max-width:42rem}.max-w-\[1400px\]{max-width:1400px}.max-w-xl{max-width:36rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.border-collapse{border-collapse:collapse}@keyframes ping{75%, 100%{transform:scale(2);opacity:0}}.animate-ping{animation:ping 1s cubic-bezier(0, 0, 0.2, 1) infinite}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite}.cursor-default{cursor:default}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.items-stretch{align-items:stretch}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-0\.5{gap:0.125rem}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-4{gap:1rem}.gap-space-lg{gap:1rem}.gap-space-md{gap:0.75rem}.gap-space-sm{gap:0.5rem}.gap-space-xl{gap:1.5rem}.gap-space-xs{gap:0.25rem}.gap-x-2{column-gap:0.5rem}.gap-y-1{row-gap:0.25rem}.space-y-1\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.375rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.375rem * var(--tw-space-y-reverse))}.divide-y > :not([hidden]) ~ :not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(1px * calc(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(1px * var(--tw-divide-y-reverse))}.divide-surface-container > :not([hidden]) ~ :not([hidden]){--tw-divide-opacity:1;border-color:rgb(30 32 36 / var(--tw-divide-opacity, 1))}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.whitespace-nowrap{white-space:nowrap}.text-balance{text-wrap:balance}.rounded{border-radius:0.125rem}.rounded-full{border-radius:0.75rem}.rounded-none{border-radius:0px}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-surface-container{--tw-border-opacity:1;border-color:rgb(30 32 36 / var(--tw-border-opacity, 1))}.border-outline-variant{--tw-border-opacity:1;border-color:rgb(68 70 83 / var(--tw-border-opacity, 1))}.border-outline-variant\/20{border-color:rgb(68 70 83 / 0.2)}.border-outline-variant\/30{border-color:rgb(68 70 83 / 0.3)}.border-outline-variant\/40{border-color:rgb(68 70 83 / 0.4)}.border-primary\/30{border-color:rgb(184 196 255 / 0.3)}.border-primary\/40{border-color:rgb(184 196 255 / 0.4)}.border-primary\/50{border-color:rgb(184 196 255 / 0.5)}.border-secondary\/40{border-color:rgb(183 196 255 / 0.4)}.border-surface-container-highest{--tw-border-opacity:1;border-color:rgb(51 53 57 / var(--tw-border-opacity, 1))}.border-tertiary\/30{border-color:rgb(255 185 86 / 0.3)}.border-tertiary\/40{border-color:rgb(255 185 86 / 0.4)}.bg-surface-container-lowest{--tw-bg-opacity:1;background-color:rgb(12 14 18 / var(--tw-bg-opacity, 1))}.bg-surface\/90{background-color:rgb(17 19 23 / 0.9)}.bg-outline{--tw-bg-opacity:1;background-color:rgb(142 144 159 / var(--tw-bg-opacity, 1))}.bg-outline-variant{--tw-bg-opacity:1;background-color:rgb(68 70 83 / var(--tw-bg-opacity, 1))}.bg-primary{--tw-bg-opacity:1;background-color:rgb(184 196 255 / var(--tw-bg-opacity, 1))}.bg-primary-container{--tw-bg-opacity:1;background-color:rgb(0 47 167 / var(--tw-bg-opacity, 1))}.bg-primary-container\/20{background-color:rgb(0 47 167 / 0.2)}.bg-secondary{--tw-bg-opacity:1;background-color:rgb(183 196 255 / var(--tw-bg-opacity, 1))}.bg-surface{--tw-bg-opacity:1;background-color:rgb(17 19 23 / var(--tw-bg-opacity, 1))}.bg-surface-container{--tw-bg-opacity:1;background-color:rgb(30 32 36 / var(--tw-bg-opacity, 1))}.bg-surface-container-high{--tw-bg-opacity:1;background-color:rgb(40 42 46 / var(--tw-bg-opacity, 1))}.bg-surface-container-low{--tw-bg-opacity:1;background-color:rgb(26 28 32 / var(--tw-bg-opacity, 1))}.bg-surface-container-lowest\/60{background-color:rgb(12 14 18 / 0.6)}.bg-surface-container-lowest\/80{background-color:rgb(12 14 18 / 0.8)}.bg-tertiary{--tw-bg-opacity:1;background-color:rgb(255 185 86 / var(--tw-bg-opacity, 1))}.bg-tertiary-container\/10{background-color:rgb(88 55 0 / 0.1)}.bg-tertiary-container\/30{background-color:rgb(88 55 0 / 0.3)}.bg-tertiary-container\/40{background-color:rgb(88 55 0 / 0.4)}.object-cover{object-fit:cover}.p-0\.5{padding:0.125rem}.p-3{padding:0.75rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-1\.5{padding-left:0.375rem;padding-right:0.375rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-space-lg{padding-left:1rem;padding-right:1rem}.px-space-md{padding-left:0.75rem;padding-right:0.75rem}.px-space-sm{padding-left:0.5rem;padding-right:0.5rem}.px-space-xs{padding-left:0.25rem;padding-right:0.25rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-space-sm{padding-top:0.5rem;padding-bottom:0.5rem}.py-space-xl{padding-top:1.5rem;padding-bottom:1.5rem}.pb-3{padding-bottom:0.75rem}.pb-4{padding-bottom:1rem}.pl-8{padding-left:2rem}.pl-9{padding-left:2.25rem}.pr-3{padding-right:0.75rem}.pt-14{padding-top:3.5rem}.pt-3{padding-top:0.75rem}.pt-4{padding-top:1rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.font-body-md{font-family:IBM Plex Sans}.font-body-lg{font-family:IBM Plex Sans}.font-body-sm{font-family:IBM Plex Sans}.font-headline-lg{font-family:IBM Plex Sans}.font-headline-md{font-family:IBM Plex Sans}.font-headline-xl{font-family:IBM Plex Sans}.font-label-caps{font-family:IBM Plex Sans}.font-telemetry-lg{font-family:IBM Plex Mono}.font-telemetry-md{font-family:IBM Plex Mono}.font-telemetry-sm{font-family:IBM Plex Mono}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-\[13px\]{font-size:13px}.text-\[14px\]{font-size:14px}.text-\[15px\]{font-size:15px}.text-\[16px\]{font-size:16px}.text-\[32px\]{font-size:32px}.text-\[40px\]{font-size:40px}.text-body-lg{font-size:15px;line-height:22px;font-weight:400}.text-body-md{font-size:13px;line-height:18px;font-weight:400}.text-body-sm{font-size:12px;line-height:16px;font-weight:400}.text-headline-lg{font-size:24px;line-height:32px;letter-spacing:-0.01em;font-weight:600}.text-headline-md{font-size:18px;line-height:26px;letter-spacing:-0.01em;font-weight:600}.text-label-caps{font-size:10px;line-height:14px;letter-spacing:0.06em;font-weight:600}.text-telemetry-lg{font-size:20px;line-height:28px;letter-spacing:-0.02em;font-weight:500}.text-telemetry-md{font-size:13px;line-height:18px;font-weight:400}.text-telemetry-sm{font-size:11px;line-height:14px;font-weight:400}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-normal{font-weight:400}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-\[1\.12\]{line-height:1.12}.leading-relaxed{line-height:1.625}.tracking-tight{letter-spacing:-0.025em}.tracking-wider{letter-spacing:0.05em}.tracking-widest{letter-spacing:0.1em}.text-on-surface{--tw-text-opacity:1;color:rgb(226 226 232 / var(--tw-text-opacity, 1))}.text-on-primary-container{--tw-text-opacity:1;color:rgb(144 164 255 / var(--tw-text-opacity, 1))}.text-on-surface-variant{--tw-text-opacity:1;color:rgb(196 197 214 / var(--tw-text-opacity, 1))}.text-outline{--tw-text-opacity:1;color:rgb(142 144 159 / var(--tw-text-opacity, 1))}.text-outline-variant{--tw-text-opacity:1;color:rgb(68 70 83 / var(--tw-text-opacity, 1))}.text-primary{--tw-text-opacity:1;color:rgb(184 196 255 / var(--tw-text-opacity, 1))}.text-secondary{--tw-text-opacity:1;color:rgb(183 196 255 / var(--tw-text-opacity, 1))}.text-tertiary{--tw-text-opacity:1;color:rgb(255 185 86 / var(--tw-text-opacity, 1))}.line-through{-webkit-text-decoration-line:line-through;text-decoration-line:line-through}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-75{opacity:0.75}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.blur-2xl{--tw-blur:blur(40px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-100{transition-duration:100ms}.duration-75{transition-duration:75ms}.selection\:bg-primary-container *::selection{--tw-bg-opacity:1;background-color:rgb(0 47 167 / var(--tw-bg-opacity, 1))}.selection\:text-on-primary-container *::selection{--tw-text-opacity:1;color:rgb(144 164 255 / var(--tw-text-opacity, 1))}.selection\:bg-primary-container::selection{--tw-bg-opacity:1;background-color:rgb(0 47 167 / var(--tw-bg-opacity, 1))}.selection\:text-on-primary-container::selection{--tw-text-opacity:1;color:rgb(144 164 255 / var(--tw-text-opacity, 1))}.placeholder\:text-outline::placeholder{--tw-text-opacity:1;color:rgb(142 144 159 / var(--tw-text-opacity, 1))}.hover\:border-outline-variant:hover{--tw-border-opacity:1;border-color:rgb(68 70 83 / var(--tw-border-opacity, 1))}.hover\:border-primary\/50:hover{border-color:rgb(184 196 255 / 0.5)}.hover\:bg-secondary-container:hover{--tw-bg-opacity:1;background-color:rgb(5 62 189 / var(--tw-bg-opacity, 1))}.hover\:bg-surface-container:hover{--tw-bg-opacity:1;background-color:rgb(30 32 36 / var(--tw-bg-opacity, 1))}.hover\:bg-surface-container-high:hover{--tw-bg-opacity:1;background-color:rgb(40 42 46 / var(--tw-bg-opacity, 1))}.hover\:bg-surface-container-low:hover{--tw-bg-opacity:1;background-color:rgb(26 28 32 / var(--tw-bg-opacity, 1))}.hover\:bg-tertiary-container\/20:hover{background-color:rgb(88 55 0 / 0.2)}.hover\:text-on-secondary-container:hover{--tw-text-opacity:1;color:rgb(168 185 255 / var(--tw-text-opacity, 1))}.hover\:text-on-surface:hover{--tw-text-opacity:1;color:rgb(226 226 232 / var(--tw-text-opacity, 1))}.hover\:text-on-surface-variant:hover{--tw-text-opacity:1;color:rgb(196 197 214 / var(--tw-text-opacity, 1))}.hover\:text-secondary-fixed:hover{--tw-text-opacity:1;color:rgb(220 225 255 / var(--tw-text-opacity, 1))}.focus\:border-primary:focus{--tw-border-opacity:1;border-color:rgb(184 196 255 / var(--tw-border-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}@media (min-width: 640px){.sm\:flex{display:flex}.sm\:w-80{width:20rem}.sm\:flex-row{flex-direction:row}.sm\:items-center{align-items:center}}@media (min-width: 768px){.md\:mt-0{margin-top:0px}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:items-end{align-items:flex-end}.md\:divide-x > :not([hidden]) ~ :not([hidden]){--tw-divide-x-reverse:0;border-right-width:calc(1px * var(--tw-divide-x-reverse));border-left-width:calc(1px * calc(1 - var(--tw-divide-x-reverse)))}.md\:divide-y-0 > :not([hidden]) ~ :not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(0px * calc(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(0px * var(--tw-divide-y-reverse))}.md\:px-6{padding-left:1.5rem;padding-right:1.5rem}.md\:pl-6{padding-left:1.5rem}.md\:pr-6{padding-right:1.5rem}.md\:pt-0{padding-top:0px}}@media (min-width: 1024px){.lg\:col-span-5{grid-column:span 5 / span 5}.lg\:col-span-7{grid-column:span 7 / span 7}.lg\:flex{display:flex}.lg\:w-auto{width:auto}.lg\:grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}.lg\:flex-row{flex-direction:row}.lg\:items-center{align-items:center}.lg\:p-8{padding:2rem}.lg\:px-space-xl{padding-left:1.5rem;padding-right:1.5rem}.lg\:text-\[36px\]{font-size:36px}.lg\:text-\[44px\]{font-size:44px}}</style><style id="prototype-run-styles">
+        .prototype-link-hover { cursor: pointer !important; }
+        .prototype-hotspot {
+          outline: 2px dashed rgba(66, 135, 245, 0.7) !important;
+          outline-offset: 2px;
+          animation: hotspot-pulse 2s ease-in-out infinite;
+        }
+        @keyframes hotspot-pulse {
+          0%, 100% { outline-color: rgba(66, 135, 245, 0.5); }
+          50% { outline-color: rgba(66, 135, 245, 0.9); }
+        }
+      </style></head><body class="bg-surface-container-lowest font-body-md text-on-surface antialiased min-h-[884px] flex flex-col selection:bg-primary-container selection:text-on-primary-container" data-stitch-vh="min-h-[884px]===min-h-screen"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-surface-container"><div class="h-14 w-full px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md shrink-0"><div class="flex items-center gap-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VUKOhKEw_iWooWcuWV39s5y6E5j6YzFdvz4ZdP85qfc_Fx3VwuD3k3mw-IR66YMc3FCtm16ASz11aPy8n8H8hJg38GJoAUL4ksHoztKmTyVFMNm0xGjBaEREA3LF9USIU1T5ASRMVZ0-G9mQ-3koEOb5xxR4FfFxVJNwGmCRImNa_DOF4ntsCV4_-DUVEM13S56DtiZ_jvo3NNrX_g5HBR8r0OGPtmSdUrgGXqrN7bIo5Zl5GfFuEK1A"><span class="font-headline-md text-headline-md tracking-tight text-on-surface font-semibold">Counterledger</span></div><div class="hidden sm:flex items-center px-space-xs py-0.5 rounded bg-surface-container-high border border-outline-variant/40"><span class="font-label-caps text-label-caps uppercase text-secondary font-semibold">VERIFIABLE LIABILITIES v0.9</span></div></div><nav class="hidden lg:flex items-center gap-1 border border-surface-container bg-surface-container-lowest/60 p-0.5 rounded" data-active-classes="text-on-surface bg-surface-container-high border-outline-variant font-semibold"><a aria-current="page" class="px-space-md py-1 rounded transition-colors duration-100 text-on-surface bg-surface-container-high border-outline-variant font-semibold" data-path="board" href="#">Board</a><a class="px-space-md py-1 font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded transition-colors duration-100" data-path="prove" href="#">Prove</a><a class="px-space-md py-1 font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded transition-colors duration-100" data-path="replay" href="#">Replay</a><a class="px-space-md py-1 font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded transition-colors duration-100" data-path="cover" href="#">Cover</a><a class="px-space-md py-1 font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded transition-colors duration-100" data-path="judges" href="#">Judges</a></nav><div class="flex items-center gap-space-md shrink-0"><div class="flex items-center gap-space-xs px-space-sm py-1 rounded bg-surface-container border border-surface-container-highest"><span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span><span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant tracking-wider uppercase">SOLANA DEVNET</span></div><button class="px-space-md py-1.5 rounded bg-primary-container hover:bg-secondary-container border border-secondary/40 text-on-primary-container hover:text-on-secondary-container font-body-md text-body-md transition-colors duration-100 font-medium tracking-tight shadow-sm flex items-center gap-space-xs" type="button"><span class="material-symbols-outlined text-[16px]">lock_open</span><span>Prove my balance</span></button></div></div></header><main class="w-full flex-1 pt-14 bg-surface-container-lowest"><div class="flex flex-col w-full">
+<!-- SECTION 1: HERO VIEWPORT -->
+<section class="w-full px-space-lg lg:px-space-xl py-space-xl bg-surface-container-lowest border-b border-surface-container">
+<div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- Hero Left Column -->
+<div class="lg:col-span-7 flex flex-col justify-center">
+<!-- Status Indicator Tag -->
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-DEFAULT bg-surface-container-low border border-outline-variant/30 w-fit mb-space-md">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary tracking-wider uppercase font-medium">
+            [ PROTOCOL TELEMETRY // ACTIVE COVERAGE ]
+          </span>
+</div>
+<!-- Headline -->
+<h1 class="font-headline-xl text-[40px] lg:text-[44px] leading-[1.12] font-semibold tracking-tight text-on-surface mb-space-md text-balance">
+          Your exchange shows what it holds. Now you can <span class="text-primary">prove what it owes.</span>
+</h1>
+<!-- Subheadline -->
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-space-lg leading-relaxed">
+          Users prove their own balances with zkTLS. We watch withdrawals from the exchange's public wallets. A cover market on Solana pays if they stop.
+        </p>
+<!-- CTA Cluster -->
+<div class="flex flex-wrap items-center gap-space-sm mb-space-md">
+<a class="px-5 py-2.5 rounded-DEFAULT bg-primary-container text-on-surface font-body-md text-body-md font-medium hover:bg-secondary-container transition-colors duration-100 border border-primary/40 shadow-sm flex items-center gap-space-xs" href="#">
+<span class="material-symbols-outlined text-[16px] text-primary">table_chart</span>
+<span>Open the board</span>
+</a>
+<a class="px-5 py-2.5 rounded-DEFAULT bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface px-5 py-2.5 rounded-DEFAULT font-telemetry-md text-telemetry-md transition-colors duration-100 border border-outline-variant/40 flex items-center gap-space-xs" href="#">
+<span class="material-symbols-outlined text-[16px] text-tertiary">history</span>
+<span>Replay FTX</span>
+</a>
+<div class="hidden sm:flex items-center gap-space-xs px-space-sm py-2 rounded-DEFAULT bg-surface-container-lowest border border-outline-variant/20 ml-2">
+<span class="font-telemetry-sm text-telemetry-sm text-outline">EPOCH #419</span>
+<span class="text-outline-variant">/</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary">99.98% HEALTH</span>
+</div>
+</div>
+<!-- Telemetry Footnote -->
+<div class="font-telemetry-sm text-telemetry-sm text-outline flex flex-wrap items-center gap-x-2 gap-y-1">
+<span>Zero disclosure of credentials</span>
+<span>•</span>
+<span>Zero exchange API keys</span>
+<span>•</span>
+<span class="text-on-surface-variant font-medium">Cryptographic TLS proofs</span>
+</div>
+</div>
+<!-- Hero Right Column: Monitored Card (CoinDCX Live Telemetry) -->
+<div class="lg:col-span-5 w-full">
+<div class="bg-surface border border-outline-variant/40 rounded-DEFAULT p-5 shadow-2xl relative overflow-hidden">
+<!-- Ambient Structural Corner Glow -->
+<div class="absolute -top-12 -right-12 w-32 h-32 bg-primary-container/20 rounded-full blur-2xl pointer-events-none"></div>
+<!-- Card Header Bar -->
+<div class="flex items-center justify-between border-b border-surface-container pb-3 mb-4">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">CoinDCX</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary bg-primary-container/20 px-2 py-0.5 border border-primary/30 rounded-DEFAULT font-medium">
+                MONITORED
+              </span>
+</div>
+<div class="font-telemetry-sm text-[10px] text-outline flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+<span>LIVE SYNC • 14s AGO</span>
+</div>
+</div>
+<!-- Quantitative Metrics Split -->
+<div class="grid grid-cols-2 gap-space-md mb-4 bg-surface-container-lowest p-3 rounded-DEFAULT border border-surface-container">
+<div>
+<div class="font-label-caps text-label-caps text-outline uppercase tracking-wider mb-1">
+                PUBLISHED RESERVES (PoR)
+              </div>
+<div class="font-telemetry-lg text-telemetry-lg text-on-surface font-semibold tracking-tight">
+                $184.20M
+              </div>
+<div class="font-telemetry-sm text-[11px] text-outline mt-0.5">
+                Verified on-chain assets
+              </div>
+</div>
+<div>
+<div class="font-label-caps text-label-caps text-outline uppercase tracking-wider mb-1">
+                PROVEN LIABILITIES FLOOR
+              </div>
+<div class="font-telemetry-lg text-telemetry-lg text-primary font-semibold tracking-tight">
+                0.999 USDT
+              </div>
+<div class="font-telemetry-sm text-[11px] text-outline-variant mt-0.5">
+                by 1 account <span class="text-outline font-normal">(minimum, not total)</span>
+</div>
+</div>
+</div>
+<!-- Anomaly / Heartbeat Telemetry State -->
+<div class="p-3 bg-surface-container-low rounded-DEFAULT border border-tertiary/30 mb-4">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-1.5 text-tertiary font-telemetry-md text-telemetry-md font-medium">
+<span class="material-symbols-outlined text-[16px] text-tertiary">warning</span>
+<span>Withdrawal Heartbeat: not enough public data</span>
+</div>
+<span class="font-telemetry-sm text-[10px] bg-tertiary-container/40 text-tertiary px-1.5 py-0.5 rounded-DEFAULT border border-tertiary/40">
+                WARN_ANOMALY
+              </span>
+</div>
+<p class="font-telemetry-sm text-telemetry-sm text-on-surface-variant leading-relaxed">
+              Public wallet delta below statistical significance threshold for 28-day window. Cold-storage outflow model uncalibrated.
+            </p>
+</div>
+<!-- Solvency & Verifiability Score Gauge -->
+<div class="mb-4">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-caps text-label-caps uppercase text-outline">Solvency &amp; Verifiability Score</span>
+<span class="font-telemetry-md text-telemetry-md font-semibold text-on-surface">85<span class="text-outline text-telemetry-sm">/100</span></span>
+</div>
+<!-- Segmented Calibrated Meter Bar -->
+<div class="grid grid-cols-20 gap-0.5 h-2 bg-surface-container-lowest p-0.5 rounded-DEFAULT border border-surface-container">
+<!-- 17 segments filled (85%) -->
+<div class="h-full bg-primary rounded-none"></div>
+<div class="h-full bg-primary rounded-none"></div>
+<div class="h-full bg-primary rounded-none"></div>
+<div class="h-full bg-primary rounded-none"></div>
+<div class="h-full bg-primary rounded-none"></div>
+<div class="h-full bg-primary rounded-none"></div>
+<div class="h-full bg-primary rounded-none"></div>
+<div class="h-full bg-primary rounded-none"></div>
+<div class="h-full bg-primary rounded-none"></div>
+<div class="h-full bg-primary rounded-none"></div>
+<div class="h-full bg-primary rounded-none"></div>
+<div class="h-full bg-primary rounded-none"></div>
+<div class="h-full bg-primary rounded-none"></div>
+<div class="h-full bg-primary rounded-none"></div>
+<div class="h-full bg-primary rounded-none"></div>
+<div class="h-full bg-primary rounded-none"></div>
+<div class="h-full bg-primary rounded-none"></div>
+<!-- 3 segments empty (15%) -->
+<div class="h-full bg-surface-container-high rounded-none"></div>
+<div class="h-full bg-surface-container-high rounded-none"></div>
+<div class="h-full bg-surface-container-high rounded-none"></div>
+</div>
+<div class="flex justify-between items-center mt-1 text-[10px] font-telemetry-sm text-outline">
+<span>0 (CRITICAL RISK)</span>
+<span>MEDIAN: 78</span>
+<span>100 (SOLVENT VERIFIED)</span>
+</div>
+</div>
+<!-- Bottom Card Footer Action -->
+<div class="pt-3 border-t border-surface-container flex justify-between items-center">
+<span class="font-telemetry-sm text-telemetry-sm text-outline">ROOT: 0x82f4..e991c</span>
+<a class="font-telemetry-sm text-telemetry-sm text-primary hover:text-secondary-fixed flex items-center gap-1 transition-colors" href="#">
+<span>View Merkle audit path</span>
+<span class="material-symbols-outlined text-[13px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: THREE COLUMNS ARCHITECTURE -->
+<section class="w-full px-space-lg lg:px-space-xl py-space-xl bg-surface-container-lowest border-b border-surface-container">
+<div class="max-w-[1400px] mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg">
+<div>
+<div class="font-telemetry-sm text-telemetry-sm text-primary uppercase tracking-widest mb-1">
+            CORE PROTOCOL MECHANISM
+          </div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">
+            Cryptographic liabilities without operator cooperation
+          </h2>
+</div>
+<div class="font-telemetry-sm text-telemetry-sm text-outline mt-2 md:mt-0">
+          ARCHITECTURE REF // ISO-20022 COMPLIANT TRANSCRIPT PROOF
+        </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Card 1 -->
+<div class="bg-surface border border-outline-variant/30 p-6 rounded-DEFAULT flex flex-col justify-between hover:border-outline-variant transition-colors duration-100">
+<div>
+<div class="font-telemetry-sm text-telemetry-sm text-primary font-medium tracking-wider mb-3">
+              01 // CLIENT-SIDE PROOF
+            </div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold mb-2">
+              Prove your balance
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-4">
+              zkTLS, 30 seconds, never your password. Generate a cryptographic zero-knowledge proof of your authenticated session directly inside your browser. No private keys, session tokens, or API credentials ever leave your client.
+            </p>
+</div>
+<div class="border-t border-surface-container pt-4 mt-auto">
+<ul class="space-y-1.5 font-telemetry-sm text-telemetry-sm text-outline">
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 bg-primary rounded-full"></span>
+<span>TLS 1.3 transcript attestation</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 bg-primary rounded-full"></span>
+<span>Zero session token leakage</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 bg-primary rounded-full"></span>
+<span>Instant cryptographic commitment</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface border border-outline-variant/30 p-6 rounded-DEFAULT flex flex-col justify-between hover:border-outline-variant transition-colors duration-100">
+<div>
+<div class="font-telemetry-sm text-telemetry-sm text-primary font-medium tracking-wider mb-3">
+              02 // ON-CHAIN SURVEILLANCE
+            </div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold mb-2">
+              Watch withdrawals
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-4">
+              Hourly heartbeat vs the exchange's own 28-day pattern. Continuous heuristic surveillance cross-references on-chain outbound transfers against proprietary historical outflow velocity and cluster addresses.
+            </p>
+</div>
+<div class="border-t border-surface-container pt-4 mt-auto">
+<ul class="space-y-1.5 font-telemetry-sm text-telemetry-sm text-outline">
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 bg-primary rounded-full"></span>
+<span>28-day rolling liquidity baseline</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 bg-primary rounded-full"></span>
+<span>Mempool anomaly detection</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 bg-primary rounded-full"></span>
+<span>Auto-flag on 3.2σ divergence</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface border border-outline-variant/30 p-6 rounded-DEFAULT flex flex-col justify-between hover:border-outline-variant transition-colors duration-100">
+<div>
+<div class="font-telemetry-sm text-telemetry-sm text-primary font-medium tracking-wider mb-3">
+              03 // PROGRAMMATIC SETTLEMENT
+            </div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold mb-2">
+              Cover the halt
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-4">
+              Priced by the score, paid after a 2-day halt, not 100 days. Autonomous smart contract risk markets deployed on Solana execute programmatic payouts directly to affected depositors without discretionary claims committees.
+            </p>
+</div>
+<div class="border-t border-surface-container pt-4 mt-auto">
+<ul class="space-y-1.5 font-telemetry-sm text-telemetry-sm text-outline">
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 bg-primary rounded-full"></span>
+<span>Dynamic parametric pricing</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 bg-primary rounded-full"></span>
+<span>48-hour deterministic trigger</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 bg-primary rounded-full"></span>
+<span>Solana sub-second execution</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: HISTORICAL BENCHMARK & PROOF STRIP -->
+<section class="w-full bg-surface-container-low border-b border-surface-container py-space-xl px-space-lg lg:px-space-xl">
+<div class="max-w-[1400px] mx-auto">
+<div class="font-telemetry-sm text-telemetry-sm text-outline uppercase tracking-widest mb-6">
+        EMPIRICAL MODEL VALIDATION // REPLAY ANALYSIS
+      </div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg divide-y md:divide-y-0 md:divide-x divide-surface-container">
+<!-- Metric 1 -->
+<div class="md:pr-6 pt-4 md:pt-0">
+<div class="font-telemetry-lg text-[32px] lg:text-[36px] font-bold text-on-surface tracking-tight mb-1">
+            7.9 HOURS
+          </div>
+<div class="font-headline-md text-headline-md text-on-surface font-semibold mb-2">
+            FTX 2022: alarm 7.9 hours before the first public report
+          </div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Outflow velocity dropped below the critical 3-sigma corridor at 04:12 UTC, triggering autonomous halt alerts prior to the emergency withdrawal freeze.
+          </p>
+</div>
+<!-- Metric 2 -->
+<div class="md:px-6 pt-4 md:pt-0">
+<div class="font-telemetry-lg text-[32px] lg:text-[36px] font-bold text-primary tracking-tight mb-1">
+            37 HOURS vs 100 DAYS
+          </div>
+<div class="font-headline-md text-headline-md text-on-surface font-semibold mb-2">
+            Cover would have paid at 37 hours. Nexus Mutual: 100 days
+          </div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Parametric smart contracts settle immediately upon 48-hour withdrawal cessation, eliminating multi-month governance assessments and legal deadlocks.
+          </p>
+</div>
+<!-- Metric 3 -->
+<div class="md:pl-6 pt-4 md:pt-0">
+<div class="font-telemetry-lg text-[32px] lg:text-[36px] font-bold text-on-surface tracking-tight mb-1">
+            0 FALSE ALARMS
+          </div>
+<div class="font-headline-md text-headline-md text-on-surface font-semibold mb-2">
+            0 false alarms across 6 normal baseline weeks
+          </div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Calibrated across 7 tier-1 custodial entities during scheduled hot-wallet rebalancing, sweeping operations, and high-load congestion windows.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: GLOBAL EXCHANGE SURVEILLANCE BOARD -->
+<section class="w-full px-space-lg lg:px-space-xl py-space-xl bg-surface-container-lowest border-b border-surface-container">
+<div class="max-w-[1400px] mx-auto">
+<!-- Table Header & Filter Row -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 gap-space-sm border-b border-surface-container">
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 bg-primary rounded-none"></span>
+<h2 class="font-telemetry-md text-telemetry-md font-semibold text-on-surface uppercase tracking-wider">
+            GLOBAL EXCHANGE SURVEILLANCE BOARD
+          </h2>
+<span class="font-telemetry-sm text-telemetry-sm text-outline px-1.5 py-0.5 rounded-DEFAULT bg-surface-container border border-surface-container-highest">
+            LIVE v0.92
+          </span>
+</div>
+<div class="flex items-center gap-space-xs">
+<!-- Search Mockup -->
+<div class="relative">
+<span class="material-symbols-outlined text-[15px] text-outline absolute left-2.5 top-2 pointer-events-none">search</span>
+<input class="bg-surface-container-lowest border border-outline-variant/40 rounded-DEFAULT pl-8 pr-3 py-1 font-telemetry-sm text-telemetry-sm text-on-surface focus:outline-none focus:border-primary w-40 cursor-default" placeholder="Filter exchange..." readonly="" type="text" value="All monitored">
+</div>
+<button class="px-2.5 py-1 rounded-DEFAULT bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 font-telemetry-sm text-telemetry-sm text-on-surface-variant transition-colors flex items-center gap-1" type="button">
+<span>FILTER: ALL EXCHANGES</span>
+<span class="material-symbols-outlined text-[14px]">tune</span>
+</button>
+</div>
+</div>
+<!-- Ledger Table -->
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left border-collapse min-w-[760px]">
+<thead>
+<tr class="border-b border-surface-container bg-surface-container-lowest/80 font-label-caps text-label-caps text-outline uppercase tracking-wider">
+<th class="py-3 px-3">EXCHANGE</th>
+<th class="py-3 px-3 text-right">RESERVES (PoR)</th>
+<th class="py-3 px-3 text-right">PROVEN FLOOR</th>
+<th class="py-3 px-3 text-center">WITHDRAWAL HEARTBEAT</th>
+<th class="py-3 px-3 text-right">SCORE</th>
+<th class="py-3 px-3 text-right">AUDIT</th>
+</tr>
+</thead>
+<tbody class="font-telemetry-md text-telemetry-md divide-y divide-surface-container">
+<!-- Row 1: Binance -->
+<tr class="hover:bg-surface-container-low transition-colors duration-75">
+<td class="py-3 px-3 font-body-md font-semibold text-on-surface flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>Binance</span>
+</td>
+<td class="py-3 px-3 text-right font-telemetry-md text-on-surface font-medium">$172.96B</td>
+<td class="py-3 px-3 text-right font-telemetry-md text-primary">$412.8M <span class="text-outline text-telemetry-sm">(3,841 accts)</span></td>
+<td class="py-3 px-3 text-center">
+<div class="inline-flex items-center gap-1.5 text-telemetry-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded-DEFAULT">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>Normal (18m ago)</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-telemetry-md font-semibold text-on-surface">94/100</td>
+<td class="py-3 px-3 text-right">
+<button class="px-2 py-0.5 text-telemetry-sm text-primary hover:text-secondary-fixed bg-surface-container border border-surface-container-highest rounded-DEFAULT hover:border-primary/50 transition-colors" type="button">
+                  [Inspect]
+                </button>
+</td>
+</tr>
+<!-- Row 2: OKX -->
+<tr class="hover:bg-surface-container-low transition-colors duration-75">
+<td class="py-3 px-3 font-body-md font-semibold text-on-surface flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>OKX</span>
+</td>
+<td class="py-3 px-3 text-right font-telemetry-md text-on-surface font-medium">$31.32B</td>
+<td class="py-3 px-3 text-right font-telemetry-md text-primary">$89.4M <span class="text-outline text-telemetry-sm">(820 accts)</span></td>
+<td class="py-3 px-3 text-center">
+<div class="inline-flex items-center gap-1.5 text-telemetry-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded-DEFAULT">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>Normal (24m ago)</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-telemetry-md font-semibold text-on-surface">91/100</td>
+<td class="py-3 px-3 text-right">
+<button class="px-2 py-0.5 text-telemetry-sm text-primary hover:text-secondary-fixed bg-surface-container border border-surface-container-highest rounded-DEFAULT hover:border-primary/50 transition-colors" type="button">
+                  [Inspect]
+                </button>
+</td>
+</tr>
+<!-- Row 3: Bybit -->
+<tr class="hover:bg-surface-container-low transition-colors duration-75">
+<td class="py-3 px-3 font-body-md font-semibold text-on-surface flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>Bybit</span>
+</td>
+<td class="py-3 px-3 text-right font-telemetry-md text-on-surface font-medium">$16.28B</td>
+<td class="py-3 px-3 text-right font-telemetry-md text-primary">$42.1M <span class="text-outline text-telemetry-sm">(419 accts)</span></td>
+<td class="py-3 px-3 text-center">
+<div class="inline-flex items-center gap-1.5 text-telemetry-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded-DEFAULT">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>Normal (41m ago)</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-telemetry-md font-semibold text-on-surface">88/100</td>
+<td class="py-3 px-3 text-right">
+<button class="px-2 py-0.5 text-telemetry-sm text-primary hover:text-secondary-fixed bg-surface-container border border-surface-container-highest rounded-DEFAULT hover:border-primary/50 transition-colors" type="button">
+                  [Inspect]
+                </button>
+</td>
+</tr>
+<!-- Row 4: Bitget -->
+<tr class="hover:bg-surface-container-low transition-colors duration-75">
+<td class="py-3 px-3 font-body-md font-semibold text-on-surface flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>Bitget</span>
+</td>
+<td class="py-3 px-3 text-right font-telemetry-md text-on-surface font-medium">$6.21B</td>
+<td class="py-3 px-3 text-right font-telemetry-md text-primary">$11.5M <span class="text-outline text-telemetry-sm">(164 accts)</span></td>
+<td class="py-3 px-3 text-center">
+<div class="inline-flex items-center gap-1.5 text-telemetry-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded-DEFAULT">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>Normal (58m ago)</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-telemetry-md font-semibold text-on-surface">86/100</td>
+<td class="py-3 px-3 text-right">
+<button class="px-2 py-0.5 text-telemetry-sm text-primary hover:text-secondary-fixed bg-surface-container border border-surface-container-highest rounded-DEFAULT hover:border-primary/50 transition-colors" type="button">
+                  [Inspect]
+                </button>
+</td>
+</tr>
+<!-- Row 5: KuCoin -->
+<tr class="hover:bg-surface-container-low transition-colors duration-75">
+<td class="py-3 px-3 font-body-md font-semibold text-on-surface flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+<span>KuCoin</span>
+</td>
+<td class="py-3 px-3 text-right font-telemetry-md text-on-surface font-medium">$3.45B</td>
+<td class="py-3 px-3 text-right font-telemetry-md text-primary">$8.2M <span class="text-outline text-telemetry-sm">(98 accts)</span></td>
+<td class="py-3 px-3 text-center">
+<div class="inline-flex items-center gap-1.5 text-telemetry-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded-DEFAULT">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Low velocity (1.2h ago)</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-telemetry-md font-semibold text-on-surface">83/100</td>
+<td class="py-3 px-3 text-right">
+<button class="px-2 py-0.5 text-telemetry-sm text-primary hover:text-secondary-fixed bg-surface-container border border-surface-container-highest rounded-DEFAULT hover:border-primary/50 transition-colors" type="button">
+                  [Inspect]
+                </button>
+</td>
+</tr>
+<!-- Row 6: CoinDCX (Warning State) -->
+<tr class="bg-tertiary-container/10 hover:bg-tertiary-container/20 transition-colors duration-75">
+<td class="py-3 px-3 font-body-md font-semibold text-on-surface flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span>CoinDCX</span>
+</td>
+<td class="py-3 px-3 text-right font-telemetry-md text-on-surface font-medium">$0.18B</td>
+<td class="py-3 px-3 text-right font-telemetry-md text-tertiary font-semibold">0.999 USDT <span class="text-outline text-telemetry-sm">(1 acct)*</span></td>
+<td class="py-3 px-3 text-center">
+<div class="inline-flex items-center gap-1 text-telemetry-sm text-tertiary bg-tertiary-container/30 px-2 py-0.5 rounded-DEFAULT border border-tertiary/40">
+<span class="material-symbols-outlined text-[13px] text-tertiary">warning</span>
+<span>not enough public data</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-telemetry-md font-semibold text-on-surface">85/100</td>
+<td class="py-3 px-3 text-right">
+<button class="px-2 py-0.5 text-telemetry-sm text-tertiary hover:text-on-surface bg-surface-container border border-tertiary/40 rounded-DEFAULT transition-colors" type="button">
+                  [Inspect]
+                </button>
+</td>
+</tr>
+<!-- Row 7: WazirX (Halt Recorded) -->
+<tr class="opacity-75 hover:bg-surface-container-low transition-colors duration-75">
+<td class="py-3 px-3 font-body-md font-semibold text-outline flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+<span class="line-through">WazirX</span>
+</td>
+<td class="py-3 px-3 text-right font-telemetry-md text-outline">—</td>
+<td class="py-3 px-3 text-right font-telemetry-md text-outline">—</td>
+<td class="py-3 px-3 text-center">
+<div class="inline-flex items-center gap-1.5 text-telemetry-sm text-outline bg-surface-container-lowest px-2 py-0.5 rounded-DEFAULT border border-surface-container">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+<span>Halt recorded (inactive)</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-telemetry-md font-semibold text-outline">12/100</td>
+<td class="py-3 px-3 text-right">
+<button class="px-2 py-0.5 text-telemetry-sm text-outline hover:text-on-surface-variant bg-surface-container border border-surface-container-highest rounded-DEFAULT transition-colors" type="button">
+                  [Inspect]
+                </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Subnote & Pagination Telemetry -->
+<div class="font-telemetry-sm text-telemetry-sm text-outline mt-3 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+<div>
+          * Proven floor indicates cryptographic minimum balance verified by zkTLS depositors to date, not aggregate liabilities.
+        </div>
+<div class="text-on-surface-variant font-medium">
+          Displaying 7 of 24 tracked exchanges • Solana feed sync #982,104
+        </div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: CALL TO ACTION TERMINAL BANNER -->
+<section class="w-full px-space-lg lg:px-space-xl py-space-xl bg-surface-container-low">
+<div class="max-w-[1400px] mx-auto bg-surface border border-outline-variant/40 rounded-DEFAULT p-6 lg:p-8 relative overflow-hidden">
+<!-- Decorative Micro Grid Background Indicator -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+<div class="max-w-xl">
+<div class="font-telemetry-sm text-telemetry-sm text-primary uppercase tracking-widest mb-1.5">
+            CLIENT-SIDE ZKTLS PROVER v0.9
+          </div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight mb-2">
+            Cryptographically prove what you are owed in under 30 seconds.
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Generate verifiable liability claims without disclosing account credentials, trading history, or personal identity to Counterledger or any third party.
+          </p>
+</div>
+<!-- Terminal Input Interface Mockup -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-xs w-full lg:w-auto">
+<div class="relative w-full sm:w-80">
+<span class="material-symbols-outlined text-[16px] text-outline absolute left-3 top-3 pointer-events-none">terminal</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/40 rounded-DEFAULT pl-9 pr-3 py-2.5 font-telemetry-sm text-telemetry-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary transition-colors cursor-default" placeholder="Paste TLS session or select exchange" readonly="" type="text">
+</div>
+<button class="px-5 py-2.5 rounded-DEFAULT bg-primary-container hover:bg-secondary-container border border-primary/50 text-on-surface font-body-md text-body-md font-medium transition-colors duration-100 whitespace-nowrap flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span>Generate zkTLS Proof</span>
+</button>
+</div>
+</div>
+<!-- Trust Strip Indicators -->
+<div class="border-t border-surface-container mt-6 pt-4 flex flex-wrap items-center justify-between gap-space-md text-[11px] font-telemetry-sm text-outline">
+<div class="flex items-center gap-4">
+<span class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>ZK-SNARK Verifier Contract deployed</span>
+</span>
+<span class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>Solana Program: 0x9f..421a</span>
+</span>
+</div>
+<div class="text-on-surface-variant">
+          AUDITED BY ODDYSSEY SECURITY LABS • ZERO ACCESS REQUIRED
+        </div>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full border-t border-surface-container bg-surface-container-lowest py-space-sm px-space-lg"><div class="w-full flex flex-col md:flex-row items-center justify-between gap-space-xs font-telemetry-sm text-telemetry-sm text-outline"><div class="flex items-center gap-space-sm"><span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span><p>Solana devnet demo. Test-USDC only. A protocol demo, not insurance.</p></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-[13px]">speed</span><span>LATENCY: 412ms</span></div><div class="flex items-center gap-space-xs text-secondary"><span class="material-symbols-outlined text-[13px]">tag</span><span>SLOT: 289410382</span></div><div class="text-outline-variant font-telemetry-sm">UTC 2025-02-28 14:02:18</div></div></div></footer></body></html>

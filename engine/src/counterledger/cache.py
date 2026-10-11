@@ -97,22 +97,23 @@ def _call(
 
     host = httpx.URL(url).host  # throttle by real host
     data: Any = None
-    for attempt in range(6):
+    for attempt in range(10):
         _throttle(host, min_gap)
         try:
             r = _client_get().request(method, url, params=params, json=body, headers=headers)
         except httpx.TransportError as e:  # timeouts, resets: retry
             data = repr(e)
-            time.sleep(2**attempt)
+            time.sleep(min(2**attempt, 60))
             continue
-        if r.status_code == 429 or r.status_code >= 500:
-            time.sleep(2**attempt)
+        if r.status_code == 429 or r.status_code >= 500:  # rate limit / server error: back off up to a minute
+            data = f"HTTP {r.status_code}: {r.text[:120]}"
+            time.sleep(min(2**attempt, 60))
             continue
         r.raise_for_status()
         data = r.text if text else r.json()
         if ok is None or ok(data):
             break
-        time.sleep(2**attempt)  # API-level error (e.g. rate limit in a 200 body): retry, never cache it
+        time.sleep(min(2**attempt, 60))  # API-level error (e.g. rate limit in a 200 body): retry, never cache it
     else:
         raise BadResponse(f"{method} {shown} {_scrub(params)} -> {str(data)[:200]}")
 
