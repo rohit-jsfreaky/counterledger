@@ -22,7 +22,7 @@ export default function Cover() {
         {[
           ["Priced by evidence", "The rate rises as an exchange's score falls and as its pool fills up. The score is a published formula anyone can recompute."],
           ["Paid by proof, not a vote", "A confirmed halt on the heartbeat opens a challenge window. If nobody challenges it, every live cover on that exchange pays in full."],
-          ["One pool per exchange", "Each pool can cover at most half its assets, so one failure cannot drain the others. Nexus Mutual's custody cover sold $220M and paid $6M before it was retired."],
+          ["One pool per exchange", "Each pool can cover at most half its assets, so one failure cannot drain the others. Nexus Mutual sold $220M of custody cover, paid about $6M in claims, then moved to retire it because liabilities were unknown."],
         ].map(([t, b]) => (
           <div key={t}>
             <h3 className="font-semibold">{t}</h3>
