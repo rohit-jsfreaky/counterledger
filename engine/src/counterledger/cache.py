@@ -60,10 +60,19 @@ def _client_get() -> httpx.Client:
 _lock = threading.Lock()
 
 
+_extra: dict[str, float] = {}  # host -> extra gap learned from 429s: grows on each 429, shrinks on each success
+
+
+def _adapt(host: str, limited: bool) -> None:
+    with _lock:
+        e = _extra.get(host, 0.0)
+        _extra[host] = min(e * 1.5 + 0.25, 5.0) if limited else max(e * 0.97 - 0.005, 0.0)
+
+
 def _throttle(host: str, min_gap: float) -> None:
     """Space calls to one host by min_gap seconds, across threads (each thread reserves the next slot)."""
     with _lock:
-        slot = max(time.monotonic(), _last_call.get(host, 0) + min_gap)
+        slot = max(time.monotonic(), _last_call.get(host, 0) + min_gap + _extra.get(host, 0.0))
         _last_call[host] = slot
     wait = slot - time.monotonic()
     if wait > 0:
@@ -97,23 +106,34 @@ def _call(
 
     host = httpx.URL(url).host  # throttle by real host
     data: Any = None
-    for attempt in range(10):
+    attempt = limited = 0
+    while attempt < 10:
         _throttle(host, min_gap)
         try:
             r = _client_get().request(method, url, params=params, json=body, headers=headers)
         except httpx.TransportError as e:  # timeouts, resets: retry
             data = repr(e)
             time.sleep(min(2**attempt, 60))
+            attempt += 1
             continue
-        if r.status_code == 429 or r.status_code >= 500:  # rate limit / server error: back off up to a minute
+        if r.status_code == 429 and limited < 1000:  # rate limit: slow this host down and wait it out (hours, not minutes)
+            data = f"HTTP {r.status_code}: {r.text[:120]}"
+            _adapt(host, True)
+            time.sleep(min(2**limited, 30))
+            limited += 1
+            continue
+        if r.status_code == 429 or r.status_code >= 500:  # server error: back off up to a minute
             data = f"HTTP {r.status_code}: {r.text[:120]}"
             time.sleep(min(2**attempt, 60))
+            attempt += 1
             continue
         r.raise_for_status()
+        _adapt(host, False)
         data = r.text if text else r.json()
         if ok is None or ok(data):
             break
         time.sleep(min(2**attempt, 60))  # API-level error (e.g. rate limit in a 200 body): retry, never cache it
+        attempt += 1
     else:
         raise BadResponse(f"{method} {shown} {_scrub(params)} -> {str(data)[:200]}")
 
