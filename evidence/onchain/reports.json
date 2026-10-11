@@ -1,0 +1,79 @@
+{
+ "coindcx": {
+  "heartbeat": {
+   "state": "not_enough_data",
+   "value": 3,
+   "as_of": "2026-10-10T19:00:00Z",
+   "evidence_sha256": "720fb5d59830861586d41525cc6c216268a0e8365d9aa29ee33122eb046b4719",
+   "tx": "22FNFwvVshtBCQsPFKg8YCkoQvenjRkkkRF6qY6kD1qptsbrkZEQo1goCpJ2X15BFrRniJdW62euyfEzT6aPyuWh"
+  },
+  "score": {
+   "value": 85,
+   "as_of": "2026-10-11T08:00:00Z",
+   "evidence_sha256": "50620ead2c66def3cf54d54bebd31cdcdc526ec6925caa2c9242162c45774c5c",
+   "tx": "2GywbYGwWL64NLnVzjhekYdMRcZhmVSSfUpxWHDAxdP4g2wpWTzqh7dvHbs6zF15nNB7r3QPxQQE9jvCsztnxWeE"
+  }
+ },
+ "wazirx": {
+  "score": {
+   "value": 50,
+   "as_of": "2026-10-11T08:00:00Z",
+   "evidence_sha256": "24c7e47118587b70c5e914a2d3879202ab111e50794957ad68d2b00245fa7a13",
+   "tx": "54SNV5iKZ54Zp3JyRfkJ2P5UNbPqwdCF3UK5Y84EZkMoAJsgLEq7pCYAKyDpKsjeit8bgASRn5EyqYnR3isM8wjT"
+  }
+ },
+ "binance": {
+  "score": {
+   "value": 75,
+   "as_of": "2026-10-11T08:00:00Z",
+   "evidence_sha256": "20acd4b082f6ce8adf821748b2ba18fdccfd5e0fe39d1d28cd491e0a952099df",
+   "tx": "3NbNB92pUKXzGx2F3rcYdfkjei1kgcvV16ASaEQkFim9tmMdqhpaB6V5C1G5PaVKgRZ7KPgxLRkU318Hv6eDsx4p"
+  }
+ },
+ "bybit": {
+  "score": {
+   "value": 75,
+   "as_of": "2026-10-11T08:00:00Z",
+   "evidence_sha256": "ef3b77d77dbfcc365b08fbf34d41a370d96466e78746ff0d4f42807e270d06ac",
+   "tx": "5sm9brKNjAYeVvsL2XTAAecEwzcWphgrsDPWPLjUikf1aNyJiizZFb9P4yRRCrF2BLoWeavgE7GWWbwQSvGoKeb"
+  }
+ },
+ "okx": {
+  "score": {
+   "value": 75,
+   "as_of": "2026-10-11T08:00:00Z",
+   "evidence_sha256": "f5708ce213986109f889ee1ec23c9f568a8622b3c690c87b0b90c5dfbd155ed7",
+   "tx": "5YgfNRH2JKErv29edd1DtWS5FDnU1Lc9bN5Wu79FiQf6vY5dRtBTa7bbWykJakspJJeKf6Vhvu8ZpsjJFPXc5Yos"
+  }
+ },
+ "kucoin": {
+  "heartbeat": {
+   "state": "normal",
+   "value": 1,
+   "as_of": "2026-10-10T19:00:00Z",
+   "evidence_sha256": "ed4b53c8e6e11ad0e838af4863d3ed47050c72bc22727a90c813d88ca85b4fc5",
+   "tx": "3EZrqHk7r4x5BHDWGB2UbjpAZoW1MCZwPgTP2UXoEzTzCyrJNsYJnTW6WRtZ3XeWzr7drAv5DGuvGuButkb8JKbv"
+  },
+  "score": {
+   "value": 90,
+   "as_of": "2026-10-11T08:00:00Z",
+   "evidence_sha256": "5a838c1fb9d3c4acb131f0b9b4720d800055983a4f0884753daa07c7370e5639",
+   "tx": "2gnoEZ3ewJjoK7pb9JKuT5qQ8riUy9roGGeVaZBxqyXKuDmC98NF4WzkX5ff5aDDH3NkSfSVgzF7k8cHRTiPhx3M"
+  }
+ },
+ "bitget": {
+  "heartbeat": {
+   "state": "normal",
+   "value": 1,
+   "as_of": "2026-10-10T19:00:00Z",
+   "evidence_sha256": "3026b5a6b30b758b63ff7cd07ff77aa40e5e465dd74da2f106c2d13c9c92199b",
+   "tx": "5FTNFnXJwFzy9mCu5VfkGuqi5CVi6pQ5wMUEu9RDMJqwWLm27K7zbdbG2uy4SwF6piobmH9RVB8QwjCvH1WLpmn2"
+  },
+  "score": {
+   "value": 90,
+   "as_of": "2026-10-11T08:00:00Z",
+   "evidence_sha256": "7ba34aaa7ab80824af84b21cdd27c84709ced9960df70ea1138f6773abc055b9",
+   "tx": "4tGSuKmiLNewp3rwEJw2CVKAwfiT4jSE4U5PfoDVjGuubX1DZvGMLL6QDSYAqLTKkcNnnjc56NKbRmbXTWPW6mnN"
+  }
+ }
+}

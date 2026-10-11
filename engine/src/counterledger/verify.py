@@ -74,6 +74,55 @@ def verify_live() -> None:
               f"data/live/{ex}/hourly.csv (24h outflows {fresh['last_24h_by_chain']})")
 
 
+def verify_scores() -> None:
+    from counterledger import score
+    from counterledger.heartbeat import canonical_hash
+
+    p = score.load_params()
+    onchain_p = EVIDENCE_DIR / "onchain" / "reports.json"
+    posted = json.loads(onchain_p.read_text()) if onchain_p.exists() else {}
+    for ex in score.EXCHANGES:
+        f = EVIDENCE_DIR / "score" / f"{ex}.json"
+        if not f.exists():
+            check(False, f"{ex} score: evidence missing")
+            continue
+        doc = json.loads(f.read_text())
+        value, lines = score.compute(doc["inputs"], p)
+        body = {k: v for k, v in doc.items() if k != "evidence_sha256"}
+        same_hash = canonical_hash(body) == doc["evidence_sha256"]
+        ok = value == doc["score"] and lines == doc["deductions"] and same_hash
+        on = posted.get(ex, {}).get("score")
+        chain_note = ""
+        if on:
+            ok = ok and on["evidence_sha256"] == doc["evidence_sha256"] and on["value"] == value
+            chain_note = f"; same hash posted on devnet (tx {on['tx'][:10]}…)"
+        check(ok, f"{ex} score {value} recomputed from its recorded inputs = published{chain_note}")
+
+
+def verify_proofs() -> None:
+    for f in sorted((EVIDENCE_DIR / "proofs").glob("*.json")) if (EVIDENCE_DIR / "proofs").exists() else []:
+        d = json.loads(f.read_text())
+        private_free = "wallet_balance" not in f.read_text() and "account_id" not in f.read_text()
+        check(private_free and d["txs"]["recordProof"] and d["bucketLabel"],
+              f"{d['exchange']} balance proof on devnet ({d['bucketLabel']}, record {d['proofRecord'][:8]}…) — "
+              f"public file holds no exact balance or account id")
+
+
+def verify_replays() -> None:
+    from counterledger.heartbeat import canonical_hash
+
+    for f in sorted((EVIDENCE_DIR / "onchain").glob("replay-*.json")) if (EVIDENCE_DIR / "onchain").exists() else []:
+        d = json.loads(f.read_text())
+        src = json.loads((DATA_DIR.parent / d["evidence"]["replay"]).read_text())
+        body = {k: v for k, v in src.items() if k != "evidence_sha256"}
+        ok = (canonical_hash(body) == src["evidence_sha256"] == d["evidence"]["replay_sha256"]
+              and abs(d["paid_test_usdc"] - d["notional_test_usdc"]) < 1e-6
+              and all(d["txs"].get(k) for k in ("buy_cover", "post_halt", "open_trigger", "finalize_trigger", "claim_cover")))
+        check(ok, f"devnet halt replay {d['exchangeId']}: cover bought (premium {d['premium_test_usdc']} test-USDC), halt "
+                  f"posted with the {d['event']} evidence hash, paid {d['paid_test_usdc']:g} after the "
+                  f"{d['challenge_window_secs']}s challenge window")
+
+
 def verify_reserves() -> None:
     summary = json.loads((EVIDENCE_DIR / "reserves" / "summary.json").read_text())
     for key, s in summary.items():
@@ -91,6 +140,9 @@ def main() -> None:
     verify_backtests()
     verify_live()
     verify_reserves()
+    verify_scores()
+    verify_proofs()
+    verify_replays()
     bad = [m for ok, m in results if not ok]
     print(f"\n{len(results) - len(bad)}/{len(results)} PASS")
     sys.exit(1 if bad else 0)

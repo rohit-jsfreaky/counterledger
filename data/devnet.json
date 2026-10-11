@@ -1,0 +1,113 @@
+{
+  "cluster": "devnet",
+  "programId": "5DCUGtXcR4DcBi7FpyRv1fGtUS3zTHJy9kXoDH8yxG9K",
+  "admin": "7fxaymC8mAhA4fTPtU66QgV22dSfjmsrTSoZy6s3WgE2",
+  "observer": "H3mxityNp4EMkNXGMvFxnRtyKvhFxzm974WqQgvb3rgS",
+  "attestors": [
+    "0x244897572368eadf65bfbc5aec98d8e5443a9072"
+  ],
+  "challengeWindowSecs": 120,
+  "txs": {
+    "initialize": "3jDot3jm8SpxsZRLBim3TiWdPukN45GbK2JnjWCYTGhw8DVfMJyrFwe2ZgTnyLpaYxgeFjvuVbwLqbBLa8REvjMy"
+  },
+  "usdcMint": "hgXveWxRf8jsdyxGRKw9D3nXzgywgXaoCx6xxUoUFw9",
+  "config": "6irVhkJhScxuogfFPMT6qJj5ZV3zepLJ4hRJr4uD38gr",
+  "exchanges": {
+    "coindcx": {
+      "name": "CoinDCX",
+      "address": "ExbPbj8dcJga7rbJGNVNr9TN6Lq7cu2nESPwvxLi4BoP",
+      "providerHashes": [
+        "0xd15229d370246e380ca78ae63f6540335cf5f0b62d498bb815a93d1e80c00f21",
+        "0x179bd33e2b92f0ace99a777b8263872f26e9522e3bfd97605b0365e857071553"
+      ],
+      "addTx": "3rpyT8QbFAr1p13pNLUD7Mpi4wTYsAqhf8vVTWsRTR4tq4ZKzAPG2u9s9iWVAC9rpqKMLxzCz2trKU5TQcUsZbXu"
+    },
+    "wazirx": {
+      "name": "WazirX",
+      "address": "9FT7iAujMRYhRSAyNLMLxQfr8WjXYE5RodAbpZWrd2z5",
+      "providerHashes": [],
+      "addTx": "2MsStjPrtYiVLXePwyLBrJmeEKQgw6vuPmyykRohkFtaXE9tsFY4EsjCYfibWHdRZytkA1r2DZRHTn9UhbNDzrq3"
+    },
+    "binance": {
+      "name": "Binance",
+      "address": "GVzPsR1V7u2xrq78VS1jGU9fGWAFsfeJh2CkcrenojCi",
+      "providerHashes": [],
+      "addTx": "4kLJJC3T66mwvhPBRH1KEehr8gXFA8juXnQCjVhVD5iytVqPh8sWvcJc2E1hFPjx5Yw1cu31bWyGauC8yx5rCjmZ"
+    },
+    "bybit": {
+      "name": "Bybit",
+      "address": "4rEiv8fYWT2UfYYV4b5pBXNeCCN9b1Nn3famEZ7v33BV",
+      "providerHashes": [],
+      "addTx": "mdYjFcrWheG2ASGDk4aAhWCqaCCg9zkZgyVRNiG8EikWTQwjqpMDzoxTWEWMhKXVnhTQXJ7EbK6h4LNv8JoQ4nN"
+    },
+    "okx": {
+      "name": "OKX",
+      "address": "4MKuvbma6kbJMGuQXzq6HNy67to3WF9nfRcRywCh3Soh",
+      "providerHashes": [],
+      "addTx": "3bB3vcpUdKmRVtfn4MvkXtFjGH6yvRsMpEXhKwgDjCx2khhPvRN2mhYjztMhvgPJHeCoxkPJtSNXkRT4NEXaWBVp"
+    },
+    "kucoin": {
+      "name": "KuCoin",
+      "address": "FYKEasFSWwycRz62STHB8PtCcJXDZBXcU5BfEda3yAu8",
+      "providerHashes": [],
+      "addTx": "C3cMyu1h8Sq5XLDCSR7wv65tqbn2aumdGPjNxWA3DqijdwKn8g4VGS6Tm1EWcZEjWhj3BRsWbsL8i18gSWg1fnv"
+    },
+    "bitget": {
+      "name": "Bitget",
+      "address": "4c4zgqYBxZte9j6YNmZwn9e1mmFGMe9Nhi3ZtbEYJZkt",
+      "providerHashes": [],
+      "addTx": "5PyYdn6xanVqLyAoMLGTnMoDT2caDfD3iJSs46idahPh6pbqKtn5Fa8dYraNodKoyV8gZ5y8BSDXxfSuY4NGaNex"
+    }
+  },
+  "pools": {
+    "coindcx": {
+      "pool": "BetYDpHXFHAYUxiPi8ChwgNWiGuUXFQe7GAxieJxCz9h",
+      "vault": "Cex8nWrTFQdTYgU2HNS4jb46SWtAzzqQs3mq9Z4crsZu",
+      "capBps": 5000,
+      "baseRateBps": 200
+    },
+    "wazirx": {
+      "pool": "6iPpzHJqBcQmiGK7RK6G7dLeGvwwjvVDWzz7WNEDr8sB",
+      "vault": "7TDZsCDmeW6h2ox9hHLYtmQKEhCywQ93UNBhoYxDJHz1",
+      "capBps": 5000,
+      "baseRateBps": 200
+    },
+    "binance": {
+      "pool": "8hjJbDfX3RqfVPwvue8JZtTHSh8EMZzMxnh47UWtR8pB",
+      "vault": "APsDVJRxUKidJUBEYCQxUsJGJkw5oetgEFWKg6j3jRmw",
+      "capBps": 5000,
+      "baseRateBps": 200
+    },
+    "bybit": {
+      "pool": "FxjP7DLc1FEKqaib2hzqKnoLaGE52pkBJTChCpCQEKY7",
+      "vault": "86mEL7ctSnJMheu5JKKkj27s4jC8sRrAJ8dvbEHPgv8L",
+      "capBps": 5000,
+      "baseRateBps": 200
+    },
+    "okx": {
+      "pool": "A4bL2rogHmJy9BxLj7BSnqFev5qcUNsFCPraTDPWiF3z",
+      "vault": "2EMbC9AFHjwbz9rEZrYJiZWh16Mcuq2eXs3VZiS1FRg8",
+      "capBps": 5000,
+      "baseRateBps": 200
+    },
+    "kucoin": {
+      "pool": "2Tf5smmk1JBRbVZ6vKyTwRrycxNwDA2JcVFMV6wnejTn",
+      "vault": "Arwot9PiJX6ipa5vfj6pLKewuyN9u6j49rFW9bR7ar5d",
+      "capBps": 5000,
+      "baseRateBps": 200
+    },
+    "bitget": {
+      "pool": "CNnSDyQL9imUZFdd3hwTTiR4WxBMSJWvcJQY5bb6Ypvz",
+      "vault": "FSRuxNhcKEKrUWFPyqUANbdr5i8co2yyHEWSgA9T4GCW",
+      "capBps": 5000,
+      "baseRateBps": 200
+    }
+  },
+  "lp": "8LFdy9g4jaceEJHByCoeDbcNKA6mkrajYR6aScRhVLvo",
+  "replays": {
+    "rp-ftx-a1": {
+      "event": "ftx-2022-11",
+      "file": "evidence/onchain/replay-ftx-2022-11-a1.json"
+    }
+  }
+}

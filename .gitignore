@@ -60,3 +60,4 @@ desktop.ini
 # Full per-event transfer lists are too big for git (FTX 58 MB): published as a GitHub Release asset, sha256 in meta.json
 data/raw/*/outflows.csv.gz
 data/live/*/outflows.csv
+.mcp.json

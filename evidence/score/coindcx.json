@@ -1,0 +1,49 @@
+{
+ "kind": "score",
+ "exchange": "coindcx",
+ "as_of": "2026-10-11T08:00:00Z",
+ "score": 85,
+ "deductions": [
+  {
+   "rule": "heartbeat:not_enough_data",
+   "points": 15
+  }
+ ],
+ "inputs": {
+  "reserves_sourced": true,
+  "reserves_total_usd": 184081305.02,
+  "heartbeat_state": "not_enough_data",
+  "floors": [
+   {
+    "asset": "USDT",
+    "floor": 0.998993,
+    "provers": 1,
+    "reserve": 13866.96878
+   }
+  ],
+  "provers": 1,
+  "stuck_withdrawal_proofs": 0,
+  "inclusion_failures": 0
+ },
+ "sources": {
+  "score_params_sha256": "4160e7b85cf5ca03a2c187b83beaf1b7082850ca4f1ed3b5c524547d0b083aae",
+  "reserves": {
+   "file": "evidence/reserves/coindcx.json",
+   "sha256": "ce7ecafe8cec79e3abd61e627c145259615f9301984dbfb8a9d932e78ba764dc",
+   "as_of": "2026-10-10T11:22:59Z"
+  },
+  "heartbeat": {
+   "file": "evidence/heartbeat/coindcx.json",
+   "sha256": "b0ad0c4b4bd6da456c351d85c913d25ced9bff18d144bf2b4bbda91c0b36f979",
+   "as_of": "2026-10-10T19:00:00Z"
+  },
+  "chain": {
+   "account": "ExbPbj8dcJga7rbJGNVNr9TN6Lq7cu2nESPwvxLi4BoP",
+   "slot": 509841357,
+   "data_sha256": "c00372eb2b984f770f6b280ff0db88e93e4ce565e4066e0927711fc3c7f55500"
+  }
+ },
+ "params_file": "data/score-params.json",
+ "note": "Shows how much of the books can be seen and proven from outside. Not a solvency rating.",
+ "evidence_sha256": "50620ead2c66def3cf54d54bebd31cdcdc526ec6925caa2c9242162c45774c5c"
+}

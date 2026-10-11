@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "fixed_at": "2026-10-11T08:25:44Z",
+  "note": "Fixed before any score was computed. Transparent formula, no ML. A change is a new version; every version's scores are published. The score says how much of an exchange's custody can be SEEN and PROVEN from outside — it is not a solvency rating and never a claim about an exchange.",
+  "range": "0..100, higher = more of the books are visible and proven, fewer warning signals",
+  "start": 100,
+  "deductions": {
+    "no_sourced_reserves": {"points": 25, "when": "no published/labelled address list with a source URL (reserves shown as '—')"},
+    "heartbeat": {
+      "normal": 0,
+      "not_enough_data": 15,
+      "unknown": 15,
+      "below_usual_pattern": 30,
+      "halt_confirmed": 60,
+      "why": "from evidence/heartbeat/<exchange>.json (rules: data/heartbeat-live-params.json)"
+    },
+    "proven_shortfall": {"points": 40, "when": "for ANY asset, the user-proven floor is larger than the on-chain reserve of that asset (both known); applied once"},
+    "not_yet_proven": {"points": 10, "when": "0 accounts have recorded a verified balance proof on devnet"},
+    "stuck_withdrawal_proofs": {"points_each": 10, "max": 30, "when": "verified stuck-withdrawal proofs in the current epoch (none exist in v1 — always 0)"},
+    "inclusion_failures": {"points_each": 20, "max": 40, "when": "verified inclusion-check failures (none in v1 — always 0)"}
+  },
+  "clamp": [0, 100],
+  "inputs_snapshot": "every input value and its source file hash is written into evidence/score/<exchange>.json; verify recomputes the score from that file alone",
+  "pricing_use": "cover annual rate = pool base + (100 - score) x 30 bps + utilisation / 5 (program constants)"
+}

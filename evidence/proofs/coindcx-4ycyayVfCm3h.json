@@ -1,0 +1,36 @@
+{
+ "kind": "balance-proof",
+ "cluster": "devnet",
+ "exchange": "coindcx",
+ "programId": "5DCUGtXcR4DcBi7FpyRv1fGtUS3zTHJy9kXoDH8yxG9K",
+ "proofRecord": "6uRFWpGzNNVjXjcTV5i5WzMZuep1i3aY3GK4vHm9Gftw",
+ "nullifier": "0x5ecb9d89668cf0cb5ceea960edda41acf2bfa6f50aff1f92b29e5069b1740a75",
+ "prover": "6dPcwSJVjeh75qUmswLpTjSszo5sUzqwceKYDoGxN3dR",
+ "asset": "USDT",
+ "bucket": 0,
+ "bucketLabel": "< 1 USDT",
+ "epoch": 691,
+ "reclaimProviderId": "2d2421ec-43bf-4ab4-a1b9-2eb13cc963e6",
+ "claimIdentifiers": [
+  "0x883f76edc076005d7c6913f354a078d6e9b6d9abc1c81734f796695e43df38e8",
+  "0xeef098f66f34085b572eebbe21bb594085989a2694dfe3f62e6d16e1c494085f"
+ ],
+ "attestor": "0x244897572368eadf65bfbc5aec98d8e5443a9072",
+ "floorAfter": {
+  "amount": "998993",
+  "decimals": 6,
+  "provers": 1
+ },
+ "txs": {
+  "upload": [
+   "5ojYEpdrQQmDo5ZcGPdWdfALL5ujgMbSU46xffj1qVzpSNjfuf3grCXdppQNkFgs1UpijKPX6xoDT9eqsXH1ES9k",
+   "5i7GzsEr1ovX5hBG5SVLxYQsy4JgvhXT8QuZz22YXX8UCYQaAKuyZTNLaTtrRi7t32o32Vw5NPsbDtX8YKRLA96v",
+   "2TRPH1EHGHC6e9txGiqEnEjg6XkyCtEqKPq58pND79oZCM864gbZ36hQQGQRhedEqBAso35oKDupdeNwTJhJoYF7",
+   "2v3MhtBtkUKcoC7kd9TnVMASs7EJQjkksvMkzQzGM8fQPUxrHZt95u2tudhjZEv8dd5m3aeNTYstWC3o5wdmdYhz",
+   "2QbunymsrG33xk8wpCosR7n4WsXRxqTE8aeDw4J974Q7V33ny6tA9mNSWMKucsbAB5ZzUCjS2paDJb4WMxavEW6S"
+  ],
+  "recordProof": "4ycyayVfCm3hXVJ8Q23znmSDYauBnAJak1Wu1vYzdum6ddgPXqJQmgFA7PhYArQNGsefp6gLosm4ikkd7BNQBf1B"
+ },
+ "explorer": "https://explorer.solana.com/tx/4ycyayVfCm3hXVJ8Q23znmSDYauBnAJak1Wu1vYzdum6ddgPXqJQmgFA7PhYArQNGsefp6gLosm4ikkd7BNQBf1B?cluster=devnet",
+ "note": "Exact balance and account id are not in this file. The claim info inside the upload transactions is public on devnet."
+}

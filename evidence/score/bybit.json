@@ -1,0 +1,45 @@
+{
+ "kind": "score",
+ "exchange": "bybit",
+ "as_of": "2026-10-11T08:00:00Z",
+ "score": 75,
+ "deductions": [
+  {
+   "rule": "heartbeat:unknown",
+   "points": 15
+  },
+  {
+   "rule": "not_yet_proven",
+   "points": 10
+  }
+ ],
+ "inputs": {
+  "reserves_sourced": true,
+  "reserves_total_usd": 16284533266.97,
+  "heartbeat_state": "unknown",
+  "floors": [],
+  "provers": 0,
+  "stuck_withdrawal_proofs": 0,
+  "inclusion_failures": 0
+ },
+ "sources": {
+  "score_params_sha256": "4160e7b85cf5ca03a2c187b83beaf1b7082850ca4f1ed3b5c524547d0b083aae",
+  "reserves": {
+   "file": "evidence/reserves/bybit.json",
+   "sha256": "7fc5941d58f7173e5f70ce96a75f0069905d21db21df55da77664e33e0da6e2e",
+   "as_of": "2026-10-10T15:06:47Z"
+  },
+  "heartbeat": {
+   "file": null,
+   "reason": "live heartbeat not run yet"
+  },
+  "chain": {
+   "account": "4rEiv8fYWT2UfYYV4b5pBXNeCCN9b1Nn3famEZ7v33BV",
+   "slot": 509841359,
+   "data_sha256": "389f2073439f097054c918b285700570d4f4b5912c3ba42db8c966e4e65ac0a8"
+  }
+ },
+ "params_file": "data/score-params.json",
+ "note": "Shows how much of the books can be seen and proven from outside. Not a solvency rating.",
+ "evidence_sha256": "ef3b77d77dbfcc365b08fbf34d41a370d96466e78746ff0d4f42807e270d06ac"
+}

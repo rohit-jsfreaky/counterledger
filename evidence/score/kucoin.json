@@ -1,0 +1,42 @@
+{
+ "kind": "score",
+ "exchange": "kucoin",
+ "as_of": "2026-10-11T08:00:00Z",
+ "score": 90,
+ "deductions": [
+  {
+   "rule": "not_yet_proven",
+   "points": 10
+  }
+ ],
+ "inputs": {
+  "reserves_sourced": true,
+  "reserves_total_usd": 3452600314.11,
+  "heartbeat_state": "normal",
+  "floors": [],
+  "provers": 0,
+  "stuck_withdrawal_proofs": 0,
+  "inclusion_failures": 0
+ },
+ "sources": {
+  "score_params_sha256": "4160e7b85cf5ca03a2c187b83beaf1b7082850ca4f1ed3b5c524547d0b083aae",
+  "reserves": {
+   "file": "evidence/reserves/kucoin.json",
+   "sha256": "3a3184ba4113a2d59269d09082687b3ecd4d119edd520349288c474b7e588427",
+   "as_of": "2026-10-10T16:23:11Z"
+  },
+  "heartbeat": {
+   "file": "evidence/heartbeat/kucoin.json",
+   "sha256": "069807decfb63da819a9fe07f242f02b24f8acf116b208455225c4b790e3d4ba",
+   "as_of": "2026-10-10T19:00:00Z"
+  },
+  "chain": {
+   "account": "FYKEasFSWwycRz62STHB8PtCcJXDZBXcU5BfEda3yAu8",
+   "slot": 509841361,
+   "data_sha256": "346fd50e84c5e09f39a28fb00f5c56c6f7edc383d88bc34a8dc3e8ee3b97eb5e"
+  }
+ },
+ "params_file": "data/score-params.json",
+ "note": "Shows how much of the books can be seen and proven from outside. Not a solvency rating.",
+ "evidence_sha256": "5a838c1fb9d3c4acb131f0b9b4720d800055983a4f0884753daa07c7370e5639"
+}

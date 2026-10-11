@@ -1,0 +1,44 @@
+{
+ "kind": "score",
+ "exchange": "wazirx",
+ "as_of": "2026-10-11T08:00:00Z",
+ "score": 50,
+ "deductions": [
+  {
+   "rule": "no_sourced_reserves",
+   "points": 25
+  },
+  {
+   "rule": "heartbeat:unknown",
+   "points": 15
+  },
+  {
+   "rule": "not_yet_proven",
+   "points": 10
+  }
+ ],
+ "inputs": {
+  "reserves_sourced": false,
+  "reserves_total_usd": null,
+  "heartbeat_state": "unknown",
+  "floors": [],
+  "provers": 0,
+  "stuck_withdrawal_proofs": 0,
+  "inclusion_failures": 0
+ },
+ "sources": {
+  "score_params_sha256": "4160e7b85cf5ca03a2c187b83beaf1b7082850ca4f1ed3b5c524547d0b083aae",
+  "heartbeat": {
+   "file": null,
+   "reason": "no live heartbeat (no sourced addresses)"
+  },
+  "chain": {
+   "account": "9FT7iAujMRYhRSAyNLMLxQfr8WjXYE5RodAbpZWrd2z5",
+   "slot": 509841357,
+   "data_sha256": "17fdb39c0d01df8582fb4796049bc17722bb472b9bd2d0eeb97ce676f67f085f"
+  }
+ },
+ "params_file": "data/score-params.json",
+ "note": "Shows how much of the books can be seen and proven from outside. Not a solvency rating.",
+ "evidence_sha256": "24c7e47118587b70c5e914a2d3879202ab111e50794957ad68d2b00245fa7a13"
+}

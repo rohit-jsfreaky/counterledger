@@ -1,0 +1,42 @@
+{
+ "kind": "halt-replay",
+ "event": "ftx-2022-11",
+ "pre_event": {
+  "t": "2022-11-01T21:00:00Z",
+  "count": 259,
+  "baseline_median": 228.5,
+  "state": "normal",
+  "score": 90,
+  "deductions": [
+   {
+    "rule": "not_yet_proven",
+    "points": 10
+   }
+  ],
+  "score_inputs": {
+   "reserves_sourced": true,
+   "reserves_total_usd": null,
+   "heartbeat_state": "normal",
+   "floors": [],
+   "provers": 0,
+   "stuck_withdrawal_proofs": 0,
+   "inclusion_failures": 0
+  }
+ },
+ "heartbeat_alarm": "2022-11-08T14:00:00Z",
+ "halt_confirmed": "2022-11-09T11:00:00Z",
+ "payout_due": "2022-11-10T11:00:00Z",
+ "nexus_earliest_claim_days_after_T": 100,
+ "sources": {
+  "heartbeat_backtest": {
+   "file": "evidence/backtests/ftx-2022-11.json",
+   "evidence_sha256": "af0e352a8b25d4b9b37c972aeb66ff7230fb25e1d69e03d018eb9e9134a2feeb"
+  },
+  "cover_backtest": {
+   "file": "evidence/backtests/cover-ftx-2022-11.json",
+   "evidence_sha256": "ef7b0cd64714409fa9b87a0f10563047d8e44453085f3a82f8d9cec77d92cf3e"
+  }
+ },
+ "note": "Devnet replay of a real past halt: the observer posts the pre-event state, then the confirmed halt, and the pool runs its normal trigger \u2192 challenge window \u2192 payout. Test-USDC only.",
+ "evidence_sha256": "9f8663f9799924103a98d99f1ede3fba56668dd09313c1b66e3e76e9c78ad6cd"
+}

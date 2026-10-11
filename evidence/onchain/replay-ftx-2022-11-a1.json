@@ -1,0 +1,36 @@
+{
+ "kind": "devnet-halt-replay",
+ "event": "ftx-2022-11",
+ "exchangeId": "rp-ftx-a1",
+ "exchange": "EoqK5ZsiQhzdjnX1UaonX42SFfZpvwLUpVYoRiRKREmL",
+ "pool": "ErREwwvArbrSZJDvHVuuAmzwYycfGXb4QSyfMHfB4HKz",
+ "cover": "GHV3r4niZV3FbL2qgEF8Stgwkf5RbsVEcGXDqwCh8DgM",
+ "premium_test_usdc": 5.753425,
+ "notional_test_usdc": 1000,
+ "buyer_balance_before": 100,
+ "buyer_balance_after": 1094.246575,
+ "paid_test_usdc": 1000,
+ "challenge_window_secs": 120,
+ "evidence": {
+  "replay": "evidence/replay/ftx-2022-11.json",
+  "replay_sha256": "9f8663f9799924103a98d99f1ede3fba56668dd09313c1b66e3e76e9c78ad6cd",
+  "cover_backtest_sha256": "ef7b0cd64714409fa9b87a0f10563047d8e44453085f3a82f8d9cec77d92cf3e"
+ },
+ "historical": {
+  "halt_confirmed": "2022-11-09T11:00:00Z",
+  "payout_due": "2022-11-10T11:00:00Z",
+  "nexus_earliest_claim_days_after_T": 100
+ },
+ "txs": {
+  "add_exchange": "2MKFpaXFW15SUXLf9LTEtVh6bNtYQf6AhEsiKGDYw9BLTYGLBB7HzBJLRqwsZgEEvdWafGP6rsgHyB6QUoJr3tbh",
+  "lp_deposit": "2E6RdBpisLB8zpqzXmSE5z6tMpgxe6cobQevjP7uCcGT7F1ikKGTnutwzZLF6MzjPvMTfz7XnxaXYCMKoDncMaE3",
+  "post_heartbeat": "4tqJ2NPGLdLu3Lma4LKtUGQN4FwMikxycxSkp1ReBy7HrhBtJnjTQQ7ApYafAuttQyNAWWyNbNmjM66LMuBBZUdy",
+  "post_score": "2DeG7NzdxvhWruiqBdHGpMVUnn9vFPyVw3haUkzgA8NUreLL9SCp2hMM7LZjpxixH2V38DSHKj7Aowv1zjqWJJYn",
+  "buy_cover": "3XgqR9SC6ui1gKFRfLhB1idH6z86nQkRkFxS7mQD2X6CVNH7P4VWT52fdBXArTsdbd2KRpKqA6nXMZHT6dzaDNm8",
+  "post_halt": "4MJK8zYkXwur2PgDz9tV9JUerQ7SJKaa9t78QMscaV4cCyJ5dzdu4LCU72aHk9btAZEwsKK3LPuwBXQ5NZUm3me7",
+  "open_trigger": "2PqRv4yYXX1gXTHvFn6B4s8ByV7hiZuJi5BxCNLoQuY4TPPuaoPaneYw1ixdZ7N8TidEdCb3LsnLSiftyugJ77fz",
+  "finalize_trigger": "eo6trWChpTtHccmsB6yBRwi99MJv5z8SKMM9inkwh4ZzUUtsScdWT75y5zadc4iZVhdcAb1fXYGaFCkWntHCfQe",
+  "claim_cover": "CaTnN73ctESAiUg1ZS3xXCpUoUYqo3Qx73vGJVZLwhAM3o3Ey5i9duVJm4GhVVnQ1AQuWLzPNFwu9xzX9AdcbgC"
+ },
+ "note": "Test-USDC on devnet. A protocol demo, not insurance."
+}
