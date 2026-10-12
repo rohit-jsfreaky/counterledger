@@ -16,10 +16,17 @@ import {
   score,
   type ExchangeId,
 } from "@/lib/data";
+import { SHELL } from "@/components/page-hero";
 import { amount, FloorCell, HeartbeatBadge, HourlyChart, ScoreBadge, TxLink, usd } from "@/components/ui";
 
 export function generateStaticParams() {
   return EXCHANGES.map((exchange) => ({ exchange }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ exchange: string }> }) {
+  const { exchange } = await params;
+  if (!EXCHANGES.includes(exchange as ExchangeId)) return {};
+  return { title: `${boardRow(exchange as ExchangeId).name} — Counterledger` };
 }
 
 export default async function ExchangePage({ params }: { params: Promise<{ exchange: string }> }) {
@@ -38,46 +45,58 @@ export default async function ExchangePage({ params }: { params: Promise<{ excha
   const prf = proofs(id);
 
   return (
-    <div className="mx-auto max-w-[1280px] px-5 py-14 lg:px-8 lg:py-20">
-      <Link href="/board" className="inline-flex items-center gap-1 text-sm text-dim hover:text-text">← All exchanges</Link>
-      <div className="mt-6 flex flex-wrap items-center gap-4">
-        <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-klein text-2xl font-semibold text-white">{row.name[0]}</span>
-        <div>
-          <h1 className="text-[40px] font-semibold leading-none tracking-[-0.03em] md:text-[52px]">{row.name}</h1>
-          <p className="mt-2 text-[15px] text-dim">
-            {row.indian ? "Indian exchange" : "Global exchange"}. Account on devnet{" "}
-            {ex?.address ? <a className="link font-mono text-[13px]" href={EXPLORER("address", ex.address)}>{ex.address.slice(0, 8)}…</a> : "-"}
-          </p>
+    <>
+      <section className="relative isolate overflow-hidden border-b border-line">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(55%_90%_at_88%_-10%,rgb(61_104_255/0.18),transparent_65%)]"
+        />
+        <div aria-hidden className="grain pointer-events-none absolute inset-0 -z-10 opacity-35" />
+        <div className={`${SHELL} pb-12 pt-10 lg:pb-16 lg:pt-14`}>
+          <Link href="/board" className="inline-flex items-center gap-1 text-sm text-dim hover:text-text">← All exchanges</Link>
+          <div className="mt-8 flex flex-wrap items-end justify-between gap-8">
+            <div className="flex items-center gap-5">
+              <span className="flex h-16 w-16 items-center justify-center rounded-[18px] bg-[linear-gradient(140deg,#3d68ff,#0b2a8f)] text-3xl font-semibold text-white shadow-[0_20px_60px_rgb(61_104_255/0.3)]">{row.name[0]}</span>
+              <div>
+                <span className="pill-label">{row.indian ? "Indian exchange" : "Global exchange"}</span>
+                <h1 className="mt-3 text-[44px] font-medium leading-none tracking-[-0.035em] md:text-[64px]">{row.name}</h1>
+              </div>
+            </div>
+            <p className="text-[14px] text-dim">
+              Account on devnet{" "}
+              {ex?.address ? <a className="link font-mono text-[13px]" href={EXPLORER("address", ex.address)} target="_blank" rel="noreferrer">{ex.address.slice(0, 8)}…</a> : "-"}
+            </p>
+          </div>
+          <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-[14px] border border-line bg-line md:grid-cols-4">
+            <div className="bg-surface/90 px-6 py-5 backdrop-blur">
+              <div className="font-mono text-3xl font-medium text-blue">{row.score ?? "-"}<span className="text-base text-dim">/100</span></div>
+              <div className="mt-1 text-[13px] text-dim">score</div>
+            </div>
+            <div className="bg-surface/90 px-6 py-5 backdrop-blur">
+              <div className="font-mono text-2xl font-medium">{row.reservesUsd == null ? "-" : usd(row.reservesUsd)}</div>
+              <div className="mt-1 text-[13px] text-dim">held in listed wallets</div>
+            </div>
+            <div className="bg-surface/90 px-6 py-5 backdrop-blur">
+              <div className="font-mono text-2xl font-medium">{row.floors[0] ? `${amount(row.floors[0].floor)} ${row.floors[0].asset}` : "-"}</div>
+              <div className="mt-1 text-[13px] text-dim">{row.provers ? `proven by ${row.provers} account${row.provers === 1 ? "" : "s"}, a minimum` : "not yet proven"}</div>
+            </div>
+            <div className="bg-surface/90 px-6 py-5 backdrop-blur">
+              <div className="pt-1"><HeartbeatBadge state={row.heartbeatState} reason={row.heartbeatReason} /></div>
+              <div className="mt-2 text-[13px] text-dim">withdrawals</div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-4">
-        <div className="bg-surface px-6 py-5">
-          <div className="font-mono text-3xl font-medium text-blue">{row.score ?? "-"}<span className="text-base text-dim">/100</span></div>
-          <div className="mt-1 text-[13px] text-dim">score</div>
-        </div>
-        <div className="bg-surface px-6 py-5">
-          <div className="font-mono text-2xl font-medium">{row.reservesUsd == null ? "-" : usd(row.reservesUsd)}</div>
-          <div className="mt-1 text-[13px] text-dim">held in listed wallets</div>
-        </div>
-        <div className="bg-surface px-6 py-5">
-          <div className="font-mono text-2xl font-medium">{row.floors[0] ? `${amount(row.floors[0].floor)} ${row.floors[0].asset}` : "-"}</div>
-          <div className="mt-1 text-[13px] text-dim">{row.provers ? `proven by ${row.provers} account${row.provers === 1 ? "" : "s"}, a minimum` : "not yet proven"}</div>
-        </div>
-        <div className="bg-surface px-6 py-5">
-          <div className="pt-1"><HeartbeatBadge state={row.heartbeatState} reason={row.heartbeatReason} /></div>
-          <div className="mt-2 text-[13px] text-dim">withdrawals</div>
-        </div>
-      </div>
-
-      <div className="mt-6 grid gap-6 lg:grid-cols-3">
+      </section>
+      <div className={`${SHELL} pb-14 lg:pb-20`}>
+      <div className="mt-10 grid items-start gap-6 lg:grid-cols-3 lg:mt-14">
         {/* reserves */}
-        <section className="rounded-2xl border border-line bg-surface p-6 lg:col-span-2">
+        <section className="min-w-0 rounded-2xl border border-line bg-surface p-6 lg:col-span-2">
           <h2 className="mb-4 text-lg font-semibold tracking-tight">Reserves in listed wallets</h2>
           {res ? (
             <>
               <div className="font-mono text-3xl font-medium">{usd(res.total_usd)}</div>
               <div className="mt-1 text-xs text-dim">as of {res.as_of} · {res.note}</div>
-              <table className="mt-4 w-full text-sm">
+              <div className="-mx-1 mt-4 overflow-x-auto px-1"><table className="w-full min-w-[420px] text-sm">
                 <thead>
                   <tr className="border-b border-line text-left">
                     <th className="label py-2 font-normal">Asset</th>
@@ -94,11 +113,11 @@ export default async function ExchangePage({ params }: { params: Promise<{ excha
                     </tr>
                   ))}
                 </tbody>
-              </table>
+              </table></div>
               <div className="mt-4 space-y-1 text-xs text-dim">
-                <div>Balances: <a className="link" href={res.source.balances}>{res.source.balances}</a></div>
-                <div>Addresses: <a className="link" href={res.source.addresses}>{res.source.addresses.replace("https://github.com/", "")}</a></div>
-                {res.source.upstream && <div>Upstream: {res.source.upstream}</div>}
+                <div className="break-all">Balances: <a className="link" href={res.source.balances} target="_blank" rel="noreferrer">{res.source.balances}</a></div>
+                <div className="break-all">Addresses: <a className="link" href={res.source.addresses} target="_blank" rel="noreferrer">{res.source.addresses.replace("https://github.com/", "")}</a></div>
+                {res.source.upstream && <div className="break-all">Upstream: {res.source.upstream}</div>}
                 {reg && (
                   <div className="num">
                     Wallets we watch: Ethereum {reg.chains.ethereum.length} · BSC {reg.chains.bsc.length} · Tron {reg.chains.tron.length}
@@ -115,7 +134,7 @@ export default async function ExchangePage({ params }: { params: Promise<{ excha
         </section>
 
         {/* floor */}
-        <section className="rounded-2xl border border-line bg-surface p-6">
+        <section className="min-w-0 rounded-2xl border border-line bg-surface p-6">
           <h2 className="mb-4 text-lg font-semibold tracking-tight">Proven by users</h2>
           <FloorCell floors={row.floors} provers={row.provers} />
           {row.floors.map((f) => (
@@ -136,7 +155,7 @@ export default async function ExchangePage({ params }: { params: Promise<{ excha
         </section>
 
         {/* heartbeat */}
-        <section className="rounded-2xl border border-line bg-surface p-6 lg:col-span-2">
+        <section className="min-w-0 rounded-2xl border border-line bg-surface p-6 lg:col-span-2">
           <div className="flex items-center justify-between">
             <h2 className="text-lg font-semibold tracking-tight">Withdrawals, last 72 hours</h2>
             <HeartbeatBadge state={row.heartbeatState} reason={row.heartbeatReason} />
@@ -172,7 +191,7 @@ export default async function ExchangePage({ params }: { params: Promise<{ excha
         </section>
 
         {/* score */}
-        <section className="rounded-2xl border border-line bg-surface p-6">
+        <section className="min-w-0 rounded-2xl border border-line bg-surface p-6">
           <h2 className="mb-4 text-lg font-semibold tracking-tight">How the score adds up</h2>
           <div className="num text-sm">start 100</div>
           {sc?.deductions.map((d: any) => (
@@ -200,7 +219,8 @@ export default async function ExchangePage({ params }: { params: Promise<{ excha
 
         {id === "binance" && <Inclusion />}
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 
@@ -208,7 +228,7 @@ function Inclusion() {
   const roots = binanceRoots();
   const tv = inclusionVectors();
   return (
-    <section className="rounded-2xl border border-line bg-surface p-6 lg:col-span-3">
+    <section className="min-w-0 rounded-2xl border border-line bg-surface p-6 lg:col-span-3">
       <h2 className="mb-3 text-lg font-semibold tracking-tight">Check you are in Binance&apos;s liability tree</h2>
       <p className="max-w-3xl text-sm text-muted">
         A Binance user can download their record (account hash, balances, Merkle path). Our checker runs Binance&apos;s own

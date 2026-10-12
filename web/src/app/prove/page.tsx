@@ -1,5 +1,5 @@
 import { Wallets } from "@/components/wallet";
-import { SectionTitle } from "@/components/ui";
+import { PageHero, SHELL } from "@/components/page-hero";
 import { PROVIDERS } from "@/lib/providers";
 import { ProveFlow } from "./prove-flow";
 
@@ -7,10 +7,11 @@ export const metadata = { title: "Prove my balance — Counterledger" };
 
 export default function Prove() {
   return (
-    <div className="mx-auto max-w-[1280px] px-5 py-14 lg:px-8 lg:py-20">
-      <SectionTitle kicker="Prove" title="Prove the balance your exchange shows you">
+    <>
+      <PageHero kicker="Prove" title="Prove the balance" accent="your exchange shows you.">
         One login, one signed fact: your coin and balance, plus a hashed account ID so one account counts once. Our Solana program checks it and adds you to the exchange&apos;s proven floor.
-      </SectionTitle>
+      </PageHero>
+      <div className={`${SHELL} py-14 lg:py-20`}>
       <Wallets>
         <ProveFlow providers={PROVIDERS} />
       </Wallets>
@@ -26,6 +27,7 @@ export default function Prove() {
           </div>
         ))}
       </div>
-    </div>
+      </div>
+    </>
   );
 }

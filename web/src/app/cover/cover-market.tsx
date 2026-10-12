@@ -24,8 +24,8 @@ type PoolView = {
 
 const USDC = 1_000_000;
 const HB = [
-  { t: "Unknown", c: "bg-line-strong" },
-  { t: "Normal", c: "bg-ok" },
+  { t: "No heartbeat", c: "bg-line-strong" },
+  { t: "Usual pattern", c: "bg-ok" },
   { t: "Below usual", c: "bg-amber" },
   { t: "Too quiet", c: "bg-line-strong" },
   { t: "Halt confirmed", c: "bg-amber" },

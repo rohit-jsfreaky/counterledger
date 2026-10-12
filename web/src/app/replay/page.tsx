@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { backtest, coverBacktest, events, replays } from "@/lib/data";
-import { HourlyChart, SectionTitle, TxLink } from "@/components/ui";
+import { HourlyChart, TxLink } from "@/components/ui";
+import { HeroStats, PageHero, SHELL } from "@/components/page-hero";
 
 export const metadata = { title: "Replay — Counterledger" };
 
@@ -15,19 +16,35 @@ function hours(h: number | null | undefined) {
 export default function Replay() {
   const evs = events();
   const devnetReplays = replays();
+  const runs = evs.map((ev) => ({ ev, hb: backtest(ev.id), cv: coverBacktest(ev.id) })).filter((x) => x.hb && x.cv);
+  const controls = runs.reduce((a, x) => a + x.hb.result.controls.length, 0);
+  const falseAlarms = runs.reduce((a, x) => a + x.hb.result.control_alarms_total, 0);
+  const pays = runs.map((x) => x.cv.first_payout_minus_T_hours).filter((h: number | null) => h != null) as number[];
+  const ftx = runs.find((x) => x.ev.id === "ftx-2022-11");
   return (
-    <div className="mx-auto max-w-[1280px] px-5 py-14 lg:px-8 lg:py-20">
-      <SectionTitle kicker="Replay" title="Three real halts, replayed hour by hour">
+    <>
+      <PageHero
+        kicker="Replay"
+        title="Three real halts,"
+        accent="replayed hour by hour."
+        aside={
+          <HeroStats
+            items={[
+              [ftx ? hours(ftx.hb.result.first_alarm_minus_T_hours) : "—", "our FTX alarm, against its halt"],
+              [pays.length ? `T + ${Math.min(...pays).toFixed(0)}–${Math.max(...pays).toFixed(0)} h` : "—", "cover pays, all three events"],
+              [`${falseAlarms} of ${controls}`, "normal weeks with a false alarm"],
+              ["T + 100 days", "Nexus Mutual custody cover claim rule"],
+            ]}
+          />
+        }
+      >
         For each one we fetched ~100 days of the exchange&apos;s hot-wallet outflows on Ethereum and ran the heartbeat with
         parameters fixed before the first run. Two normal weeks per exchange are controls: the alarm must stay quiet there.
         We publish the result whatever it shows.
-      </SectionTitle>
+      </PageHero>
 
-      <div className="space-y-6">
-        {evs.map((ev) => {
-          const hb = backtest(ev.id);
-          const cv = coverBacktest(ev.id);
-          if (!hb || !cv) return null;
+      <div className={SHELL}>
+        {runs.map(({ ev, hb, cv }, i) => {
           const r = hb.result;
           const markers = [
             { t: ev.T, label: "exchange halt (T)", tone: "dim" as const },
@@ -36,28 +53,37 @@ export default function Replay() {
           ];
           const tIdx = r.series.findIndex((s: any) => s.t >= ev.T);
           const window = r.series.slice(Math.max(0, tIdx - 36), tIdx + 24);
+          const [name, when] = (NAMES[ev.id] ?? ev.id).split(" · ");
           return (
-            <section key={ev.id} className="card p-5">
-              <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <h3 className="text-lg font-semibold">{NAMES[ev.id] ?? ev.id}</h3>
-                <a className="link text-xs" href={ev.T_source}>source for T ↗</a>
+            <section key={ev.id} className={`grid gap-8 py-14 lg:grid-cols-12 lg:gap-12 lg:py-20 ${i ? "border-t border-line" : ""}`}>
+              <div className="lg:col-span-4">
+                <div className="eyebrow">{String(i + 1).padStart(2, "0")} · {when}</div>
+                <h2 className="mt-3 text-[40px] font-medium leading-none tracking-[-0.03em] md:text-[48px]">{name}</h2>
+                <p className="serif-i mt-5 text-[19px] leading-snug text-text">&ldquo;{ev.T_quote}&rdquo;</p>
+                <p className="num mt-4 text-[12px] leading-relaxed text-dim">
+                  T = {ev.T.replace("T", " ").replace("Z", " UTC")} · {ev.T_kind} ·{" "}
+                  <a className="link" href={ev.T_source} target="_blank" rel="noreferrer">source ↗</a>
+                </p>
+                <div className="mt-6 grid grid-cols-2 gap-px overflow-hidden rounded-[14px] border border-line bg-line">
+                  <Cell label="Our alarm" value={hours(r.first_alarm_minus_T_hours)} sub={r.first_alarm ? r.first_alarm.slice(0, 16).replace("T", " ") : "no alarm"} tone={r.first_alarm_minus_T_hours < 0 ? "blue" : "muted"} />
+                  <Cell label="Control weeks" value={`${r.control_alarms_total} false alarm${r.control_alarms_total === 1 ? "" : "s"}`} sub={r.controls.map((c: any) => c.window[0].slice(0, 10)).join(" · ")} tone={r.control_alarms_total ? "amber" : "blue"} />
+                  <Cell label="Cover pays" value={cv.first_payout_minus_T_hours != null ? `T + ${cv.first_payout_minus_T_hours.toFixed(0)} h` : "—"} sub="halt + 24 h challenge" tone="blue" />
+                  <Cell label="Nexus Mutual" value="T + 100 d" sub="custody cover rule" tone="muted" />
+                </div>
               </div>
-              <p className="mt-1 text-sm text-dim">
-                T = {ev.T.replace("T", " ").replace("Z", " UTC")} · {ev.T_kind} · &ldquo;{ev.T_quote}&rdquo;
-              </p>
-              <div className="mt-4">
-                <HourlyChart points={window.map((s: any) => ({ t: s.t, count: s.count, median: s.median, stall: s.stall }))} markers={markers} height={150} />
-              </div>
-              <div className="mt-1 text-[11px] text-dim">36 h before T to 24 h after · blue bars = outflows per hour · amber = stall hours · dashed = 28-day median</div>
-              <div className="mt-4 grid gap-3 md:grid-cols-4">
-                <Cell label="Our alarm" value={hours(r.first_alarm_minus_T_hours)} sub={r.first_alarm ?? "no alarm"} tone={r.first_alarm_minus_T_hours < 0 ? "blue" : "muted"} />
-                <Cell label="Control weeks" value={`${r.control_alarms_total} false alarm${r.control_alarms_total === 1 ? "" : "s"}`} sub={r.controls.map((c: any) => c.window[0].slice(0, 10)).join(" · ")} tone={r.control_alarms_total ? "amber" : "blue"} />
-                <Cell label="Cover pays" value={cv.first_payout_minus_T_hours != null ? `T + ${cv.first_payout_minus_T_hours.toFixed(0)} h` : "—"} sub="halt confirmed + 24 h challenge" tone="blue" />
-                <Cell label="Nexus Mutual" value="T + 100 days" sub="custody cover claim rule" tone="muted" />
-              </div>
-              <div className="mt-3 text-xs text-dim">
-                Usable hours in the event window: {r.event_window_hours_with_usable_baseline}/216 · evidence{" "}
-                <span className="num">{hb.evidence_sha256.slice(0, 12)}…</span> · raw data sha256 <span className="num">{hb.outflows_sha256?.slice(0, 12)}…</span>
+              <div className="lg:col-span-8">
+                <div className="card p-5 md:p-6">
+                  <div className="mb-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-[12px] text-dim">
+                    <span className="flex items-center gap-2"><i className="h-2.5 w-2.5 rounded-sm bg-blue-2" />outflows per hour</span>
+                    <span className="flex items-center gap-2"><i className="h-2.5 w-2.5 rounded-sm bg-amber" />stall hours</span>
+                    <span className="flex items-center gap-2"><i className="w-4 border-t border-dashed border-muted" />28-day median</span>
+                    <span className="sm:ml-auto">36 h before T to 24 h after</span>
+                  </div>
+                  <HourlyChart points={window.map((s: any) => ({ t: s.t, count: s.count, median: s.median, stall: s.stall }))} markers={markers} height={220} />
+                </div>
+                <div className="num mt-3 text-[11px] text-dim">
+                  usable hours {r.event_window_hours_with_usable_baseline}/216 · evidence {hb.evidence_sha256.slice(0, 12)}… · raw data sha256 {hb.outflows_sha256?.slice(0, 12)}…
+                </div>
               </div>
             </section>
           );
@@ -65,39 +91,49 @@ export default function Replay() {
       </div>
 
       {devnetReplays.length > 0 && (
-        <section className="card mt-8 p-5">
-          <div className="label mb-2 text-blue">The same halt, run on devnet</div>
-          <p className="text-sm text-muted">
-            We replayed FTX on a fresh pool: pre-halt heartbeat and score posted, a user bought cover, the halt was posted with the
-            FTX evidence hash, and after the challenge window the cover paid. Every step is a devnet transaction.
-          </p>
-          {devnetReplays.map((d) => (
-            <div key={d.pool} className="mt-4 grid gap-2 text-xs md:grid-cols-4">
-              {Object.entries(d.txs).map(([k, v]) => (
-                <div key={k} className="well flex items-center justify-between p-2">
-                  <span className="num text-muted">{k}</span>
-                  <TxLink sig={String(v)} label="tx ↗" />
-                </div>
-              ))}
-              <div className="md:col-span-4 text-dim">
-                Premium {d.premium_test_usdc} test-USDC for {d.notional_test_usdc} test-USDC of cover · paid {d.paid_test_usdc} after a {d.challenge_window_secs}s challenge window.
-              </div>
+        <section className="border-t border-line bg-surface">
+          <div className={`${SHELL} grid gap-10 py-14 lg:grid-cols-12 lg:py-20`}>
+            <div className="lg:col-span-4">
+              <span className="pill-label">On devnet</span>
+              <h2 className="mt-5 text-[34px] font-medium leading-[1.05] tracking-[-0.03em] md:text-[42px]">
+                The same halt, <span className="serif-i text-ice">run for real.</span>
+              </h2>
+              <p className="mt-5 text-[15px] leading-relaxed text-muted">
+                We replayed FTX on a fresh pool: pre-halt heartbeat and score posted, a user bought cover, the halt was posted with the
+                FTX evidence hash, and after the challenge window the cover paid. Every step is a devnet transaction.
+              </p>
+              <Link href="/judges" className="btn btn-ghost mt-8 h-11 px-5 text-[14px]">The 60-second judge path</Link>
             </div>
-          ))}
-          <Link href="/judges" className="link mt-4 inline-block text-sm">Judges: the 60-second path →</Link>
+            {devnetReplays.map((d) => (
+              <div key={d.pool} className="lg:col-span-8">
+                <ol className="overflow-hidden rounded-[14px] border border-line">
+                  {Object.entries(d.txs).map(([k, v], j) => (
+                    <li key={k} className="flex items-center gap-4 border-b border-line bg-panel/60 px-5 py-3.5 last:border-0">
+                      <span className="num w-6 text-[12px] text-dim">{String(j + 1).padStart(2, "0")}</span>
+                      <span className="num flex-1 text-[13px] text-text/90">{k}</span>
+                      <TxLink sig={String(v)} label="view tx ↗" />
+                    </li>
+                  ))}
+                </ol>
+                <p className="num mt-4 text-[12px] text-dim">
+                  premium {d.premium_test_usdc} test-USDC for {d.notional_test_usdc} test-USDC of cover · paid {d.paid_test_usdc} after a {d.challenge_window_secs}s challenge window
+                </p>
+              </div>
+            ))}
+          </div>
         </section>
       )}
-    </div>
+    </>
   );
 }
 
 function Cell({ label, value, sub, tone }: { label: string; value: string; sub: string; tone: "blue" | "amber" | "muted" }) {
   const c = tone === "blue" ? "text-blue" : tone === "amber" ? "text-amber" : "text-muted";
   return (
-    <div className="well p-3">
+    <div className="bg-surface px-4 py-3.5">
       <div className="label">{label}</div>
-      <div className={`num mt-1 text-lg ${c}`}>{value}</div>
-      <div className="num text-[11px] text-dim">{sub}</div>
+      <div className={`num mt-1 text-[17px] ${c}`}>{value}</div>
+      <div className="num mt-0.5 text-[11px] leading-snug text-dim">{sub}</div>
     </div>
   );
 }

@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { ArrowRight, CheckCircle, Question, WarningDiamond } from "@phosphor-icons/react/dist/ssr";
 import { boardRow, EXCHANGES, liveHourly, proofs, reservesSummary, scoreParams, type HeartbeatState } from "@/lib/data";
-import { SectionTitle, Sparkline, amount, usd } from "@/components/ui";
+import { Sparkline, amount, usd } from "@/components/ui";
+import { HeroStats, PageHero, SHELL } from "@/components/page-hero";
 
 export const metadata = { title: "Board — Counterledger" };
 
@@ -10,7 +11,7 @@ const HB: Record<HeartbeatState, { text: string; tone: string; Icon: typeof Chec
   below_usual_pattern: { text: "Below its usual pattern", tone: "text-amber", Icon: WarningDiamond },
   halt_confirmed: { text: "Halt confirmed", tone: "text-amber", Icon: WarningDiamond },
   not_enough_data: { text: "Too quiet to compare", tone: "text-dim", Icon: Question },
-  unknown: { text: "Building 29-day history", tone: "text-dim", Icon: Question },
+  unknown: { text: "No wallet list to watch", tone: "text-dim", Icon: Question },
 };
 
 export default function Board() {
@@ -21,26 +22,26 @@ export default function Board() {
   const latest = rows.map((r) => r.heartbeatAsOf).filter(Boolean).sort().at(-1);
 
   return (
-    <div className="mx-auto max-w-[1280px] px-5 py-14 lg:px-8 lg:py-20">
-      <SectionTitle kicker="Board" title="What we can see, and what users have proven">
+    <>
+      <PageHero
+        kicker="Board"
+        title="What we can see,"
+        accent="and what users have proven."
+        aside={
+          <HeroStats
+            items={[
+              [usd(reserves, 1), "held in listed wallets"],
+              [String(rows.length), "exchanges watched"],
+              [String(proofCount), `balance proof${proofCount === 1 ? "" : "s"} recorded`],
+              [latest ? latest.slice(11, 16) + " UTC" : "-", `last heartbeat${latest ? ", " + latest.slice(0, 10) : ""}`],
+            ]}
+          />
+        }
+      >
         Reserves come from each exchange&apos;s own published or labelled wallets. Proven floors come only from proofs our Solana program verified. Withdrawals are compared every hour with the exchange&apos;s own last 28 days.
-      </SectionTitle>
-
-      <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-4">
-        {[
-          [usd(reserves, 1), "held in listed wallets"],
-          [String(rows.length), "exchanges watched"],
-          [String(proofCount), `balance proof${proofCount === 1 ? "" : "s"} recorded`],
-          [latest ? latest.slice(0, 16).replace("T", " ") : "-", "last heartbeat (UTC)"],
-        ].map(([v, l]) => (
-          <div key={l} className="bg-surface px-6 py-5">
-            <div className="font-mono text-2xl font-medium tracking-tight">{v}</div>
-            <div className="mt-1 text-[13px] text-dim">{l}</div>
-          </div>
-        ))}
-      </div>
-
-      <div className="mt-8 overflow-hidden rounded-2xl border border-line bg-surface">
+      </PageHero>
+      <div className={`${SHELL} py-14 lg:py-20`}>
+      <div className="overflow-hidden rounded-2xl border border-line bg-surface">
         <div className="hidden grid-cols-12 gap-4 border-b border-line bg-panel px-6 py-3 text-[13px] font-medium text-dim lg:grid">
           <span className="col-span-3">Exchange</span>
           <span className="col-span-2">Held in listed wallets</span>
@@ -106,5 +107,6 @@ export default function Board() {
         </div>
       </div>
     </div>
+    </>
   );
 }

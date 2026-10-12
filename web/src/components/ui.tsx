@@ -14,11 +14,11 @@ export function amount(v: number, max = 6): string {
 }
 
 const HB: Record<HeartbeatState, { label: string; tone: "ok" | "warn" | "dim"; icon: "ok" | "warn" | "q" }> = {
-  normal: { label: "Normal pattern", tone: "ok", icon: "ok" },
+  normal: { label: "Usual pattern", tone: "ok", icon: "ok" },
   below_usual_pattern: { label: "Below its usual pattern", tone: "warn", icon: "warn" },
   halt_confirmed: { label: "Withdrawals halted", tone: "warn", icon: "warn" },
   not_enough_data: { label: "Too quiet to compare", tone: "dim", icon: "q" },
-  unknown: { label: "Building 29-day history", tone: "dim", icon: "q" },
+  unknown: { label: "No wallet list to watch", tone: "dim", icon: "q" },
 };
 
 export function HeartbeatBadge({ state, compact = false, reason }: { state: HeartbeatState; compact?: boolean; reason?: string | null }) {
@@ -103,7 +103,7 @@ export function HourlyChart({
       {placed.map((m) => (
         <span
           key={m.label}
-          className={`absolute whitespace-nowrap font-mono text-[11px] ${m.pct > 70 ? "-translate-x-full pr-1.5" : "pl-1.5"}`}
+          className={`absolute z-10 whitespace-nowrap rounded-[4px] bg-surface px-1.5 font-mono text-[11px] leading-[16px] ${m.pct > 70 ? "-translate-x-full" : ""}`}
           style={{ left: `${m.pct}%`, top: m.row * 18, color: color(m.tone) }}
         >
           {m.label}

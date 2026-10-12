@@ -1,5 +1,5 @@
 import { Wallets } from "@/components/wallet";
-import { SectionTitle } from "@/components/ui";
+import { PageHero, SHELL } from "@/components/page-hero";
 import { boardRow, devnet, EXCHANGES } from "@/lib/data";
 import { CoverMarket } from "./cover-market";
 
@@ -9,12 +9,13 @@ export default function Cover() {
   const st = devnet();
   const pools = EXCHANGES.filter((id) => st.pools?.[id]).map((id) => ({ id, name: boardRow(id).name }));
   return (
-    <div className="mx-auto max-w-[1280px] px-5 py-14 lg:px-8 lg:py-20">
-      <SectionTitle kicker="Cover" title="Cover against a withdrawal halt">
+    <>
+      <PageHero kicker="Cover" title="Cover against" accent="a withdrawal halt.">
         One pool per exchange, in test-USDC on devnet. The price comes from the exchange&apos;s score and the pool&apos;s usage. The payout
         comes from a confirmed halt on the heartbeat, after a challenge window, and never from a vote. This is a protocol demo, not
         insurance.
-      </SectionTitle>
+      </PageHero>
+      <div className={`${SHELL} py-14 lg:py-20`}>
       <Wallets>
         <CoverMarket pools={pools} mint={st.usdcMint} />
       </Wallets>
@@ -30,6 +31,7 @@ export default function Cover() {
           </div>
         ))}
       </div>
-    </div>
+      </div>
+    </>
   );
 }

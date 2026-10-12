@@ -34,24 +34,25 @@ export function BreakPanel({ attacks, programId }: { attacks: Attack[]; programI
           Each run builds a real transaction against program <span className="num">{programId.slice(0, 8)}…</span> and asks devnet to simulate it.
         </span>
       </div>
-      {attacks.map((a) => {
+      {attacks.map((a, i) => {
         const r = results[a.id];
         const done = r && r !== "busy" && !("error" in r) ? r : null;
         const ok = done && (a.id === "control" ? !done.rejected : done.rejected && a.expect.split(" / ").includes(done.result.code));
         return (
           <div key={a.id} className="card p-5">
-            <div className="flex flex-wrap items-start justify-between gap-4">
-              <div className="max-w-3xl">
-                <div className="flex items-center gap-2">
+            <div className="flex items-start justify-between gap-6">
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center gap-2.5">
+                  <span className="num text-[12px] text-dim">{String(i + 1).padStart(2, "0")}</span>
                   {a.id === "control" ? <CheckCircle size={18} className="text-ok" /> : <ShieldCheck size={18} className="text-blue" />}
-                  <h3 className="font-medium">{a.title}</h3>
+                  <h3 className="text-[17px] font-medium tracking-[-0.01em]">{a.title}</h3>
                 </div>
                 <p className="mt-2 text-sm text-muted">{a.tries}</p>
                 <p className="mt-1 text-xs text-dim">
                   Guard: {a.guard} · expected <span className="num text-text">{a.expect}</span>
                 </p>
               </div>
-              <button onClick={() => run(a.id)} disabled={r === "busy"} className="btn btn-ghost text-sm disabled:opacity-50">
+              <button onClick={() => run(a.id)} disabled={r === "busy"} className="btn btn-ghost shrink-0 text-sm disabled:opacity-50">
                 {r === "busy" ? <CircleNotch size={16} className="animate-spin" /> : <Terminal size={16} />} Simulate
               </button>
             </div>
