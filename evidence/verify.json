@@ -1,10 +1,7 @@
 {
- "passed": 30,
- "total": 30,
- "pending": [
-  "OKX live heartbeat: 29-day backfill in progress, no state published yet",
-  "Binance live heartbeat: 29-day backfill in progress, no state published yet"
- ],
+ "passed": 32,
+ "total": 32,
+ "pending": [],
  "lines": [
   {
    "ok": true,
@@ -60,6 +57,14 @@
   },
   {
    "ok": true,
+   "msg": "OKX live heartbeat state 'normal' as of 2026-10-10T19:00:00Z recomputed from data/live/okx/hourly.csv (24h outflows {'ethereum': 25095, 'tron': 77171, 'bsc': 0})"
+  },
+  {
+   "ok": true,
+   "msg": "Binance live heartbeat state 'normal' as of 2026-10-10T19:00:00Z recomputed from data/live/binance/hourly.csv (24h outflows {'ethereum': 6978, 'tron': 145093, 'bsc': 0})"
+  },
+  {
+   "ok": true,
    "msg": "Binance reserves $172.96B: every number has a balance source and an address source; assets sum to the total"
   },
   {
@@ -88,31 +93,31 @@
   },
   {
    "ok": true,
-   "msg": "coindcx score 85 recomputed from its recorded inputs = published; same hash posted on devnet (tx 4BBpS4jfmS…)"
+   "msg": "coindcx score 85 recomputed from its recorded inputs = published; same hash posted on devnet (tx 4MFCqMAGUq…)"
   },
   {
    "ok": true,
-   "msg": "wazirx score 50 recomputed from its recorded inputs = published; same hash posted on devnet (tx 1teQVsYBWA…)"
+   "msg": "wazirx score 50 recomputed from its recorded inputs = published; same hash posted on devnet (tx 5Ga92yYhTe…)"
   },
   {
    "ok": true,
-   "msg": "binance score 75 recomputed from its recorded inputs = published; same hash posted on devnet (tx 55tyiJh4PK…)"
+   "msg": "binance score 90 recomputed from its recorded inputs = published; same hash posted on devnet (tx jhDz9hNhWM…)"
   },
   {
    "ok": true,
-   "msg": "bybit score 90 recomputed from its recorded inputs = published; same hash posted on devnet (tx Rt4Z1o6h3n…)"
+   "msg": "bybit score 90 recomputed from its recorded inputs = published; same hash posted on devnet (tx 4RoDNRZawV…)"
   },
   {
    "ok": true,
-   "msg": "okx score 75 recomputed from its recorded inputs = published; same hash posted on devnet (tx 2JAYcG6Qv8…)"
+   "msg": "okx score 90 recomputed from its recorded inputs = published; same hash posted on devnet (tx 4GjsFwgpSa…)"
   },
   {
    "ok": true,
-   "msg": "kucoin score 90 recomputed from its recorded inputs = published; same hash posted on devnet (tx 4Knv7WmLa8…)"
+   "msg": "kucoin score 90 recomputed from its recorded inputs = published; same hash posted on devnet (tx 3GELwjwurk…)"
   },
   {
    "ok": true,
-   "msg": "bitget score 90 recomputed from its recorded inputs = published; same hash posted on devnet (tx 4q6jWgGBef…)"
+   "msg": "bitget score 90 recomputed from its recorded inputs = published; same hash posted on devnet (tx 2peXhHNzaX…)"
   },
   {
    "ok": "< 1 USDT",

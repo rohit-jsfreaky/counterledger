@@ -116,6 +116,8 @@ def _call(
             time.sleep(min(2**attempt, 60))
             attempt += 1
             continue
+        if r.status_code == 429 and "monthly quota" in r.text:  # will not clear by waiting: fail now, loudly
+            raise BadResponse(f"{method} {shown} -> quota used up: {r.text[:160]}")
         if r.status_code == 429 and limited < 1000:  # rate limit: slow this host down and wait it out (hours, not minutes)
             data = f"HTTP {r.status_code}: {r.text[:120]}"
             _adapt(host, True)

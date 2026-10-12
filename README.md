@@ -7,7 +7,7 @@ and paid by a confirmed withdrawal halt.
 [Judge it in 90 seconds](#judge-it-in-90-seconds) · [The numbers](#the-numbers) · [How Reclaim decides](#how-reclaim-zktls-decides) · [Limits](#honesty-limits-and-whats-real)
 
 [![ci](https://github.com/rohit-jsfreaky/counterledger/actions/workflows/ci.yml/badge.svg)](https://github.com/rohit-jsfreaky/counterledger/actions/workflows/ci.yml)
-![verify](https://img.shields.io/badge/uv%20run%20verify-30%20PASS-0f766e)
+![verify](https://img.shields.io/badge/uv%20run%20verify-32%2F32%20PASS-0f766e)
 ![tests](https://img.shields.io/badge/tests-16%20engine%20%2B%2015%20program-002fa7)
 ![Solana devnet](https://img.shields.io/badge/Solana-devnet-002fa7)
 ![Reclaim zkTLS](https://img.shields.io/badge/Reclaim-zkTLS-002fa7)
@@ -188,8 +188,9 @@ learn what an exchange owes a user without the exchange's cooperation.
   backtest data was fetched. A parameter sweep is published as a control, not used to pick the best number.
 - **Etherscan's 1,000-row cap.** The pager walks block ranges until no new rows appear and reads any block that alone
   holds ≥ 1,000 rows page by page.
-- **Free-tier limits.** BSC logs come from NodeReal (span limits per network); Tron from TronGrid with backoff that waits
-  up to a minute on rate limits; the long backfills pin their end hour so a restart resumes exactly where it stopped.
+- **Free-tier limits.** BSC history comes from NodeReal (span limits per network); Tron from TronGrid. On a rate limit
+  the cache slows that host down and waits instead of failing; a monthly quota fails fast. The long backfills pin their
+  end hour and run under a supervisor that restarts them, so a crash resumes exactly where it stopped, from the cache.
 - **Helius devnet sometimes answers "account not found" for accounts that exist** (about 1 read in 4 on 11 Oct). The site's
   RPC proxy retries empty reads, then asks the public devnet RPC.
 - **Attacks are real transactions.** `/break` builds each attack against the deployed program and runs
@@ -223,8 +224,8 @@ predict them. FTX was a run, and its withdrawals collapsed before the halt was p
 
 | Exchange | Reserves in listed wallets | Withdrawals | Proven by users | Score |
 |---|---|---|---|---|
-| Binance | $172.96B | backfill running | not yet proven | 75 |
-| OKX | $31.32B | backfill running | not yet proven | 75 |
+| Binance | $172.96B | usual pattern (Ethereum + Tron; BSC left out, see limits) | not yet proven | 90 |
+| OKX | $31.32B | usual pattern | not yet proven | 90 |
 | Bybit | $16.28B | usual pattern | not yet proven | 90 |
 | Bitget | $6.21B | usual pattern | not yet proven | 90 |
 | KuCoin | $3.45B | usual pattern | not yet proven | 90 |
@@ -253,6 +254,9 @@ report is accepted.
 - **Inclusion check:** verified with Binance's own code on test vectors built with Binance's tree code; it has not been
   run on a real Binance user record (I have no Binance account). Binance's bundled sample record fails Binance's own
   verifier at the pinned commit, so it is not used.
+- **Binance's live heartbeat leaves out BSC.** NodeReal's free monthly quota ran out on 12 Oct before Binance's 33 BSC
+  wallets were read, and no free source serves BSC history (public RPCs refuse it; BscScan's API is paid). BSC is left
+  out for the whole 29-day window, never part of it, and the reason is in `evidence/heartbeat/binance.json`.
 - **Backtests use Ethereum only** for the hourly signal (Tron and BSC are added for the live watcher). The WazirX
   backtest has thin data (8,431 transfers), and one normal WazirX week raised a false alarm.
 - **Real:** exchange addresses and balances (with sources), on-chain flows, the three historical events and their
@@ -273,7 +277,7 @@ report is accepted.
 | `data/`, `evidence/` | committed inputs and every published result | JSON, CSV |
 
 **Run it:** see [Judge it in 90 seconds](#judge-it-in-90-seconds). `uv run verify` ends with a line like
-`30/30 PASS, 2 PENDING` while the OKX and Binance 29-day backfills are still running (PENDING is never counted as a pass).
+`32/32 PASS`. A live heartbeat whose 29-day backfill is still running prints PENDING, never counted as a pass.
 The site needs `HELIUS_API_KEY`, `RECLAIM_APP_ID` and `RECLAIM_APP_SECRET` in `.env` for the live proof flow; everything
 else works without keys. The full transfer lists for the backtests are release assets
 ([data-v1](https://github.com/rohit-jsfreaky/counterledger/releases/tag/data-v1)); CI downloads them.

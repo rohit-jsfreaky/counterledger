@@ -9,33 +9,40 @@
   },
   "score": {
    "value": 85,
-   "as_of": "2026-10-11T12:00:00Z",
-   "evidence_sha256": "acbf3e1df1f91d66a0b5a80efd5e2f04862540276e59fbcd8d176edda6b290ef",
-   "tx": "4BBpS4jfmSEaYDi6LCt5VtmoMKyfu2gVPb98BW8fkj8w4CsLeYgJiVaVWaz2JzmPAUn3EDgNTAVjm2PKpr7U4Nia"
+   "as_of": "2026-10-12T06:00:00Z",
+   "evidence_sha256": "3b7b9af15aa4ef9cdbcf44b024ca1220f69a6602683f3ad45f276ca0566609e4",
+   "tx": "4MFCqMAGUqMzyxGer7XMvyf69wgmaeC4FH1q5Q2bpaUFuCd1Kp3PnzqqT48xUQ9e3aJPqvTdhyan7Tdzv5QZ2iKp"
   }
  },
  "wazirx": {
   "score": {
    "value": 50,
-   "as_of": "2026-10-11T12:00:00Z",
-   "evidence_sha256": "a0543836492376edd90592eba0eed51a085fe02f9a911e4fbe51f9e33f6f0135",
-   "tx": "1teQVsYBWApotYV2WtVvCab6tq1gt3oJRs7N1TTFrXB5JKJDCn13Mn7PTVYc66asc68gDXSHv8gxBsWBSQYRvKt"
+   "as_of": "2026-10-12T06:00:00Z",
+   "evidence_sha256": "0088ab082b5d33e9b57e6e45bf5b87e9e88a0460d30063750878c98605061f5c",
+   "tx": "5Ga92yYhTeMxtKf8Qmv7XreJ8CZGvPnmo3rgDbN5UZU8LAr7VmnEqmBXh7rhRg2W9ANJ3RhtAQZzQWaV5LMwnJ9n"
   }
  },
  "binance": {
   "score": {
-   "value": 75,
-   "as_of": "2026-10-11T12:00:00Z",
-   "evidence_sha256": "786d85cc44ca3d2e06c545e01194047399701fbe8b74b707c9df6d8c0e070715",
-   "tx": "55tyiJh4PKC5J8Z65158FEwiafRvWzzKi8KeEqT8uVxy8ELSRaBLWQmom72FfHeS5drr7qp8HmA8yfb9GHhNrYUF"
+   "value": 90,
+   "as_of": "2026-10-12T06:00:00Z",
+   "evidence_sha256": "fbeacec2fba0dd83ee5502b71f1ac43b94051a3c52fe47eb881fba097fe024d1",
+   "tx": "jhDz9hNhWMQPhkDVNQqjhMUP8u9Vgf5pRLB6ujf9Tpjmq3KiinXCmCe7dUHgRrfzzM91emKPQyM7gij25W9SCBr"
+  },
+  "heartbeat": {
+   "state": "normal",
+   "value": 1,
+   "as_of": "2026-10-10T19:00:00Z",
+   "evidence_sha256": "d7526b8c1f5d8fe8f1afe3f177def5ae598bb74ecb985ea560f97d2fa469a610",
+   "tx": "4xQhVgCbcfqj5Lt4YKtLB8GidTQh1SgRr4BWAfwnbe8B7UMjezpqpfn1NnarvzsWUhWPRYGokP8eqSGmMH8uYHZH"
   }
  },
  "bybit": {
   "score": {
    "value": 90,
-   "as_of": "2026-10-11T12:00:00Z",
-   "evidence_sha256": "36d32eeb3ff96599dbd413d28bb82998b28475cf735be5973daeea93fa56d8f1",
-   "tx": "Rt4Z1o6h3nKN8dXvgQHCNkrjs4SWBSYqgme13QHkpa1bEHkqtpVU2vmbHC7QY9HXeZg5aS6mMRBkZmW6b5BKL2y"
+   "as_of": "2026-10-12T06:00:00Z",
+   "evidence_sha256": "3200e66e2b6108aff0b0c0460aaf0c8d74bac91389b02b15d7838cedc6fd7294",
+   "tx": "4RoDNRZawV7SccbBPbBoNRwsbUCr4cCAGNeyjACasn1Zpwn2yww5SvwwobaXEQDkzrzoFLbGcKVsCMjqxBZJZ9uP"
   },
   "heartbeat": {
    "state": "normal",
@@ -47,10 +54,17 @@
  },
  "okx": {
   "score": {
-   "value": 75,
-   "as_of": "2026-10-11T12:00:00Z",
-   "evidence_sha256": "fcf242b2f6c2a48daf5b5cc569c03fd81252ee6af822d8870b306cc9871618a9",
-   "tx": "2JAYcG6Qv8hMYHbJPXPe3gs8WRpAMhre3jCqFu4x5pTMKL14TbkBD1BjYoLjS1JDD1PZ5DEmJHAzkw519eWnekuy"
+   "value": 90,
+   "as_of": "2026-10-12T06:00:00Z",
+   "evidence_sha256": "fad35b386c9cc5d822cc5c003181783678cb57868e0138e62a6f62f287c2962e",
+   "tx": "4GjsFwgpSaWpy1BfCrMrAcVkrRMPQPLJamKsXua2gdfuoeQnkS9SnKj3q8ZX6xUmjY4R4QTQXMFkK8GyEyFjW93J"
+  },
+  "heartbeat": {
+   "state": "normal",
+   "value": 1,
+   "as_of": "2026-10-10T19:00:00Z",
+   "evidence_sha256": "01f662e0f168be3ae48e8128e5b35283d89f01690d275f5fb1cb5b09937978b2",
+   "tx": "6sTTqZCUDqiy6XHcDbj2HZBvUMQ96L6ez3JS8CiWutK6kMkpCNi9oKLxXYwPKN2NHHmuLQ9q4zy8z9XQqqGNS4R"
   }
  },
  "kucoin": {
@@ -63,9 +77,9 @@
   },
   "score": {
    "value": 90,
-   "as_of": "2026-10-11T12:00:00Z",
-   "evidence_sha256": "c1fbf4731c28593a0a5cb4acdf378db82572f7789d31132adb4308e04adb1fde",
-   "tx": "4Knv7WmLa8PugsRq3SSRfzavFk3g7UNMNiBnfCBtH8mETbxymmmYAh4azwCNzXvZY9NYfPkKjwZJhKGRDjt89EYb"
+   "as_of": "2026-10-12T06:00:00Z",
+   "evidence_sha256": "7bc4d939096f5d147bcc2df9f77737ddee545c17799d14d8ce555cff3245e577",
+   "tx": "3GELwjwurk18VLs742RSJk8EGFMZsF4hshjTqABx6ajJBRCz6XvXgXMT1C3GRtyguD1GMa9sK2xeSCFDniM6Qg7C"
   }
  },
  "bitget": {
@@ -78,9 +92,9 @@
   },
   "score": {
    "value": 90,
-   "as_of": "2026-10-11T12:00:00Z",
-   "evidence_sha256": "aa59902b8a0acfa504a1d109b6266e2be5a75140c1843b33b20e576d05bc7b78",
-   "tx": "4q6jWgGBefumWiaXAtFvHvTqHYwWSrhRiqdATew1NUMjTyGpKXQPZtLfuwNJx3d3PC6dxczaQqVVDHrNPc3AXX3T"
+   "as_of": "2026-10-12T06:00:00Z",
+   "evidence_sha256": "4b92bda57aec26724cc513a01fa8e5db20d5d3d926a70bc5bbacb7ccecb90824",
+   "tx": "2peXhHNzaXKExk5jvZApUftC7KG584R492ZsegVD1UvZXWdhunQRcXb6hgfSd2hwq84bTbsHzvxM4Mwj3PDbRNrR"
   }
  }
 }

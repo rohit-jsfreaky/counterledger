@@ -43,7 +43,7 @@ browser) and a faucet for devnet SOL and test-USDC. Proving a balance needs a re
    window passed, 1,000 test-USDC paid (`evidence/onchain/replay-ftx-2022-11-a1.json`).
 6. **Inclusion checker:** valid record included; edited balance, wrong index and wrong root rejected
    (`evidence/inclusion/testvectors.json`).
-7. **`uv run verify`:** 30 PASS, 2 PENDING (OKX and Binance live backfills running at the time of writing).
+7. **`uv run verify`:** 32/32 PASS.
 
 ## 60-second judge path
 
@@ -73,7 +73,8 @@ browser) and a faucet for devnet SOL and test-USDC. Proving a balance needs a re
 - The watcher is a single signer in v1 (evidence hashes + challenge window are the guard).
 - Stuck-withdrawal proofs (k = 3 in the cover rules) are not built; devnet payouts use the heartbeat rule alone.
 - The inclusion check has not been run on a real Binance user record.
-- OKX and Binance live heartbeats were still backfilling at the time of writing.
+- Binance's live heartbeat leaves out BSC: NodeReal's free monthly quota ran out before its BSC wallets were read; the
+  reason is recorded in `evidence/heartbeat/binance.json`.
 
 ## Submission text (Colosseum + Superteam Earn)
 

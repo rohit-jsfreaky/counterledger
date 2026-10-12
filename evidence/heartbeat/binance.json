@@ -1,0 +1,749 @@
+{
+ "kind": "live-heartbeat",
+ "exchange": "binance",
+ "name": "Binance",
+ "as_of": "2026-10-10T19:00:00Z",
+ "state": "normal",
+ "last_hour": {
+  "count": 6309,
+  "baseline_median": 7577.5
+ },
+ "last_24h_by_chain": {
+  "ethereum": 6978,
+  "tron": 145093,
+  "bsc": 0
+ },
+ "series_72h": [
+  {
+   "t": "2026-10-07T19:00:00Z",
+   "count": 6085,
+   "median": 6506.0,
+   "by_chain": {
+    "ethereum": 343,
+    "tron": 5742,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-07T20:00:00Z",
+   "count": 5323,
+   "median": 5484.5,
+   "by_chain": {
+    "ethereum": 400,
+    "tron": 4923,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-07T21:00:00Z",
+   "count": 4384,
+   "median": 4609.0,
+   "by_chain": {
+    "ethereum": 387,
+    "tron": 3997,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-07T22:00:00Z",
+   "count": 4179,
+   "median": 4061.5,
+   "by_chain": {
+    "ethereum": 315,
+    "tron": 3864,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-07T23:00:00Z",
+   "count": 3831,
+   "median": 3711.0,
+   "by_chain": {
+    "ethereum": 275,
+    "tron": 3556,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T00:00:00Z",
+   "count": 3990,
+   "median": 3933.0,
+   "by_chain": {
+    "ethereum": 234,
+    "tron": 3756,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T01:00:00Z",
+   "count": 4630,
+   "median": 4449.5,
+   "by_chain": {
+    "ethereum": 245,
+    "tron": 4385,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T02:00:00Z",
+   "count": 4815,
+   "median": 4803.5,
+   "by_chain": {
+    "ethereum": 232,
+    "tron": 4583,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T03:00:00Z",
+   "count": 5066,
+   "median": 4847.0,
+   "by_chain": {
+    "ethereum": 246,
+    "tron": 4820,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T04:00:00Z",
+   "count": 5177,
+   "median": 5133.5,
+   "by_chain": {
+    "ethereum": 216,
+    "tron": 4961,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T05:00:00Z",
+   "count": 5872,
+   "median": 5945.0,
+   "by_chain": {
+    "ethereum": 218,
+    "tron": 5654,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T06:00:00Z",
+   "count": 6881,
+   "median": 6867.0,
+   "by_chain": {
+    "ethereum": 226,
+    "tron": 6655,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T07:00:00Z",
+   "count": 7745,
+   "median": 7743.5,
+   "by_chain": {
+    "ethereum": 287,
+    "tron": 7458,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T08:00:00Z",
+   "count": 8672,
+   "median": 8714.0,
+   "by_chain": {
+    "ethereum": 359,
+    "tron": 8313,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T09:00:00Z",
+   "count": 8719,
+   "median": 9131.5,
+   "by_chain": {
+    "ethereum": 316,
+    "tron": 8403,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T10:00:00Z",
+   "count": 9127,
+   "median": 9063.5,
+   "by_chain": {
+    "ethereum": 336,
+    "tron": 8791,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T11:00:00Z",
+   "count": 9635,
+   "median": 9667.5,
+   "by_chain": {
+    "ethereum": 384,
+    "tron": 9251,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T12:00:00Z",
+   "count": 10022,
+   "median": 10183.0,
+   "by_chain": {
+    "ethereum": 422,
+    "tron": 9600,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T13:00:00Z",
+   "count": 10597,
+   "median": 10610.0,
+   "by_chain": {
+    "ethereum": 620,
+    "tron": 9977,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T14:00:00Z",
+   "count": 10439,
+   "median": 10928.5,
+   "by_chain": {
+    "ethereum": 575,
+    "tron": 9864,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T15:00:00Z",
+   "count": 11224,
+   "median": 10304.0,
+   "by_chain": {
+    "ethereum": 709,
+    "tron": 10515,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T16:00:00Z",
+   "count": 10495,
+   "median": 9753.0,
+   "by_chain": {
+    "ethereum": 696,
+    "tron": 9799,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T17:00:00Z",
+   "count": 9399,
+   "median": 8520.5,
+   "by_chain": {
+    "ethereum": 481,
+    "tron": 8918,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T18:00:00Z",
+   "count": 7844,
+   "median": 7549.0,
+   "by_chain": {
+    "ethereum": 482,
+    "tron": 7362,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T19:00:00Z",
+   "count": 6625,
+   "median": 6506.0,
+   "by_chain": {
+    "ethereum": 470,
+    "tron": 6155,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T20:00:00Z",
+   "count": 5433,
+   "median": 5484.5,
+   "by_chain": {
+    "ethereum": 392,
+    "tron": 5041,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T21:00:00Z",
+   "count": 4698,
+   "median": 4609.0,
+   "by_chain": {
+    "ethereum": 314,
+    "tron": 4384,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T22:00:00Z",
+   "count": 3982,
+   "median": 4077.5,
+   "by_chain": {
+    "ethereum": 256,
+    "tron": 3726,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T23:00:00Z",
+   "count": 3747,
+   "median": 3726.5,
+   "by_chain": {
+    "ethereum": 226,
+    "tron": 3521,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T00:00:00Z",
+   "count": 4141,
+   "median": 3963.0,
+   "by_chain": {
+    "ethereum": 223,
+    "tron": 3918,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T01:00:00Z",
+   "count": 4848,
+   "median": 4459.0,
+   "by_chain": {
+    "ethereum": 235,
+    "tron": 4613,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T02:00:00Z",
+   "count": 4837,
+   "median": 4810.0,
+   "by_chain": {
+    "ethereum": 193,
+    "tron": 4644,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T03:00:00Z",
+   "count": 4857,
+   "median": 4887.5,
+   "by_chain": {
+    "ethereum": 223,
+    "tron": 4634,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T04:00:00Z",
+   "count": 5605,
+   "median": 5163.5,
+   "by_chain": {
+    "ethereum": 260,
+    "tron": 5345,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T05:00:00Z",
+   "count": 6735,
+   "median": 5945.0,
+   "by_chain": {
+    "ethereum": 225,
+    "tron": 6510,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T06:00:00Z",
+   "count": 7031,
+   "median": 6887.5,
+   "by_chain": {
+    "ethereum": 321,
+    "tron": 6710,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T07:00:00Z",
+   "count": 7739,
+   "median": 7751.5,
+   "by_chain": {
+    "ethereum": 318,
+    "tron": 7421,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T08:00:00Z",
+   "count": 8544,
+   "median": 8714.0,
+   "by_chain": {
+    "ethereum": 350,
+    "tron": 8194,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T09:00:00Z",
+   "count": 8907,
+   "median": 9131.5,
+   "by_chain": {
+    "ethereum": 326,
+    "tron": 8581,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T10:00:00Z",
+   "count": 9203,
+   "median": 9080.5,
+   "by_chain": {
+    "ethereum": 346,
+    "tron": 8857,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T11:00:00Z",
+   "count": 9575,
+   "median": 9667.5,
+   "by_chain": {
+    "ethereum": 383,
+    "tron": 9192,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T12:00:00Z",
+   "count": 10009,
+   "median": 10183.0,
+   "by_chain": {
+    "ethereum": 344,
+    "tron": 9665,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T13:00:00Z",
+   "count": 10884,
+   "median": 10638.5,
+   "by_chain": {
+    "ethereum": 446,
+    "tron": 10438,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T14:00:00Z",
+   "count": 10720,
+   "median": 10928.5,
+   "by_chain": {
+    "ethereum": 392,
+    "tron": 10328,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T15:00:00Z",
+   "count": 10388,
+   "median": 10329.0,
+   "by_chain": {
+    "ethereum": 464,
+    "tron": 9924,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T16:00:00Z",
+   "count": 9949,
+   "median": 9800.5,
+   "by_chain": {
+    "ethereum": 428,
+    "tron": 9521,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T17:00:00Z",
+   "count": 8585,
+   "median": 8600.5,
+   "by_chain": {
+    "ethereum": 483,
+    "tron": 8102,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T18:00:00Z",
+   "count": 7461,
+   "median": 7577.5,
+   "by_chain": {
+    "ethereum": 331,
+    "tron": 7130,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T19:00:00Z",
+   "count": 6366,
+   "median": 6590.5,
+   "by_chain": {
+    "ethereum": 342,
+    "tron": 6024,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T20:00:00Z",
+   "count": 5311,
+   "median": 5484.5,
+   "by_chain": {
+    "ethereum": 281,
+    "tron": 5030,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T21:00:00Z",
+   "count": 4651,
+   "median": 4620.5,
+   "by_chain": {
+    "ethereum": 348,
+    "tron": 4303,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T22:00:00Z",
+   "count": 3934,
+   "median": 4077.5,
+   "by_chain": {
+    "ethereum": 247,
+    "tron": 3687,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T23:00:00Z",
+   "count": 3860,
+   "median": 3742.5,
+   "by_chain": {
+    "ethereum": 291,
+    "tron": 3569,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T00:00:00Z",
+   "count": 3670,
+   "median": 3984.0,
+   "by_chain": {
+    "ethereum": 254,
+    "tron": 3416,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T01:00:00Z",
+   "count": 3863,
+   "median": 4477.5,
+   "by_chain": {
+    "ethereum": 192,
+    "tron": 3671,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T02:00:00Z",
+   "count": 4096,
+   "median": 4825.5,
+   "by_chain": {
+    "ethereum": 187,
+    "tron": 3909,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T03:00:00Z",
+   "count": 4352,
+   "median": 4887.5,
+   "by_chain": {
+    "ethereum": 224,
+    "tron": 4128,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T04:00:00Z",
+   "count": 4568,
+   "median": 5170.5,
+   "by_chain": {
+    "ethereum": 145,
+    "tron": 4423,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T05:00:00Z",
+   "count": 5239,
+   "median": 6005.5,
+   "by_chain": {
+    "ethereum": 199,
+    "tron": 5040,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T06:00:00Z",
+   "count": 5901,
+   "median": 6925.0,
+   "by_chain": {
+    "ethereum": 200,
+    "tron": 5701,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T07:00:00Z",
+   "count": 6864,
+   "median": 7751.5,
+   "by_chain": {
+    "ethereum": 223,
+    "tron": 6641,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T08:00:00Z",
+   "count": 7643,
+   "median": 8714.0,
+   "by_chain": {
+    "ethereum": 259,
+    "tron": 7384,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T09:00:00Z",
+   "count": 7996,
+   "median": 9131.5,
+   "by_chain": {
+    "ethereum": 311,
+    "tron": 7685,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T10:00:00Z",
+   "count": 7987,
+   "median": 9108.5,
+   "by_chain": {
+    "ethereum": 290,
+    "tron": 7697,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T11:00:00Z",
+   "count": 8388,
+   "median": 9667.5,
+   "by_chain": {
+    "ethereum": 289,
+    "tron": 8099,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T12:00:00Z",
+   "count": 8797,
+   "median": 10183.0,
+   "by_chain": {
+    "ethereum": 346,
+    "tron": 8451,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T13:00:00Z",
+   "count": 9255,
+   "median": 10761.0,
+   "by_chain": {
+    "ethereum": 401,
+    "tron": 8854,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T14:00:00Z",
+   "count": 8776,
+   "median": 10928.5,
+   "by_chain": {
+    "ethereum": 391,
+    "tron": 8385,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T15:00:00Z",
+   "count": 8908,
+   "median": 10370.5,
+   "by_chain": {
+    "ethereum": 451,
+    "tron": 8457,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T16:00:00Z",
+   "count": 8302,
+   "median": 9871.5,
+   "by_chain": {
+    "ethereum": 414,
+    "tron": 7888,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T17:00:00Z",
+   "count": 7035,
+   "median": 8600.5,
+   "by_chain": {
+    "ethereum": 346,
+    "tron": 6689,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T18:00:00Z",
+   "count": 6309,
+   "median": 7577.5,
+   "by_chain": {
+    "ethereum": 347,
+    "tron": 5962,
+    "bsc": 0
+   }
+  }
+ ],
+ "hourly_file": "data/live/binance/hourly.csv",
+ "hourly_sha256": "5441c2d0acd3e03f77590e7cc2413cc1caf7e903f85cc882b71417908ed823e0",
+ "rules": [
+  "data/heartbeat-params.json",
+  "data/heartbeat-live-params.json"
+ ],
+ "addresses": "data/registry/binance.json",
+ "chains_not_run": {
+  "bsc": "NodeReal free plan monthly quota used up on 12 Oct 2026 before the Binance BSC backfill finished (no free source serves BSC history); BSC is left out of Binance for the whole window"
+ },
+ "evidence_sha256": "d7526b8c1f5d8fe8f1afe3f177def5ae598bb74ecb985ea560f97d2fa469a610"
+}

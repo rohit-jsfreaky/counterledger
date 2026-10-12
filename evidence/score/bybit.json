@@ -1,7 +1,7 @@
 {
  "kind": "score",
  "exchange": "bybit",
- "as_of": "2026-10-11T12:00:00Z",
+ "as_of": "2026-10-12T06:00:00Z",
  "score": 90,
  "deductions": [
   {
@@ -32,11 +32,11 @@
   },
   "chain": {
    "account": "4rEiv8fYWT2UfYYV4b5pBXNeCCN9b1Nn3famEZ7v33BV",
-   "slot": 509903057,
-   "data_sha256": "64bf8286ef847fe3e0ed7cd0c9cc460596ccc30bb0cd7a2eca8e661c28fe42e1"
+   "slot": 510172849,
+   "data_sha256": "25108c43555ebb3cb1aaeaeef795b35ad747f61e4dd31b1c9dbf2e83a0f4b538"
   }
  },
  "params_file": "data/score-params.json",
  "note": "Shows how much of the books can be seen and proven from outside. Not a solvency rating.",
- "evidence_sha256": "36d32eeb3ff96599dbd413d28bb82998b28475cf735be5973daeea93fa56d8f1"
+ "evidence_sha256": "3200e66e2b6108aff0b0c0460aaf0c8d74bac91389b02b15d7838cedc6fd7294"
 }

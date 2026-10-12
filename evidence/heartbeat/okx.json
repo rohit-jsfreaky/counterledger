@@ -1,0 +1,746 @@
+{
+ "kind": "live-heartbeat",
+ "exchange": "okx",
+ "name": "OKX",
+ "as_of": "2026-10-10T19:00:00Z",
+ "state": "normal",
+ "last_hour": {
+  "count": 3283,
+  "baseline_median": 3719.5
+ },
+ "last_24h_by_chain": {
+  "ethereum": 25095,
+  "tron": 77171,
+  "bsc": 0
+ },
+ "series_72h": [
+  {
+   "t": "2026-10-07T19:00:00Z",
+   "count": 2778,
+   "median": 2979.5,
+   "by_chain": {
+    "ethereum": 789,
+    "tron": 1989,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-07T20:00:00Z",
+   "count": 2337,
+   "median": 2423.0,
+   "by_chain": {
+    "ethereum": 784,
+    "tron": 1553,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-07T21:00:00Z",
+   "count": 1888,
+   "median": 2040.0,
+   "by_chain": {
+    "ethereum": 566,
+    "tron": 1322,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-07T22:00:00Z",
+   "count": 1856,
+   "median": 1969.0,
+   "by_chain": {
+    "ethereum": 593,
+    "tron": 1263,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-07T23:00:00Z",
+   "count": 2150,
+   "median": 2098.5,
+   "by_chain": {
+    "ethereum": 704,
+    "tron": 1446,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T00:00:00Z",
+   "count": 2705,
+   "median": 2725.5,
+   "by_chain": {
+    "ethereum": 774,
+    "tron": 1931,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T01:00:00Z",
+   "count": 3523,
+   "median": 3524.5,
+   "by_chain": {
+    "ethereum": 862,
+    "tron": 2661,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T02:00:00Z",
+   "count": 4323,
+   "median": 4092.0,
+   "by_chain": {
+    "ethereum": 1071,
+    "tron": 3252,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T03:00:00Z",
+   "count": 4347,
+   "median": 4469.5,
+   "by_chain": {
+    "ethereum": 954,
+    "tron": 3393,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T04:00:00Z",
+   "count": 4682,
+   "median": 4718.5,
+   "by_chain": {
+    "ethereum": 1085,
+    "tron": 3597,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T05:00:00Z",
+   "count": 5312,
+   "median": 5218.0,
+   "by_chain": {
+    "ethereum": 1120,
+    "tron": 4192,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T06:00:00Z",
+   "count": 5739,
+   "median": 5518.0,
+   "by_chain": {
+    "ethereum": 1244,
+    "tron": 4495,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T07:00:00Z",
+   "count": 6275,
+   "median": 6141.0,
+   "by_chain": {
+    "ethereum": 1373,
+    "tron": 4902,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T08:00:00Z",
+   "count": 6337,
+   "median": 6445.0,
+   "by_chain": {
+    "ethereum": 1484,
+    "tron": 4853,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T09:00:00Z",
+   "count": 6340,
+   "median": 6297.5,
+   "by_chain": {
+    "ethereum": 1473,
+    "tron": 4867,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T10:00:00Z",
+   "count": 6351,
+   "median": 6182.0,
+   "by_chain": {
+    "ethereum": 1466,
+    "tron": 4885,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T11:00:00Z",
+   "count": 6341,
+   "median": 6370.0,
+   "by_chain": {
+    "ethereum": 1397,
+    "tron": 4944,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T12:00:00Z",
+   "count": 6690,
+   "median": 6524.5,
+   "by_chain": {
+    "ethereum": 1608,
+    "tron": 5082,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T13:00:00Z",
+   "count": 6765,
+   "median": 6753.0,
+   "by_chain": {
+    "ethereum": 1718,
+    "tron": 5047,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T14:00:00Z",
+   "count": 6550,
+   "median": 6548.5,
+   "by_chain": {
+    "ethereum": 1535,
+    "tron": 5015,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T15:00:00Z",
+   "count": 6027,
+   "median": 5934.5,
+   "by_chain": {
+    "ethereum": 1496,
+    "tron": 4531,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T16:00:00Z",
+   "count": 5959,
+   "median": 5636.5,
+   "by_chain": {
+    "ethereum": 1077,
+    "tron": 4882,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T17:00:00Z",
+   "count": 4591,
+   "median": 4441.0,
+   "by_chain": {
+    "ethereum": 729,
+    "tron": 3862,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T18:00:00Z",
+   "count": 3525,
+   "median": 3719.5,
+   "by_chain": {
+    "ethereum": 632,
+    "tron": 2893,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T19:00:00Z",
+   "count": 2885,
+   "median": 2979.5,
+   "by_chain": {
+    "ethereum": 713,
+    "tron": 2172,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T20:00:00Z",
+   "count": 2368,
+   "median": 2423.0,
+   "by_chain": {
+    "ethereum": 713,
+    "tron": 1655,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T21:00:00Z",
+   "count": 1940,
+   "median": 2040.0,
+   "by_chain": {
+    "ethereum": 576,
+    "tron": 1364,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T22:00:00Z",
+   "count": 1954,
+   "median": 1969.0,
+   "by_chain": {
+    "ethereum": 607,
+    "tron": 1347,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-08T23:00:00Z",
+   "count": 2118,
+   "median": 2127.0,
+   "by_chain": {
+    "ethereum": 612,
+    "tron": 1506,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T00:00:00Z",
+   "count": 2679,
+   "median": 2725.5,
+   "by_chain": {
+    "ethereum": 743,
+    "tron": 1936,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T01:00:00Z",
+   "count": 3560,
+   "median": 3559.5,
+   "by_chain": {
+    "ethereum": 924,
+    "tron": 2636,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T02:00:00Z",
+   "count": 4551,
+   "median": 4142.0,
+   "by_chain": {
+    "ethereum": 1098,
+    "tron": 3453,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T03:00:00Z",
+   "count": 4186,
+   "median": 4469.5,
+   "by_chain": {
+    "ethereum": 998,
+    "tron": 3188,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T04:00:00Z",
+   "count": 4967,
+   "median": 4718.5,
+   "by_chain": {
+    "ethereum": 1054,
+    "tron": 3913,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T05:00:00Z",
+   "count": 6094,
+   "median": 5234.0,
+   "by_chain": {
+    "ethereum": 1306,
+    "tron": 4788,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T06:00:00Z",
+   "count": 6033,
+   "median": 5654.0,
+   "by_chain": {
+    "ethereum": 1321,
+    "tron": 4712,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T07:00:00Z",
+   "count": 6058,
+   "median": 6197.0,
+   "by_chain": {
+    "ethereum": 1394,
+    "tron": 4664,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T08:00:00Z",
+   "count": 6287,
+   "median": 6445.0,
+   "by_chain": {
+    "ethereum": 1392,
+    "tron": 4895,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T09:00:00Z",
+   "count": 6280,
+   "median": 6323.0,
+   "by_chain": {
+    "ethereum": 1478,
+    "tron": 4802,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T10:00:00Z",
+   "count": 6112,
+   "median": 6215.0,
+   "by_chain": {
+    "ethereum": 1413,
+    "tron": 4699,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T11:00:00Z",
+   "count": 6639,
+   "median": 6377.0,
+   "by_chain": {
+    "ethereum": 1533,
+    "tron": 5106,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T12:00:00Z",
+   "count": 6584,
+   "median": 6658.0,
+   "by_chain": {
+    "ethereum": 1558,
+    "tron": 5026,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T13:00:00Z",
+   "count": 6658,
+   "median": 6795.5,
+   "by_chain": {
+    "ethereum": 1631,
+    "tron": 5027,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T14:00:00Z",
+   "count": 6229,
+   "median": 6587.0,
+   "by_chain": {
+    "ethereum": 1467,
+    "tron": 4762,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T15:00:00Z",
+   "count": 5121,
+   "median": 6048.0,
+   "by_chain": {
+    "ethereum": 1239,
+    "tron": 3882,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T16:00:00Z",
+   "count": 5600,
+   "median": 5663.5,
+   "by_chain": {
+    "ethereum": 1443,
+    "tron": 4157,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T17:00:00Z",
+   "count": 4260,
+   "median": 4457.0,
+   "by_chain": {
+    "ethereum": 1170,
+    "tron": 3090,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T18:00:00Z",
+   "count": 3447,
+   "median": 3719.5,
+   "by_chain": {
+    "ethereum": 930,
+    "tron": 2517,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T19:00:00Z",
+   "count": 2694,
+   "median": 2979.5,
+   "by_chain": {
+    "ethereum": 795,
+    "tron": 1899,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T20:00:00Z",
+   "count": 2294,
+   "median": 2423.0,
+   "by_chain": {
+    "ethereum": 746,
+    "tron": 1548,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T21:00:00Z",
+   "count": 1840,
+   "median": 2040.0,
+   "by_chain": {
+    "ethereum": 535,
+    "tron": 1305,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T22:00:00Z",
+   "count": 1615,
+   "median": 1969.0,
+   "by_chain": {
+    "ethereum": 471,
+    "tron": 1144,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-09T23:00:00Z",
+   "count": 1920,
+   "median": 2134.0,
+   "by_chain": {
+    "ethereum": 626,
+    "tron": 1294,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T00:00:00Z",
+   "count": 2401,
+   "median": 2725.5,
+   "by_chain": {
+    "ethereum": 737,
+    "tron": 1664,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T01:00:00Z",
+   "count": 3147,
+   "median": 3578.0,
+   "by_chain": {
+    "ethereum": 840,
+    "tron": 2307,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T02:00:00Z",
+   "count": 3576,
+   "median": 4166.0,
+   "by_chain": {
+    "ethereum": 876,
+    "tron": 2700,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T03:00:00Z",
+   "count": 4045,
+   "median": 4469.5,
+   "by_chain": {
+    "ethereum": 888,
+    "tron": 3157,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T04:00:00Z",
+   "count": 4536,
+   "median": 4755.5,
+   "by_chain": {
+    "ethereum": 996,
+    "tron": 3540,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T05:00:00Z",
+   "count": 5051,
+   "median": 5256.0,
+   "by_chain": {
+    "ethereum": 1024,
+    "tron": 4027,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T06:00:00Z",
+   "count": 5236,
+   "median": 5739.5,
+   "by_chain": {
+    "ethereum": 1128,
+    "tron": 4108,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T07:00:00Z",
+   "count": 5639,
+   "median": 6197.0,
+   "by_chain": {
+    "ethereum": 1285,
+    "tron": 4354,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T08:00:00Z",
+   "count": 5865,
+   "median": 6445.0,
+   "by_chain": {
+    "ethereum": 1322,
+    "tron": 4543,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T09:00:00Z",
+   "count": 5799,
+   "median": 6323.0,
+   "by_chain": {
+    "ethereum": 1312,
+    "tron": 4487,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T10:00:00Z",
+   "count": 5886,
+   "median": 6215.0,
+   "by_chain": {
+    "ethereum": 1320,
+    "tron": 4566,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T11:00:00Z",
+   "count": 5829,
+   "median": 6435.5,
+   "by_chain": {
+    "ethereum": 1346,
+    "tron": 4483,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T12:00:00Z",
+   "count": 5832,
+   "median": 6658.0,
+   "by_chain": {
+    "ethereum": 1386,
+    "tron": 4446,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T13:00:00Z",
+   "count": 5853,
+   "median": 6795.5,
+   "by_chain": {
+    "ethereum": 1389,
+    "tron": 4464,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T14:00:00Z",
+   "count": 5828,
+   "median": 6587.0,
+   "by_chain": {
+    "ethereum": 1467,
+    "tron": 4361,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T15:00:00Z",
+   "count": 5137,
+   "median": 6048.0,
+   "by_chain": {
+    "ethereum": 1274,
+    "tron": 3863,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T16:00:00Z",
+   "count": 5010,
+   "median": 5663.5,
+   "by_chain": {
+    "ethereum": 1274,
+    "tron": 3736,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T17:00:00Z",
+   "count": 3950,
+   "median": 4457.0,
+   "by_chain": {
+    "ethereum": 1108,
+    "tron": 2842,
+    "bsc": 0
+   }
+  },
+  {
+   "t": "2026-10-10T18:00:00Z",
+   "count": 3283,
+   "median": 3719.5,
+   "by_chain": {
+    "ethereum": 950,
+    "tron": 2333,
+    "bsc": 0
+   }
+  }
+ ],
+ "hourly_file": "data/live/okx/hourly.csv",
+ "hourly_sha256": "b3c8fe8d0af4d6b2cce68427a80cc3f60bce522694a0c2ff172cabbb46fb4d45",
+ "rules": [
+  "data/heartbeat-params.json",
+  "data/heartbeat-live-params.json"
+ ],
+ "addresses": "data/registry/okx.json",
+ "evidence_sha256": "01f662e0f168be3ae48e8128e5b35283d89f01690d275f5fb1cb5b09937978b2"
+}

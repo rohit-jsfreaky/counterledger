@@ -147,13 +147,18 @@ export default async function ExchangePage({ params }: { params: Promise<{ excha
                 <HourlyChart points={hb.series_72h.map((s: any) => ({ t: s.t, count: s.count, median: s.median }))} />
               </div>
               <div className="mt-2 flex flex-wrap gap-4 text-xs text-dim">
-                <span>bars: outflows per hour (all chains)</span>
+                <span>bars: outflows per hour (all counted chains)</span>
                 <span>dashed: median of the same hour over 28 days</span>
                 <span className="num">as of {hb.as_of}</span>
               </div>
               <div className="num mt-2 text-xs text-muted">
-                Last 24h — {Object.entries(hb.last_24h_by_chain).map(([c, n]) => `${c}: ${Number(n).toLocaleString()}`).join(" · ")}
+                Last 24h — {Object.entries(hb.last_24h_by_chain).filter(([c]) => !hb.chains_not_run?.[c]).map(([c, n]) => `${c}: ${Number(n).toLocaleString()}`).join(" · ")}
               </div>
+              {Object.entries(hb.chains_not_run ?? {}).map(([c, why]) => (
+                <p key={c} className="mt-2 max-w-[70ch] text-xs text-dim">
+                  <span className="uppercase">{c}</span> is not counted for this exchange: {String(why)}.
+                </p>
+              ))}
             </>
           ) : (
             <p className="mt-4 text-sm text-muted">{row.heartbeatReason ?? "No live heartbeat for this exchange."}</p>

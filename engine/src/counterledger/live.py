@@ -94,7 +94,11 @@ def update(ex: str, now: int | None = None) -> dict:
     t0 = t1 - WINDOW_DAYS * 86400
     hot_eth = reg["chains"]["ethereum"]
     hot_tron = reg["chains"]["tron"]
-    hot_bsc = reg["chains"]["bsc"]
+    # A chain can be left out of an exchange for the WHOLE window (never part of it), with the reason kept in state and
+    # shown in the evidence. CL_SKIP_BSC="<reason>" sets it; it then sticks for every later run of that exchange.
+    if os.environ.get("CL_SKIP_BSC"):
+        state.setdefault("chains_not_run", {})["bsc"] = os.environ["CL_SKIP_BSC"]
+    hot_bsc = [] if "bsc" in state.get("chains_not_run", {}) else reg["chains"]["bsc"]
     own_eth = set(hot_eth) | set(reg["chains"]["bsc"])
     for k in LABEL_KEYS.get(ex, [ex]):
         own_eth |= set(own_labels(k))
@@ -181,6 +185,11 @@ def load_hourly(ex: str) -> dict[str, Counter]:
     return counts
 
 
+def _not_run(ex: str) -> dict[str, str]:
+    p = DATA_DIR / "live" / ex / "state.json"
+    return json.loads(p.read_text()).get("chains_not_run", {}) if p.exists() else {}
+
+
 def status(ex: str, hp: dict | None = None) -> dict:
     hp = hp or _params()[0]
     by_chain = load_hourly(ex)
@@ -214,6 +223,7 @@ def status(ex: str, hp: dict | None = None) -> dict:
         "hourly_sha256": sha256_file(DATA_DIR / "live" / ex / "hourly.csv"),
         "rules": ["data/heartbeat-params.json", "data/heartbeat-live-params.json"],
         "addresses": f"data/registry/{ex}.json",
+        **({"chains_not_run": nr} if (nr := _not_run(ex)) else {}),  # only when a chain is left out: other hashes stay put
     }
     doc["evidence_sha256"] = canonical_hash(doc)
     return doc
