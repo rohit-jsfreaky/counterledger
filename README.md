@@ -12,6 +12,7 @@ paid by proof when withdrawals stop.
 
 [**Live app**](https://counterledger-mauve.vercel.app) ·
 [**Watch the demo**](https://youtu.be/jozuFSEmUv0) ·
+[Pitch](https://youtu.be/s_J8L9GpWQk) ·
 [**Check it yourself**](https://counterledger-mauve.vercel.app/judges) ·
 [**Try to break it**](https://counterledger-mauve.vercel.app/break) ·
 [Build log](hackathon.md) ·
