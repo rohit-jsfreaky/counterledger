@@ -52,10 +52,16 @@ export function Logo({ size = 22 }: { size?: number }) {
   // two ledger columns: the exchange's side and the users' side
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden>
-      <rect x="2.5" y="3" width="8" height="18" rx="2" fill="none" stroke="#f3f4f6" strokeWidth="1.6" />
-      <rect x="13.5" y="3" width="8" height="18" rx="2" fill="#3d68ff" />
-      <path d="M5 8h3M5 12h3M5 16h3" stroke="#f3f4f6" strokeWidth="1.6" strokeLinecap="round" />
-      <path d="M16 8h3M16 12h3M16 16h3" stroke="#ffffff" strokeWidth="1.6" strokeLinecap="round" />
+      <defs>
+        <linearGradient id="cl-logo-blue" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#3d68ff" />
+          <stop offset="1" stopColor="#0b3bd6" />
+        </linearGradient>
+      </defs>
+      <rect x="3" y="2.8" width="7.6" height="18.4" rx="1.8" fill="none" stroke="#f3f4f6" strokeWidth="1.6" />
+      <rect x="13.4" y="2" width="8.4" height="20" rx="1.8" fill="url(#cl-logo-blue)" />
+      <path d="M5.4 7.6h2.8M5.4 12h2.8M5.4 16.4h2.8" stroke="#f3f4f6" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M16.2 7.6h2.8M16.2 12h2.8M16.2 16.4h2.8" stroke="#000" strokeWidth="1.6" strokeLinecap="round" />
     </svg>
   );
 }
