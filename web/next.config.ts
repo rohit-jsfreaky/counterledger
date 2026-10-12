@@ -7,6 +7,8 @@ config({ path: resolve(process.cwd(), "..", ".env"), quiet: true });
 
 const nextConfig: NextConfig = {
   cacheComponents: true,
+  // src/generated is read with fs at request time (lib/data.ts, api/faucet): ship it with every server function
+  outputFileTracingIncludes: { "/**/*": ["./src/generated/**/*"] },
   turbopack: {
     rules: {
       "*.css": {

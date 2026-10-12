@@ -12,7 +12,9 @@ and paid by a confirmed withdrawal halt.
 ![Solana devnet](https://img.shields.io/badge/Solana-devnet-002fa7)
 ![Reclaim zkTLS](https://img.shields.io/badge/Reclaim-zkTLS-002fa7)
 
-<!-- TODO(Rohit): demo video link + live URL here once published -->
+**Live site: https://counterledger-mauve.vercel.app** · judges start at [/judges](https://counterledger-mauve.vercel.app/judges)
+
+<!-- TODO(Rohit): demo video link here once published -->
 
 > Exchanges publish what they hold. Counterledger lets their users prove what they are owed, watches every withdrawal,
 > and pays out if they stop. **Devnet only, test-USDC only. The cover market is a protocol demo, not insurance.**
