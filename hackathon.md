@@ -2,8 +2,8 @@
 
 > Exchanges audit themselves. Counterledger lets their users audit them, and cover themselves against them.
 
-**Links:** live site https://counterledger-mauve.vercel.app · repo https://github.com/rohit-jsfreaky/counterledger · pitch video (TODO, m:ss) · demo video
-(TODO, m:ss) · launch post (TODO) · program `5DCUGtXcR4DcBi7FpyRv1fGtUS3zTHJy9kXoDH8yxG9K` (Solana devnet)
+**Links:** live site https://counterledger-mauve.vercel.app · repo https://github.com/rohit-jsfreaky/counterledger · pitch + demo video
+https://youtu.be/jozuFSEmUv0 (2:38) · launch post (TODO) · program `5DCUGtXcR4DcBi7FpyRv1fGtUS3zTHJy9kXoDH8yxG9K` (Solana devnet)
 
 **Auth note:** no login needed. Pages that sign transactions offer a built-in demo wallet (a devnet key kept in your
 browser) and a faucet for devnet SOL and test-USDC. Proving a balance needs a real CoinDCX account.
